@@ -1,0 +1,24 @@
+@media screen and (max-width: 1440px){
+
+}
+
+@media screen and (max-width: 1024px){
+
+}
+
+@media screen and (max-width: 767px){
+    .DESKTOP-NAV{
+        display: none;
+    }
+    .FRAME-MENU{
+        display: none;
+    }
+    .list-icon{
+        display: block !important;
+    }
+
+}
+
+@media screen and (max-width: 426px){
+
+}

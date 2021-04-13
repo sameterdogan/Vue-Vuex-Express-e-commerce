@@ -1,0 +1,44 @@
+
+html,body{
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+@media screen and (max-width: 480px)  {
+    html,body{
+        font-size: 12px;
+    }
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+td {
+    text-align: center;
+    font-weight: normal;
+}
+input,textarea{
+    box-shadow: none !important;
+    outline: none !important;
+}
+input:not([type=file]),select,textarea{
+    border: 1px solid black !important;
+    border-radius: 1rem !important;
+}
+select{
+    background-color: #ffffff !important;
+    border: solid black 1px !important;
+}
+main{
+    padding: 2rem;
+    min-height: 93vh;
+}
+.message{
+    min-height: 100px;
+    width: 300px !important;
+    position: absolute;
+    left: 95%;
+    top: 20%;
+}
+

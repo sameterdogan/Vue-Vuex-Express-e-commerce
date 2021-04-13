@@ -1,0 +1,104 @@
+<template>
+  <div id="Login">
+    <div class="row">
+      <div class="col-lg-8 loginImage">
+
+      </div>
+
+      <div class="col-lg-4 my-auto mx-auto p-5 text-center ">
+            <div v-if='message.length>0' class='message alert alert-danger'> {{message}}</div>
+            <i class="bi bi-emoji-sunglasses"></i>
+        <form @submit.prevent="handleLogin" class='mt-5' >
+          <div class="form-group">
+            <input type="text"
+                   v-model="user.email"
+                   name="email"
+                   class="form-control"
+                   placeholder="E-posta hesabını gir.">
+          </div>
+          <div class="form-group">
+            <input type="password"
+                   v-model="user.password"
+                   name="password"
+                   class="form-control"
+                   placeholder="Şifreni gir.">
+          </div>
+          <div class="text-center">
+            <button type="submit"  class="btn rounded-pill pr-5 pl-5  btn-success">Oturum aç</button>
+          </div>
+
+          <div class="mt-4 text-center">
+            <span class="orText bg-white"> Veya </span>
+            <hr class="position-relative">
+            <router-link
+                to="/auth/register"
+                tag="a"
+                class="text-success"
+            >
+              Hesap oluştur
+            </router-link>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+</template>
+
+<script>
+
+
+
+export default {
+  name: "Login",
+  data(){
+    return {
+      user:{
+        email:"",
+        password:""
+      },
+          message:"",
+          color:""
+    }
+  },
+  methods:{
+   async handleLogin(){
+     try{
+       await  this.$store.dispatch("login",this.user)
+       this.$router.push("/")
+     }catch (err){
+           console.log(err.response)
+           this.$store.dispatch("setMessage",{message:err.response.data.message,color:"danger"})
+     }
+
+    }
+  }
+}
+</script>
+
+<style scoped>
+.row{
+  height:100vh;
+  width: 100%;
+  margin: 0;
+}
+.loginImage{
+  background-image: url("../../assets/andreas-haslinger-WnBij2jMOzw-unsplash (1).jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
+hr{
+  position: absolute;
+  bottom: 23px;
+  z-index: -1;
+}
+.orText{
+  padding: 0 20px;
+  background-color: white;
+}
+.bi-emoji-sunglasses{
+      font-size: 4rem;
+}
+</style>
