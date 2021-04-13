@@ -11,7 +11,7 @@ dotenv.config({ path: './config/env/config.env' })
 dbConnect()
 
 const app = express()
-//app.use(morgan('combined'))
+if (process.env.MODE === 'production') app.use(morgan('common'))
 app.use(helmet())
 app.use('/assets', express.static('assets'))
 app.use(express.json())
@@ -35,7 +35,7 @@ app.use((err, req, res, next) => {
         success: false,
         message: customError.message,
     })
-    logger.error(customError)
+    if (process.env.MODE === 'production') logger.error(customError)
 })
 
 export default app

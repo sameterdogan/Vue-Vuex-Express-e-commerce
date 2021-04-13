@@ -38,12 +38,16 @@ export const getBySlugProduct = asyncErrorWrapper(async (req, res, next) => {
     const product = await ProductModel.findOne({
         slugProduct: req.params.slugProduct,
     })
-    console.log(product)
     if (!product) return next(new CustomError('Product not found', 404))
+    const relatedProducts = await ProductModel.find({
+        category: product.category,
+        _id: { $ne: product._id },
+    }).limit(6)
     res.status(200).json({
         success: true,
         message: 'Product information successfully brought.',
         product,
+        relatedProducts,
     })
 })
 export const addProduct = asyncErrorWrapper(async (req, res, next) => {

@@ -3,7 +3,10 @@
         <h4 class='category-name'>{{ slugCategory }}</h4>
         <hr class='category-name-hr'>
         <div class='row'>
-            <Product v-for='product in productsByCategory' :key='product._id' :product='product' />
+            <div class='col-3' v-for='product in productsByCategory' :key='product._id'>
+                <Product :product='product' />
+            </div>
+
         </div>
     </div>
 
@@ -11,6 +14,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Product from '@/components/index/product/Product'
 
 export default {
@@ -21,10 +25,9 @@ export default {
             slugCategory: '',
             filter: {},
             sort: {},
-            productsByCategory: []
         }
     },
-    async created() {
+    created() {
         this.slugCategory = this.$route.params.slugCategory
         this.$root.$on('filterOptions', filterOptions => {
             if (this.$route.name === 'products-by-category') {
@@ -34,36 +37,31 @@ export default {
                     slugCategory: this.slugCategory,
                     filter: this.filter,
                     sort: this.sort
-                }).then(() => {
-                    this.productsByCategory = this.$store.getters.getProductsByCategory
                 })
-
             }
 
         })
-        await this.$store.dispatch('initProductsByCategory', {
+        this.$store.dispatch('initProductsByCategory', {
             slugCategory: this.slugCategory,
             filter: this.filter,
             sort: this.sort
         })
-        this.productsByCategory = this.$store.getters.getProductsByCategory
 
 
     },
+    computed: {
+        ...mapGetters({ productsByCategory: 'getProductsByCategory' })
+    },
     watch: {
-        async $route(to) {
-            console.log('route geldi geldi')
-            console.log('geldi 1')
+        $route(to) {
             this.filter = {}
             this.sort = {}
             this.slugCategory = to.params.slugCategory
-            await this.$store.dispatch('initProductsByCategory', {
+            this.$store.dispatch('initProductsByCategory', {
                 slugCategory: this.slugCategory,
                 filter: this.filter,
                 sort: this.sort
             })
-            this.productsByCategory = this.$store.getters.getProductsByCategory
-            console.log(this.productsByCategory)
 
 
         }

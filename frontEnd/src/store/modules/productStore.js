@@ -7,6 +7,7 @@ const moduleProduct = {
         productsByCategory: [],
         newArrivals: [],
         product: {},
+        relatedProducts: [],
     },
     mutations: {
         INIT_PRODUCTS(state, products) {
@@ -20,6 +21,9 @@ const moduleProduct = {
         },
         INIT_BY_SLUG_PRODUCT(state, product) {
             state.product = { ...product }
+        },
+        INIT_BY_SLUG_PRODUCT_RELATED_PRODUCTS(state, relatedProducts) {
+            state.relatedProducts = relatedProducts
         },
         ADD_PRODUCT(state, product) {
             state.products.push(product)
@@ -41,19 +45,16 @@ const moduleProduct = {
         initProducts({ commit }, filterAndSortObject) {
             const filter = JSON.stringify(filterAndSortObject.filter)
             const sort = JSON.stringify(filterAndSortObject.sort)
-            return axios
-                .get(`product?filter=${filter}&sort=${sort}`)
-                .then(res => {
-                    console.log(res)
-                    commit('INIT_PRODUCTS', res.data.products)
-                })
+            axios.get(`product?filter=${filter}&sort=${sort}`).then(res => {
+                console.log(res)
+                commit('INIT_PRODUCTS', res.data.products)
+            })
         },
         initProductsByCategory({ commit }, filterObjectAndCategory) {
             const filter = JSON.stringify(filterObjectAndCategory.filter)
             const sort = JSON.stringify(filterObjectAndCategory.sort)
             const slugCategory = filterObjectAndCategory.slugCategory
-            console.log(slugCategory)
-            return axios
+            axios
                 .get(
                     `product/category/${slugCategory}?filter=${filter}&sort=${sort}`
                 )
@@ -82,7 +83,12 @@ const moduleProduct = {
             axios
                 .get(`product/${slugProduct}`)
                 .then(res => {
+                    console.log(res)
                     commit('INIT_BY_SLUG_PRODUCT', res.data.product)
+                    commit(
+                        'INIT_BY_SLUG_PRODUCT_RELATED_PRODUCTS',
+                        res.data.relatedProducts
+                    )
                 })
                 .catch(err => {
                     commit('INIT_MESSAGE', {
@@ -113,7 +119,7 @@ const moduleProduct = {
                 })
         },
         editProduct({ commit }, product) {
-            return axios
+            axios
                 .put(`product/${product.productId}`, product.productForm, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
@@ -148,10 +154,15 @@ const moduleProduct = {
         getProduct(state) {
             return state.product
         },
+        getRelatedProducts(state) {
+            console.log(state.relatedProducts)
+            return state.relatedProducts
+        },
         getNewArrivals(state) {
             return state.newArrivals
         },
         getProductsByCategory(state) {
+            console.log('computed tetiklendi')
             return state.productsByCategory
         },
     },

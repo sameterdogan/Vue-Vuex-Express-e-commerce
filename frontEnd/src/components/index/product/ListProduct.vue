@@ -1,7 +1,10 @@
 <template>
 
       <div class='row'>
-            <Product v-for='product in products' :key='product._id' :product='product' />
+          <div class='col-3' v-for='product in products' :key='product._id'>
+              <Product  :product='product' />
+          </div>
+
       </div>
 </template>
 

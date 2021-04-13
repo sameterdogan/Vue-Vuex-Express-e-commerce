@@ -1,6 +1,4 @@
 <template>
-
-  <div class='col-3'>
         <div class='card'>
               <div class='card-img-top'>
                     <img :src="`http://localhost:5000/assets/images/productImages/${product.image}`" class='img-fluid' alt=''>
@@ -18,10 +16,9 @@
 
                     <p class='product-price'> <b>${{product.price}}</b></p>
                     <button class='add-to-cart-button btn btn-sm btn-block'> ADD TO CART</button>
-                    {{product.slugProduct}}
+
               </div>
         </div>
-  </div>
 
 </template>
 
