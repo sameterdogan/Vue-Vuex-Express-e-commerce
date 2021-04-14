@@ -1,49 +1,40 @@
 <template>
 
-      <div class='row'>
-          <div class='col-3' v-for='product in products' :key='product._id'>
-              <Product  :product='product' />
-          </div>
+    <div class='row'>
+        <div class='col-3' v-for='product in products' :key='product._id'>
+            <Product :product='product' />
+        </div>
 
-      </div>
+    </div>
 </template>
 
 <script>
 import Product from '@/components/index/product/Product'
+import { mapGetters } from 'vuex'
 
 export default {
-      name: 'ProductList',
-      components: { Product },
-      data() {
-            return {
-                  filter: {},
-                  sort: {},
-                  products: [],
+    name: 'ProductList',
+    components: { Product },
+    data() {
+        return {
+            filter: {},
+            sort: {},
+        }
+    },
+    created() {
+        this.$root.$on('filterOptions', filterOptions => {
+            if (this.$route.name === 'home') {
+
+                this.filter = filterOptions.filter
+                this.sort = filterOptions.sort
+                this.$store.dispatch('initProducts', { filter: this.filter, sort: this.sort })
             }
-      },
-      created() {
-            this.$root.$on('filterOptions', filterOptions => {
-                   if(this.$route.name==="home"){
 
-                         this.filter = filterOptions.filter
-                         this.sort = filterOptions.sort
-                         this.$store.dispatch('initProducts', { filter: this.filter, sort: this.sort }).then(() => {
-                               this.products = this.$store.getters.getProducts
-                         }).catch(err => {
-                               console.log(err.response)
-                         })
-                   }
-
-            }),
-                  this.$store.dispatch('initProducts', { filter: this.filter, sort: this.sort })
-                        .then(() => {
-                              this.products = this.$store.getters.getProducts
-                        }).catch(err => {
-                        console.log(err.response)
-                  })
-
-
-      },
+        }), this.$store.dispatch('initProducts', { filter: this.filter, sort: this.sort })
+    },
+    computed:{
+        ...mapGetters({products:"getProducts"})
+    }
 
 }
 

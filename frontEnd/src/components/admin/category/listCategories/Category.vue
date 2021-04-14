@@ -15,13 +15,8 @@ export default {
   name: "Category",
   props:["category"],
   methods:{
-  async  deleteCategory(){
-    try{
-      await  this.$store.dispatch("deleteCategory",this.$props.category._id)
-    }catch (err){
-      console.log(err)
-    }
-
+    deleteCategory(){
+        this.$store.dispatch("deleteCategory",this.$props.category._id)
     }
   }
 }

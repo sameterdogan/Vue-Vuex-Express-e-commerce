@@ -5,6 +5,9 @@ html,body{
     padding: 0;
     margin: 0;
 }
+.VueCarousel-navigation-button{
+    font-size: 3rem;
+}
 @media screen and (max-width: 480px)  {
     html,body{
         font-size: 12px;

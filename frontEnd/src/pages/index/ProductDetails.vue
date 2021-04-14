@@ -7,7 +7,8 @@
             </div>
             <div class='col-6'>
                 <h1 class='product-details-name product-details-property '>{{ product.name }}</h1>
-                <h5 class='product-details-price product-details-property '>Price: <span class='lead'>{{ product.price }} $</span>
+                <h5 class='product-details-price product-details-property '>Price: <span class='lead'>{{ product.price
+                    }} $</span>
                 </h5>
                 <h5 class='product-details-color product-details-property '>Color: <span
                     class='lead'>{{ product.color }}</span></h5>
@@ -32,12 +33,21 @@
             </p>
         </div>
         <div>
-            <carousel :per-page="3" :mouse-drag="false">
-                <slide v-for='relatedProduct in relatedProducts' :key='relatedProduct._id'>
-                    <product :product='relatedProduct'/>
+            <carousel
+                :per-page='3'
+                :autoplay='true'
+                :navigationEnabled="true"
+                :loop='true'
+                navigationNextLabel="<i class='bi bi-arrow-right-circle'></i>"
+                navigationPrevLabel="<i class='bi bi-arrow-left-circle'></i>"
+                :mouse-drag='true'>
+                <slide class='p-2' v-for='relatedProduct in relatedProducts' :key='relatedProduct._id'>
+
+                    <product :product='relatedProduct' />
+
                 </slide>
+
             </carousel>
-            {{relatedProducts}}
         </div>
     </div>
 
@@ -45,15 +55,15 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { Carousel, Slide } from 'vue-carousel'
-import product from "@/components/index/product/Product"
+import { Carousel, Slide, } from 'vue-carousel'
+import product from '@/components/index/product/Product'
 
 export default {
     name: 'ProductDetails',
     components: {
         Carousel,
         Slide,
-        product
+        product,
     }
     ,
     created() {
@@ -61,13 +71,13 @@ export default {
     },
     computed: {
         ...mapGetters({ product: 'getProduct' }),
-        ...mapGetters({relatedProducts:"getRelatedProducts"})
+        ...mapGetters({ relatedProducts: 'getRelatedProducts' })
     },
-    watch:{
-      $route(to) {
-          const toSlugProduct=to.params.slugProduct
-          this.$store.dispatch('initBySlugProduct',toSlugProduct)
-      }
+    watch: {
+        $route(to) {
+            const toSlugProduct = to.params.slugProduct
+            this.$store.dispatch('initBySlugProduct', toSlugProduct)
+        }
     },
     methods: {
         qtyDown() {
@@ -118,4 +128,5 @@ export default {
     padding: 1rem;
     margin-top: 4rem;
 }
+
 </style>

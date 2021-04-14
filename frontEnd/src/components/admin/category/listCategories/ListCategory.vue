@@ -3,8 +3,8 @@
    <table class="table table-bordered table-dark table-responsive-sm  table-striped my-5 text-center">
      <thead>
      <tr>
-       <th scope="col"> Ad</th>
-       <th scope="col"> İşlemler</th>
+       <th scope="col"> Name</th>
+       <th scope="col"> Operations</th>
      </tr>
      </thead>
      <tbody>
@@ -15,22 +15,17 @@
 </template>
 
 <script>
+import {mapGetters} from    "vuex"
 import Category from "@/components/admin/category/listCategories/Category";
 export default {
   name: "ListCategory",
   components: {Category},
- async created() {
-    try {
-    await  this.$store.dispatch("initCategories")
-    }catch (err){
-      console.log(err)
-    }
+  created() {
+      this.$store.dispatch("initCategories")
 
   },
   computed:{
-    categories(){
-      return this.$store.getters.getCategories
-    }
+      ...mapGetters({categories:"getCategories"})
   }
 }
 </script>
