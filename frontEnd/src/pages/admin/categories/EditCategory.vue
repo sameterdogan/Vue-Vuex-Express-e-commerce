@@ -8,7 +8,7 @@
                             <input v-model='category.category'
                                    type='text'
                                    class='form-control'
-                                   placeholder='Kategori adı girin.'>
+                                   placeholder='Category name'>
                             <span class='vee-validate-span'>{{ errors[0] }}</span>
                         </div>
 

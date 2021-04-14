@@ -69,7 +69,6 @@ export default {
     line-height: 1rem;
     letter-spacing: 2px;
     text-decoration: none;
-    font-family: "Montserrat";
     background-color: transparent;
     border: none;
 }

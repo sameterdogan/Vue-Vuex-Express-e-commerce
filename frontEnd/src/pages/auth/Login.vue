@@ -14,28 +14,28 @@
                    v-model="user.email"
                    name="email"
                    class="form-control"
-                   placeholder="E-posta hesabını gir.">
+                   placeholder="Email">
           </div>
           <div class="form-group">
             <input type="password"
                    v-model="user.password"
                    name="password"
                    class="form-control"
-                   placeholder="Şifreni gir.">
+                   placeholder="Password">
           </div>
           <div class="text-center">
-            <button type="submit"  class="btn rounded-pill pr-5 pl-5  btn-success">Oturum aç</button>
+            <button type="submit"  class="btn rounded-pill pr-5 pl-5  btn-success">Sign in</button>
           </div>
 
           <div class="mt-4 text-center">
-            <span class="orText bg-white"> Veya </span>
+            <span class="orText bg-white"> Or </span>
             <hr class="position-relative">
             <router-link
                 to="/auth/register"
                 tag="a"
                 class="text-success"
             >
-              Hesap oluştur
+                Create Account
             </router-link>
           </div>
         </form>

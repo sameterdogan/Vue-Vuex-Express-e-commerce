@@ -3,7 +3,7 @@
      <td>{{product.name}}</td>
      <td>{{product.price}}</td>
      <td>{{product.stock}}</td>
-     <td>{{product.category}}</td>
+     <td>{{product.category.category}}</td>
      <td><img :src="`http://localhost:5000/assets/images/productImages/${product.image}`" class="productImage" alt=""></td>
      <td>
        <router-link

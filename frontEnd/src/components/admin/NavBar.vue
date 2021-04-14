@@ -19,17 +19,17 @@
               tag="a"
               class="nav-link"
             >
-              Ürünler
+              Products
             </router-link>
             <router-link
                 to="/admin/categories"
                 tag="a"
                 class="nav-link"
             >
-              Kategoriler
+              Categories
             </router-link>
-            <button v-if="isLoggedIn" @click="logout" class="btn nav-link">Çıkış yap </button>
-            <span v-if="isLoggedIn" class="nav-link" > Aktif kullanıcı : {{user.name}}</span>
+            <button v-if="isLoggedIn" @click="logout" class="btn nav-link">Logout </button>
+            <span v-if="isLoggedIn" class="nav-link" >Active user  : {{user.name}}</span>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default {
   methods:{
     logout(){
           this.$store.dispatch("logout")
-         this.$router.push("/auth/login")
+          this.$router.push("/auth/login")
     }
   },
   computed:{
