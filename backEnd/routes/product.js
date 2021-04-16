@@ -14,15 +14,13 @@ import {
     getProductsByCategory,
     getNewArrivalsProducts,
 } from '../controllers/product'
+
 const router = express.Router()
 
 router.get('/', productsQuery, getProducts)
 
-router.get(
-    '/category/:slugCategory',
-    productsByCategoryQuery,
-    getProductsByCategory
-)
+router.get('/category/:slugCategory', productsByCategoryQuery, getProductsByCategory)
+
 
 router.get('/new-arrivals', getNewArrivalsProducts)
 
@@ -31,18 +29,18 @@ router.get('/:slugProduct', getBySlugProduct)
 router.use(isLogin)
 router.use(isAdmin)
 
-router.post(
-    '/',
+router.post('/',
     productImageMuter.single('image'),
     joiValidator(productJoiSchema),
-    addProduct
+    addProduct,
 )
-router.put(
-    '/:productId',
+router.put('/:productId',
     productImageMuter.single('image'),
     joiValidator(productJoiSchema),
-    editProduct
+    editProduct,
 )
 router.delete('/:productId', deleteProduct)
+
+
 
 export default router

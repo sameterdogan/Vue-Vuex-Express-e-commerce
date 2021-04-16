@@ -5,7 +5,6 @@ const rootDir = appRootPath.path
 import path from 'path'
 import fs from 'fs'
 import slugify from 'slugify'
-import asyncErrorWrapper from '../helpers/error/asyncErrorWrapper'
 
 const Schema = mongoose.Schema
 
@@ -42,10 +41,11 @@ const ProductSchema = new Schema(
     },
     {
         timestamps: true,
-    }
+    },
 )
 
-ProductSchema.pre('save', function (next) {
+
+ProductSchema.pre('save', function(next) {
     console.log(this)
     if (!this.isModified('name')) {
         return next()
@@ -59,16 +59,11 @@ ProductSchema.pre('save', function (next) {
     next()
 })
 
-/*ProductSchema.pre(
-    'remove',
-    asyncErrorWrapper(async function (next) {
-        await fs.unlinkSync(
-            path.join(rootDir, '/assets/images/productImages/' + this.image)
-        )
-        next()
-    })
-)*/
+ProductSchema.pre('remove',  function(next) {
+         fs.unlink(path.join(rootDir, '/assets/images/productImages/' + this.image))
+             .catch(err=>console.log(err))
+         next()
+})
 
-const ProductModel = mongoose.model('Product', ProductSchema)
+export default mongoose.model('Product', ProductSchema)
 
-export default ProductModel

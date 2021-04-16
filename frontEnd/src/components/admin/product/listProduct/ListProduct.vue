@@ -1,5 +1,5 @@
 <template>
-      <div id='ListProduct'>
+      <div>
             <table class='table table-dark table-striped text-center'>
                   <thead>
                   <tr>
@@ -7,7 +7,7 @@
                         <th scope='col'> Price</th>
                         <th scope='col'> Stock</th>
                         <th scope='col'> Category</th>
-                        <th scope='col'> İmage</th>
+                        <th scope='col'> Image</th>
                         <th scope='col'> process</th>
                   </tr>
                   </thead>
@@ -19,12 +19,8 @@
                   to='/admin/add-product'
                   tag='button'
                   class='btn-dark btn text-info float-right  '>
-                  Yeni Ekle
+                  New Add
             </router-link>
-
-            <div class='clearfix'>
-
-            </div>
       </div>
 </template>
 

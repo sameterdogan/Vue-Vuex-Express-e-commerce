@@ -2,6 +2,7 @@ import ProductModel from '../models/product'
 import CustomError from '../helpers/error/CustomError'
 import asyncErrorWrapper from '../helpers/error/asyncErrorWrapper'
 
+
 export const getProducts = async (req, res, next) => {
     const products = await req.getProductsQuery.lean()
     res.status(200).json({
@@ -11,29 +12,30 @@ export const getProducts = async (req, res, next) => {
         isEndIndex: req.isEndIndex,
     })
 }
-export const getProductsByCategory = asyncErrorWrapper(
-    async (req, res, next) => {
-        const productsByCategory = await req.getProductsByCategoryQuery.lean()
 
-        res.status(200).json({
-            success: true,
-            message: 'Products successfully listed.',
-            productsByCategory,
-        })
-    }
-)
-export const getNewArrivalsProducts = asyncErrorWrapper(
-    async (req, res, next) => {
-        const newArrivalsProducts = await ProductModel.find()
-            .sort({ createdAt: 'desc' })
-            .limit(5)
-        res.status(200).json({
-            success: true,
-            message: 'New products have been successfully listed.',
-            newArrivalsProducts,
-        })
-    }
-)
+export const getProductsByCategory = asyncErrorWrapper(async (req, res, next) => {
+    const productsByCategory = await req.getProductsByCategoryQuery.lean()
+
+    res.status(200).json({
+        success: true,
+        message: 'Products successfully listed.',
+        productsByCategory,
+    })
+})
+
+export const getNewArrivalsProducts = asyncErrorWrapper(async (req, res, next) => {
+    const newArrivalsProducts = await ProductModel.find()
+        .sort({ createdAt: 'desc' })
+        .limit(5)
+    res.status(200).json({
+        success: true,
+        message: 'New products have been successfully listed.',
+        newArrivalsProducts,
+    })
+})
+
+
+
 export const getBySlugProduct = asyncErrorWrapper(async (req, res, next) => {
     const product = await ProductModel.findOne({
         slugProduct: req.params.slugProduct,
@@ -50,6 +52,7 @@ export const getBySlugProduct = asyncErrorWrapper(async (req, res, next) => {
         relatedProducts,
     })
 })
+
 export const addProduct = asyncErrorWrapper(async (req, res, next) => {
     req.body.image = req.productImage
     const newProduct = await ProductModel.create(req.body)
@@ -59,6 +62,7 @@ export const addProduct = asyncErrorWrapper(async (req, res, next) => {
         newProduct,
     })
 })
+
 export const editProduct = asyncErrorWrapper(async (req, res, next) => {
     if (req.productImage) req.body['image'] = req.productImage
 

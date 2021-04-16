@@ -16,6 +16,10 @@ const moduleProduct = {
         INIT_NEW_ARRIVALS(state, newArrivals) {
             state.newArrivals = newArrivals
         },
+        INIT_NEW_RELEASES(state, newReleases) {
+            state.newReleases = newReleases
+        }
+        ,
         INIT_PRODUCTS_BY_CATEGORY(state, productsByCategory) {
             state.productsByCategory = productsByCategory
         },
@@ -40,6 +44,15 @@ const moduleProduct = {
                 state.products.splice(index, 1)
             }
         },
+        ADD_NEW_RELEASE(state, newReleases) {
+            state.newReleases.push(newReleases)
+        },
+        DELETE_NEW_RELEASE(state, productId) {
+            let index = state.newReleases.findIndex(n => n.product._id === productId)
+            if (index > -1) {
+                state.newReleases.splice(index, 1)
+            }
+        },
     },
     actions: {
         initProducts({ commit }, filterAndSortObject) {
@@ -56,13 +69,13 @@ const moduleProduct = {
             const slugCategory = filterObjectAndCategory.slugCategory
             axios
                 .get(
-                    `product/category/${slugCategory}?filter=${filter}&sort=${sort}`
+                    `product/category/${slugCategory}?filter=${filter}&sort=${sort}`,
                 )
                 .then(res => {
                     console.log(res)
                     commit(
                         'INIT_PRODUCTS_BY_CATEGORY',
-                        res.data.productsByCategory
+                        res.data.productsByCategory,
                     )
                 })
                 .catch(err => {
@@ -87,7 +100,7 @@ const moduleProduct = {
                     commit('INIT_BY_SLUG_PRODUCT', res.data.product)
                     commit(
                         'INIT_BY_SLUG_PRODUCT_RELATED_PRODUCTS',
-                        res.data.relatedProducts
+                        res.data.relatedProducts,
                     )
                 })
                 .catch(err => {
@@ -146,26 +159,26 @@ const moduleProduct = {
                     console.log(err.response)
                 })
         },
-    },
-    getters: {
-        getProducts(state) {
-            return state.products
         },
-        getProduct(state) {
-            return state.product
+        getters: {
+            getProducts(state) {
+                return state.products
+            },
+            getProduct(state) {
+                return state.product
+            },
+            getRelatedProducts(state) {
+                console.log(state.relatedProducts)
+                return state.relatedProducts
+            },
+            getNewArrivals(state) {
+                return state.newArrivals
+            },
+            getProductsByCategory(state) {
+                console.log('computed tetiklendi')
+                return state.productsByCategory
+            },
         },
-        getRelatedProducts(state) {
-            console.log(state.relatedProducts)
-            return state.relatedProducts
-        },
-        getNewArrivals(state) {
-            return state.newArrivals
-        },
-        getProductsByCategory(state) {
-            console.log('computed tetiklendi')
-            return state.productsByCategory
-        },
-    },
-}
+    }
 
-export default moduleProduct
+    export default moduleProduct
