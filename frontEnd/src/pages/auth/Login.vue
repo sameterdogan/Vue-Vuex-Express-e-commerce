@@ -63,15 +63,8 @@ export default {
     }
   },
   methods:{
-   async handleLogin(){
-     try{
-       await  this.$store.dispatch("login",this.user)
-       this.$router.push("/")
-     }catch (err){
-           console.log(err.response)
-           this.$store.dispatch("setMessage",{message:err.response.data.message,color:"danger"})
-     }
-
+    handleLogin(){
+         this.$store.dispatch("login",this.user)
     }
   }
 }

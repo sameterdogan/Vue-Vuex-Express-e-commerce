@@ -92,7 +92,6 @@ export default {
                   }
             },
             ApplyFilter() {
-
                   this.$root.$emit('filterOptions', { filter: this.filter, sort: this.sort })
             },
       },

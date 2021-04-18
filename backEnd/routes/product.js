@@ -26,6 +26,7 @@ router.get('/new-arrivals', getNewArrivalsProducts)
 
 router.get('/:slugProduct', getBySlugProduct)
 
+
 router.use(isLogin)
 router.use(isAdmin)
 

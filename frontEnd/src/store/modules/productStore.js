@@ -78,18 +78,12 @@ const moduleProduct = {
                         res.data.productsByCategory,
                     )
                 })
-                .catch(err => {
-                    console.log(err.response)
-                })
         },
         initNewArrivals({ commit }) {
             axios
                 .get('product/new-arrivals')
                 .then(res => {
                     commit('INIT_NEW_ARRIVALS', res.data.newArrivalsProducts)
-                })
-                .catch(err => {
-                    console.log(err.response)
                 })
         },
         initBySlugProduct({ commit }, slugProduct) {
@@ -103,13 +97,8 @@ const moduleProduct = {
                         res.data.relatedProducts,
                     )
                 })
-                .catch(err => {
-                    commit('INIT_MESSAGE', {
-                        message: err.response.data.message,
-                        color: 'danger',
-                    })
+                .catch(() => {
                     commit('INIT_BY_SLUG_PRODUCT', {})
-                    console.log(err.response)
                 })
         },
         addProduct({ commit }, productForm) {
@@ -120,15 +109,6 @@ const moduleProduct = {
                 .then(res => {
                     commit('ADD_PRODUCT', res.data.newProduct)
                     router.push('/admin')
-                })
-                .catch(err => {
-                    console.log('gekdi')
-                    commit('INIT_MESSAGE', {
-                        message: err.response.data.message,
-                        color: 'danger',
-                    })
-
-                    console.log(err.response)
                 })
         },
         editProduct({ commit }, product) {
@@ -143,10 +123,6 @@ const moduleProduct = {
                     commit('EDIT_PRODUCT', res.data.editProduct)
                     router.push('/admin')
                 })
-                .catch(err => {
-                    console.log('geldi')
-                    console.log(err.response)
-                })
         },
         deleteProduct({ commit }, productId) {
             axios
@@ -154,9 +130,6 @@ const moduleProduct = {
                 .then(res => {
                     console.log(res)
                     commit('DELETE_PRODUCT', productId)
-                })
-                .catch(err => {
-                    console.log(err.response)
                 })
         },
         },

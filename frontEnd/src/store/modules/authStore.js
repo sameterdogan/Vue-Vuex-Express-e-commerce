@@ -1,47 +1,54 @@
 import axios from 'axios'
+import {router} from "@/router"
 
 const moduleAuth = {
     state: {
         token: null,
         user: null,
     },
+    mutations: {
+        INIT_TOKEN(state, token) {
+            state.token = token
+        },
+        INIT_USER(state, user) {
+            state.user = user
+        },
+    },
     actions: {
-        async login({ dispatch }, user) {
-            const res = await axios.post('auth/login', user)
-            dispatch('attempt', res.data.token)
+         login({ dispatch }, user) {
+             axios.post('auth/login', user)
+                 .then((res)=>{
+                     console.log(res)
+                     dispatch('attempt', res.data.token)
+                     router.push("/")
+                 })
+
         },
         async attempt({ commit, state }, token) {
             if (token) {
-                commit('setToken', token)
+                commit('INIT_TOKEN', token)
             }
             if (!state.token) return
             try {
                 const res = await axios.get('auth/me')
-                commit('setUser', res.data.user)
+                commit('INIT_USER', res.data.user)
             } catch (err) {
-                commit('setUser', null)
-                commit('setToken', null)
+                commit('INIT_USER', null)
+                commit('INIT_TOKEN', null)
                 console.log('failed')
             }
         },
         logout({ commit }) {
-            commit('setToken', null)
-            commit('setUser', null)
+            commit('INIT_TOKEN', null)
+            commit('INIT_USER', null)
         },
     },
-    mutations: {
-        setToken(state, token) {
-            state.token = token
-        },
-        setUser(state, user) {
-            state.user = user
-        },
-    },
+
     getters: {
         authenticated(state) {
             return state.token && state.user
         },
-        user(state) {
+        getUser(state) {
             return state.user
         },
     },

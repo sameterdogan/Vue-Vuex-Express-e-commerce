@@ -55,7 +55,7 @@ export default {
       return this.$store.getters.authenticated
     },
     user(){
-      return this.$store.getters.user
+      return this.$store.getters.getUser
     }
   }
 }

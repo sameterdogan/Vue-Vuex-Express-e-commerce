@@ -107,12 +107,13 @@ export const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
         if (store.getters.authenticated === null) {
+            console.log(store.getters.authenticated)
             next({
                 path: '/auth/login',
                 params: { nextUrl: to.fullPath },
             })
         } else {
-            let user = store.getters.user
+            let user = store.getters.getUser
             if (to.matched.some(record => record.meta.is_admin)) {
                 if (user.role === 'Admin') {
                     return next()

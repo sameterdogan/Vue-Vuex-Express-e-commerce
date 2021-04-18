@@ -37,6 +37,7 @@ export const getNewArrivalsProducts = asyncErrorWrapper(async (req, res, next) =
 
 
 export const getBySlugProduct = asyncErrorWrapper(async (req, res, next) => {
+    console.log("slug producta girdi")
     const product = await ProductModel.findOne({
         slugProduct: req.params.slugProduct,
     })
@@ -52,6 +53,7 @@ export const getBySlugProduct = asyncErrorWrapper(async (req, res, next) => {
         relatedProducts,
     })
 })
+
 
 export const addProduct = asyncErrorWrapper(async (req, res, next) => {
     req.body.image = req.productImage

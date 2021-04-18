@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import axios from 'axios'
+import axiosConfig from  "@/plugins/axiosConfig"
 import VueCarousel from 'vue-carousel'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -14,7 +14,8 @@ import Admin from '@/layouts/Admin'
 import Blank from '@/layouts/Blank'
 import Default from '@/layouts/Default'
 
-axios.defaults.baseURL = 'http://localhost:5000/api/'
+Vue.prototype.$axios=axiosConfig
+
 Vue.component('admin-layout', Admin)
 Vue.component('blank-layout', Blank)
 Vue.component('default-layout', Default)

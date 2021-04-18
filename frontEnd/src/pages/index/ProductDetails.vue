@@ -1,6 +1,6 @@
 <template>
     <div class='container'>
-        <div class='row   product-details-wrap'>
+        <div class='row  product-details-wrap'>
             <div class='col-6 text-center'>
                 <img class='product-details-image img-fluid '
                      :src='`http://localhost:5000/assets/images/productImages/${product.image}`' alt=''>
@@ -95,7 +95,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 .product-details-name {
     text-transform: uppercase;
     margin-bottom: 1.5rem;
