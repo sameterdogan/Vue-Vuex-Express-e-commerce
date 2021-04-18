@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "app-root-path": "^3.0.0",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -28,6 +29,8 @@
     "multer": "^1.4.2",
     "nodemon": "^2.0.7",
     "slugify": "^1.5.0",
+    "swagger-jsdoc": "6.0.0",
+    "swagger-ui-express": "^4.1.6",
     "uniqid": "^5.3.0",
     "winston": "^3.3.3"
   },

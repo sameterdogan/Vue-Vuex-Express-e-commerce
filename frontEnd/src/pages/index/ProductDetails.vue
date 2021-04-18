@@ -54,7 +54,7 @@
 import { mapGetters } from 'vuex'
 import { Carousel, Slide, } from 'vue-carousel'
 import product from '@/components/index/product/Product'
-import AddToCardButton from '@/components/index/card/AddToCardButton'
+import AddToCardButton from '@/components/index/basket/AddToBasketButton'
 
 export default {
     name: 'ProductDetails',

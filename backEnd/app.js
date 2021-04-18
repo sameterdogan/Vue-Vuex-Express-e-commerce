@@ -1,5 +1,8 @@
 import express from 'express'
 import dotenv from 'dotenv'
+import swaggerJsDoc from 'swagger-jsdoc'
+import swaggerUI from 'swagger-ui-express'
+import swaggerOptions from "./config/swagger/swagger.config"
 import dbConnect from './helpers/database/dbConnect'
 import cors from 'cors'
 import indexRouter from './routes/index'
@@ -7,10 +10,16 @@ import CustomError from './helpers/error/CustomError'
 import logger from './config/logger/logger.config'
 import morgan from 'morgan'
 import helmet from 'helmet'
+
 dotenv.config({ path: './config/env/config.env' })
 dbConnect()
 
 const app = express()
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions)
+console.log(swaggerDocs)
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs))
+
 if (process.env.MODE === 'production') app.use(morgan('common'))
 app.use(helmet())
 app.use('/assets', express.static('assets'))
