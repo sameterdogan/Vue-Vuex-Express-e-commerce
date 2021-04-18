@@ -6,8 +6,9 @@ const moduleProduct = {
         products: [],
         productsByCategory: [],
         newArrivals: [],
-        product: {},
         relatedProducts: [],
+        product: {},
+        quickViewProduct: {},
     },
     mutations: {
         INIT_PRODUCTS(state, products) {
@@ -16,16 +17,17 @@ const moduleProduct = {
         INIT_NEW_ARRIVALS(state, newArrivals) {
             state.newArrivals = newArrivals
         },
-        INIT_NEW_RELEASES(state, newReleases) {
-            state.newReleases = newReleases
-        }
-        ,
+
         INIT_PRODUCTS_BY_CATEGORY(state, productsByCategory) {
             state.productsByCategory = productsByCategory
         },
         INIT_BY_SLUG_PRODUCT(state, product) {
             state.product = { ...product }
         },
+        INIT_QUICK_VIEW_PRODUCT(state, quickViewProduct) {
+            state.quickViewProduct = quickViewProduct
+        }
+        ,
         INIT_BY_SLUG_PRODUCT_RELATED_PRODUCTS(state, relatedProducts) {
             state.relatedProducts = relatedProducts
         },
@@ -42,15 +44,6 @@ const moduleProduct = {
             let index = state.products.findIndex(p => p._id === productId)
             if (index > -1) {
                 state.products.splice(index, 1)
-            }
-        },
-        ADD_NEW_RELEASE(state, newReleases) {
-            state.newReleases.push(newReleases)
-        },
-        DELETE_NEW_RELEASE(state, productId) {
-            let index = state.newReleases.findIndex(n => n.product._id === productId)
-            if (index > -1) {
-                state.newReleases.splice(index, 1)
             }
         },
     },
@@ -101,6 +94,13 @@ const moduleProduct = {
                     commit('INIT_BY_SLUG_PRODUCT', {})
                 })
         },
+        initQuickViewProduct({ commit }, productId) {
+              axios.get(`product/quick-view/${productId}`)
+                  .then(res=>{
+                      commit("INIT_QUICK_VIEW_PRODUCT",res.data.quickView)
+                  })
+        }
+        ,
         addProduct({ commit }, productForm) {
             axios
                 .post('product', productForm, {
@@ -132,26 +132,29 @@ const moduleProduct = {
                     commit('DELETE_PRODUCT', productId)
                 })
         },
+    },
+    getters: {
+        getProducts(state) {
+            return state.products
         },
-        getters: {
-            getProducts(state) {
-                return state.products
-            },
-            getProduct(state) {
-                return state.product
-            },
-            getRelatedProducts(state) {
-                console.log(state.relatedProducts)
-                return state.relatedProducts
-            },
-            getNewArrivals(state) {
-                return state.newArrivals
-            },
-            getProductsByCategory(state) {
-                console.log('computed tetiklendi')
-                return state.productsByCategory
-            },
+        getProduct(state) {
+            return state.product
         },
-    }
+        getRelatedProducts(state) {
+            console.log(state.relatedProducts)
+            return state.relatedProducts
+        },
+        getNewArrivals(state) {
+            return state.newArrivals
+        },
+        getProductsByCategory(state) {
+            console.log('computed tetiklendi')
+            return state.productsByCategory
+        },
+        getQuickViewProduct(state){
+            return state.quickViewProduct
+        }
+    },
+}
 
-    export default moduleProduct
+export default moduleProduct

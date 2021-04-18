@@ -1,11 +1,11 @@
 <template>
     <div class='container'>
         <div class='row  product-details-wrap'>
-            <div class='col-6 text-center'>
+            <div class='col-lg-6 col-md-6 col-sm-12 text-center'>
                 <img class='product-details-image img-fluid '
                      :src='`http://localhost:5000/assets/images/productImages/${product.image}`' alt=''>
             </div>
-            <div class='col-6'>
+            <div class='col-lg-6 col-md-6 col-sm-12'>
                 <h1 class='product-details-name product-details-property '>{{ product.name }}</h1>
                 <h5 class='product-details-price product-details-property '>Price: <span class='lead'>{{ product.price
                     }} $</span>
@@ -19,10 +19,7 @@
                     <span v-else>Not in stock</span></h5>
 
                 <span class='h5'>Quantity</span>
-                <button @click='qtyDown' class='btn qty-down shadow-none'>-</button>
-                <input ref='qtyInput' class='text-center' type='text' disabled value='1' style='width: 80px'>
-                <button @click='qtyUp' class='btn qut-up shadow-none'>+</button>
-                <button class='btn btn-primary text-white'><i class='bi bi-cart-fill'></i> ADD TO CART</button>
+               <add-to-card-button :product='product'/>
 
             </div>
         </div>
@@ -57,10 +54,12 @@
 import { mapGetters } from 'vuex'
 import { Carousel, Slide, } from 'vue-carousel'
 import product from '@/components/index/product/Product'
+import AddToCardButton from '@/components/index/card/AddToCardButton'
 
 export default {
     name: 'ProductDetails',
     components: {
+        AddToCardButton,
         Carousel,
         Slide,
         product,
@@ -79,19 +78,6 @@ export default {
             this.$store.dispatch('initBySlugProduct', toSlugProduct)
         }
     },
-    methods: {
-        qtyDown() {
-            if (Number(this.$refs.qtyInput.value) > 1) {
-                this.$refs.qtyInput.value = Number(this.$refs.qtyInput.value) - 1
-            }
-
-        },
-        qtyUp() {
-            if (Number(this.$refs.qtyInput.value) < this.product.stock) {
-                this.$refs.qtyInput.value = Number(this.$refs.qtyInput.value) + 1
-            }
-        }
-    }
 }
 </script>
 

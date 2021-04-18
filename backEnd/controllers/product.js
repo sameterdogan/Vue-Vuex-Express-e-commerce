@@ -35,9 +35,7 @@ export const getNewArrivalsProducts = asyncErrorWrapper(async (req, res, next) =
 })
 
 
-
 export const getBySlugProduct = asyncErrorWrapper(async (req, res, next) => {
-    console.log("slug producta girdi")
     const product = await ProductModel.findOne({
         slugProduct: req.params.slugProduct,
     })
@@ -54,7 +52,15 @@ export const getBySlugProduct = asyncErrorWrapper(async (req, res, next) => {
     })
 })
 
-
+export const getQuickViewProduct = asyncErrorWrapper(async (req, res, next) => {
+    const quickView = await ProductModel.findById(req.params.productId)
+    if (!quickView) return next(new CustomError('Product not found', 404))
+    res.status(200).json({
+        success: true,
+        message: 'Product information successfully brought.',
+        quickView,
+    })
+})
 export const addProduct = asyncErrorWrapper(async (req, res, next) => {
     req.body.image = req.productImage
     const newProduct = await ProductModel.create(req.body)

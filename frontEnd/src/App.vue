@@ -2,7 +2,7 @@
     <div id='app'>
 
         <component :is='layout'>
-            <component :is='quickView.component' :slugProduct='quickView.slugProduct'></component>
+            <component :is='quickView.component' :productId='quickView.productId'></component>
             <message />
             <router-view></router-view>
 
@@ -22,7 +22,7 @@ export default {
         return {
             quickView:{
                 component:"",
-                slugProduct:""
+                productId:""
             }
         }
     },

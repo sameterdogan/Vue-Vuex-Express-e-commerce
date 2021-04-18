@@ -26,12 +26,8 @@
                                 <span v-else>Not in stock</span></h5>
 
                             <span class='h5'>Quantity</span>
-                            <!--                    <button @click='qtyDown' class='btn qty-down shadow-none'>-</button>
-                                                <input ref='qtyInput' class='text-center' type='text' disabled value='1' style='width: 80px'>
-                                                <button @click='qtyUp' class='btn qut-up shadow-none'>+</button>
-                                                <button class='btn btn-primary text-white'><i class='bi bi-cart-fill'></i> ADD TO CART</button>-->
+                                <add-to-card-button :product='product' />
                         </div>
-
 
                     </div>
                 </div>
@@ -43,22 +39,23 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import AddToCardButton from '@/components/index/card/AddToCardButton'
 
 export default {
     name: 'QuickView',
-    props: ['slugProduct'],
+    components: { AddToCardButton },
+    props: ['productId'],
     created() {
-        console.log(this.$props.slugProduct)
-        this.$store.dispatch('initBySlugProduct', this.$props.slugProduct)
+        this.$store.dispatch('initQuickViewProduct', this.$props.productId)
     },
     methods: {
         closeQuickView() {
-            this.$root.$emit('quickView', { component: '', slugProduct: '' })
+            this.$root.$emit('quickView', { component: '', productId: '' })
             document.querySelector('body').style.setProperty('overflow', 'visible')
         },
     },
     computed: {
-        ...mapGetters({ product: 'getProduct' }),
+        ...mapGetters({ product: 'getQuickViewProduct' }),
     },
 }
 </script>
@@ -68,7 +65,7 @@ export default {
 
 .quick-view-wrapper {
     position: fixed;
-    display: block;
+    display: flex;
     top: 0;
     left: 0;
     width: 100%;
@@ -82,9 +79,8 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1300px;
-    min-height: 400px;
-    margin: 15% auto;
+    max-width: 1000px;
+    margin: 1.25rem auto;
 }
 
 .quick-view-card-content {

@@ -13,6 +13,7 @@ import {
     getBySlugProduct,
     getProductsByCategory,
     getNewArrivalsProducts,
+    getQuickViewProduct
 } from '../controllers/product'
 
 const router = express.Router()
@@ -21,6 +22,7 @@ router.get('/', productsQuery, getProducts)
 
 router.get('/category/:slugCategory', productsByCategoryQuery, getProductsByCategory)
 
+router.get("/quick-view/:productId",getQuickViewProduct)
 
 router.get('/new-arrivals', getNewArrivalsProducts)
 

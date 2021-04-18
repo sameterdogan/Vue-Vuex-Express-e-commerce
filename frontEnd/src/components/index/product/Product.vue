@@ -37,15 +37,11 @@ export default {
 
     name: 'Product',
     props: ['product'],
-    data() {
-        return {
-            quickViewComponent: null,
-        }
-    },
     methods: {
         quickView() {
-            this.$root.$emit('quickView', { component: QuickView, slugProduct: this.product.slugProduct })
-            /*document.querySelector('body').style.setProperty("overflow","hidden")*/
+            this.$root.$emit('quickView', { component: QuickView, productId: this.product._id })
+            document.querySelector('body').style.setProperty("overflow","hidden")
+            this.$store.commit("INIT_QUICK_VIEW_PRODUCT", {})
         },
     },
 
@@ -85,7 +81,7 @@ export default {
     height: 220px;
 }
 
-.card-img-top:hover .quick-view, .black-fon {
+.card-img-top:hover .quick-view {
     visibility: visible;
     opacity: 1;
 }
