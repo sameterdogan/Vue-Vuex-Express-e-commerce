@@ -1,8 +1,5 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import swaggerJsDoc from 'swagger-jsdoc'
-import swaggerUI from 'swagger-ui-express'
-import swaggerOptions from "./config/swagger/swagger.config"
 import dbConnect from './helpers/database/dbConnect'
 import cors from 'cors'
 import indexRouter from './routes/index'
@@ -16,11 +13,8 @@ dbConnect()
 
 const app = express()
 
-const swaggerDocs = swaggerJsDoc(swaggerOptions)
-console.log(swaggerDocs)
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs))
 
-if (process.env.MODE === 'production') app.use(morgan('common'))
+if (process.env.MODE === 'production') app.use(morgan('dev'))
 app.use(helmet())
 app.use('/assets', express.static('assets'))
 app.use(express.json())
@@ -31,6 +25,7 @@ app.use('/api', indexRouter)
 
 app.use((err, req, res, next) => {
     let customError = err
+    console.log(err)
     switch (err.name) {
         case 'SyntaxError':
             customError = new CustomError(err.message, 400)

@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken'
+import UserModel from "../../models/user"
 import CustomError from '../../helpers/error/CustomError'
 import { contentToken, headersCheckToken } from '../../helpers/auth/token'
 
@@ -13,7 +14,7 @@ export const isLogin = async (req, res, next) => {
             )
         const token = contentToken(req)
         const verifiedToken = await jwt.verify(token, process.env.jwtSecretKey)
-        req.user = verifiedToken.user
+        req.user = await UserModel.findById(verifiedToken.user._id)
         next()
     } catch (err) {
         next(new CustomError('Invalid token or expired.', 403))

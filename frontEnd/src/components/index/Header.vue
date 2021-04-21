@@ -10,7 +10,12 @@
           <i class="bi bi-person-fill header-icons"></i>
         </button>
         <button>
-          <i class="bi bi-cart-fill header-icons"></i>
+            <router-link
+            tag='i'
+            class='bi bi-cart-fill header-icons'
+            :to="{name:'cart-details'}"
+
+            ></router-link>
         </button>
         <button >
           <i class="bi bi-list header-icons list-icon"></i>

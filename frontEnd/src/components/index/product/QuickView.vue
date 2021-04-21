@@ -39,7 +39,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import AddToCardButton from '@/components/index/basket/AddToBasketButton'
+import AddToCardButton from '@/components/index/cart/AddToCartButton'
 
 export default {
     name: 'QuickView',

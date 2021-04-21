@@ -93,6 +93,12 @@ export const router = new VueRouter({
             path: '/product/:slugProduct/details',
             component: () => import('@/pages/index/ProductDetails'),
         },
+        //cart
+        {
+            name: 'cart-details',
+            path: '/cart',
+            component: () => import('@/pages/index/Cart'),
+        },
         {
             path: '*',
             name: 'notFound',

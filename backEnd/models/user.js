@@ -58,12 +58,13 @@ const UserSchema = new Schema(
 
 UserSchema.pre('save', async function (next) {
     try {
-        const user = this
-        user.password = bcrypt.hash(user.password, 10)
+        if(!this.isModified("password")) return(next)
+        this.password = bcrypt.hash(this.password, 10)
         next()
     } catch (err) {
         next(err)
     }
 })
+
 export default mongoose.model('User', UserSchema)
 

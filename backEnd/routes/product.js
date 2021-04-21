@@ -20,11 +20,17 @@ const router = express.Router()
 
 router.get('/', productsQuery, getProducts)
 
+
 router.get('/category/:slugCategory', productsByCategoryQuery, getProductsByCategory)
+
+
 
 router.get("/quick-view/:productId",getQuickViewProduct)
 
+
 router.get('/new-arrivals', getNewArrivalsProducts)
+
+
 
 router.get('/:slugProduct', getBySlugProduct)
 
