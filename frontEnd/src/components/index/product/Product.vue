@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class='card'>
-            <div class='card-img-top'>
+            <div class='card-img-top d-flex '>
                 <img :src='`http://localhost:5000/assets/images/productImages/${product.image}`' class='img-fluid'
                      alt=''>
                 <div class='black-fon'>
@@ -21,7 +21,7 @@
                 </p>
 
                 <p class='product-price'><b>${{ product.price }}</b></p>
-                <button class='add-to-cart-button btn btn-sm btn-block'> ADD TO CART</button>
+                <button @click='addToCart' class='add-to-cart-button btn btn-sm btn-block'> ADD TO CART</button>
             </div>
         </div>
 
@@ -37,12 +37,22 @@ export default {
 
     name: 'Product',
     props: ['product'],
+    data(){
+      return{
+          item:{}
+      }
+    },
     methods: {
         quickView() {
             this.$root.$emit('quickView', { component: QuickView, productId: this.product._id })
             document.querySelector('body').style.setProperty("overflow","hidden")
             this.$store.commit("INIT_QUICK_VIEW_PRODUCT", {})
         },
+        addToCart(){
+            this.item={...this.$props.product}
+            this.item["quantity"]=1
+            this.$store.commit("ADD_TO_CART",this.item)
+        }
     },
 
 }
@@ -79,6 +89,8 @@ export default {
 
 .card-img-top {
     height: 220px;
+    display: flex ;
+    align-items: center;
 }
 
 .card-img-top:hover .quick-view {
