@@ -2,7 +2,11 @@
       <div >
          <div class='row new-arrival-row'>
                <div class='col-4'>
-                     <img :src="`http://localhost:5000/assets/images/productImages/${newArrival.image}`" class='img-fluid' alt=''>
+                   <router-link
+                       :to="{name:'product-details',params:{slugProduct:newArrival.slugProduct}}"
+                       tag='img'
+                       class='img-fluid new-arrival-image'
+                       :src="`http://localhost:5000/assets/images/productImages/${newArrival.image}`"/>
                </div>
                <div class='col-8'>
                      <div class='new-arrival-name-wrapper'>
@@ -15,7 +19,7 @@
                            </router-link>
                      </div>
 
-                     <p><b>${{newArrival.price}}</b></p>
+                     <p class='new-arrival-price'><b>$ {{newArrival.price}}</b></p>
 
                </div>
          </div>
@@ -44,6 +48,11 @@ export default {
 .new-arrival-name{
       color: black;
       text-transform: uppercase;
-
+}
+.new-arrival-price{
+    margin-top: 1rem;
+}
+.new-arrival-image{
+    cursor: pointer;
 }
 </style>

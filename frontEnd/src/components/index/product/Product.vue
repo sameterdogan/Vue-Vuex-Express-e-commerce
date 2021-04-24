@@ -20,7 +20,7 @@
                     </router-link>
                 </p>
 
-                <p class='product-price'><b>${{ product.price }}</b></p>
+                <p class='product-price'><b>$ {{ product.price }}</b></p>
                 <button @click='addToCart' class='add-to-cart-button btn btn-sm btn-block'> ADD TO CART</button>
             </div>
         </div>
@@ -52,6 +52,7 @@ export default {
             this.item={...this.$props.product}
             this.item["quantity"]=1
             this.$store.commit("ADD_TO_CART",this.item)
+            this.$store.commit("INIT_MESSAGE",{message:"Product has been added to cart",color:"success"})
         }
     },
 

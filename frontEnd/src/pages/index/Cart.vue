@@ -1,12 +1,13 @@
 <template>
 
     <div class='container'>
-        <h1>SHOPPING CART</h1>
+        <h2 class='cart-title'>SHOPPING CART</h2>
+        <hr class='cart-title-hr'>
         <div class='row'>
-            <div class='col-8'>
-              <list-item/>
+            <div class='col-lg-8'>
+                <item v-for='item in items' :key='item._id' :item='JSON.stringify(item)' />
             </div>
-            <div class='col-4'>
+            <div class='col-lg-4'>
               <div class='cart'>
                   <div class='card-header'>
                       ORDER SUMMARY
@@ -22,18 +23,23 @@
 </template>
 
 <script>
-import ListItem from '@/components/index/cart/ListItem'
 import { mapGetters } from 'vuex'
+import Item from '@/components/index/cart/Item'
 
 export default {
     name: 'Cart',
-    components: { ListItem },
+    components: { Item, },
     computed:{
+        ...mapGetters({ items: 'getItems' }),
         ...mapGetters({totalPrice:"getTotalPrice"})
     }
 }
 </script>
 
 <style scoped>
-
+.cart-title-hr {
+    background-color: black;
+    width: 8%;
+    margin-right: 100%;
+}
 </style>

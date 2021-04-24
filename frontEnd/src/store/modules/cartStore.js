@@ -20,8 +20,8 @@ const ModuleCart = {
                 state.cart.items.push(item)
                 state.cart.totalPrice += item.quantity * item.price
             }
-            console.log(cartItemsIndex)
             localStorage.setItem('cart', JSON.stringify(state.cart))
+
         },
         DELETE_FROM_CART(state, itemId) {
             const cartItemsIndex = state.cart.items.findIndex(i => i._id === itemId)
@@ -34,8 +34,6 @@ const ModuleCart = {
             }
         },
         DECREASE_ITEM(state,itemId){
-            console.log(itemId)
-            console.log("geldi dexraase from car")
             const cartItemsIndex = state.cart.items.findIndex(i => i._id === itemId)
             console.log(cartItemsIndex)
             if (cartItemsIndex >= 0) {
@@ -48,7 +46,15 @@ const ModuleCart = {
     },
     getters: {
         getCart(state) {
+            console.log("cart getirildi")
+            console.log(state.cart)
             return state.cart
+        },
+        getItems(state){
+          return state.cart.items
+        },
+        getCartCount(state){
+            return state.cart.items.length
         },
         getTotalPrice(state){
             return state.cart.totalPrice

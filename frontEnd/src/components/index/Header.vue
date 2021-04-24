@@ -16,6 +16,7 @@
             :to="{name:'cart-details'}"
 
             ></router-link>
+            <span class='badge badge-warning cart-count'> {{ cartCount }} </span>
         </button>
         <button >
           <i class="bi bi-list header-icons list-icon"></i>
@@ -28,8 +29,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  name: "Header"
+  name: "Header",
+    computed:{
+      ...mapGetters({cartCount:"getCartCount"})
+    }
 }
 </script>
 
@@ -60,6 +66,21 @@ export default {
 .list-icon{
   display: none;
 }
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 9px;
+}
 
+.cart-count {
+    font-size: 12px;
+    background: black;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+}
 
 </style>

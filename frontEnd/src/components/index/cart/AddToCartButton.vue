@@ -11,7 +11,12 @@
 <script>
 export default {
     name: 'AddToCardButton',
-    props: ['product']
+    props: ['product'],
+    data(){
+        return {
+            item:{}
+        }
+    }
     ,
     methods: {
         qtyDown() {
@@ -26,9 +31,10 @@ export default {
             }
         },
         addToCart(){
-            console.log("geldis")
-            const qty=this.$refs.qtyInput.value
-            this.$store.commit("ADD_TO_CART", {product: this.$props.product,quantity:Number(qty) })
+            this.item=[...this.$props.product]
+            this.item["quantity"]=Number(this.$refs.qtyInput.value)
+            this.$store.commit("ADD_TO_CART",this.item)
+            this.$store.commit("INIT_MESSAGE",{message:"Product has been added to cart",color:"success"})
         }
     },
 }

@@ -33,8 +33,8 @@ select{
     background-color: #ffffff !important;
     border: solid black 1px !important;
 }
+
 main{
-    padding: 2rem;
     min-height: 93vh;
 }
 .message{

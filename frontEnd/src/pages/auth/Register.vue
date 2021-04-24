@@ -7,33 +7,28 @@
      <div class="col-lg-4  my-auto mx-auto p-5">
        <form @submit.prevent="register">
          <div class="form-group">
-           <input type="text" v-model="user.name" class="form-control"  placeholder="İsmini ve soyismini gir." required minlength="5" maxlength="25"   >
-           <small id="nameRule" class="form-text p-1 rounded">İsim - Soyisim alanı en az 5 en  fazla 25 karakter olmalı.</small>
+           <input type="text" v-model="user.name" class="form-control"  placeholder="Full name" required minlength="5" maxlength="25"   >
 
          </div>
          <div class="form-group">
-           <input type="email"  v-model="user.email"  class="form-control" aria-describedby="emailHelp"  placeholder="E-posta adresini gir." pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required    >
-           <small id="emailRule" class="form-text p-1 rounded">Geçerli bir E-posta adresi giriniz.</small>
+           <input type="email"  v-model="user.email"  class="form-control" aria-describedby="emailHelp"  placeholder="Email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required    >
          </div>
          <div class="form-group">
-
-           <input type="password" v-model="user.password" class="form-control"  placeholder="Şifreni gir."  required minlength="6" maxlength="14">
-
-           <small id="passwordRule" class="form-text p-1 rounded">Şifre en az 8 en fazla 20 karakter olmalı. </small>
+           <input type="password" v-model="user.password" class="form-control"  placeholder="Password"  required minlength="6" maxlength="14">
          </div>
          <div class="text-center">
-           <button type="submit" class="btn rounded-pill pr-5 pl-5  btn-success">Hesap oluştur</button>
+           <button type="submit" class="btn rounded-pill pr-5 pl-5  btn-success">Create Account</button>
          </div>
 
          <div class="mt-4 text-center">
-           <span class="orText bg-white"> Veya </span>
+           <span class="orText bg-white"> Or </span>
            <hr class="position-relative">
            <router-link
            to="/auth/login"
            tag="a"
            class="text-success"
            >
-             Oturum aç
+             Sign In
            </router-link>
          </div>
 

@@ -2,10 +2,10 @@
       <div class='container-fluid'>
 
             <div class='row'>
-                  <div class='col-3'>
+                  <div class='col-lg-3 new-arrivals'>
                         <list-new-arrival />
                   </div>
-                  <div class='col-9'>
+                  <div class='col-lg-9 col-md-12'>
                         <search-options />
                         <product-list-by-category/>
 

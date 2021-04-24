@@ -1,22 +1,7 @@
 <template>
-
-    <table class='table table-sm  table-light'>
-        <div class='table-responsive'>
-            <table class='table align-middle'>
-                <thead class='text-center'>
-                <tr>
-                    <th>ITEMS</th>
-                    <th>PRICE</th>
-                    <th>QTY</th>
-                    <th>TOTAL</th>
-                </tr>
-                </thead>
-                <tbody>
-                <item v-for='item in cart.items' :key='item._id' :item='item' />
-                </tbody>
-            </table>
-        </div>
-    </table>
+    <div>
+        <item v-for='item in cart.items' :key='item._id' :item='JSON.stringify(item)' />
+    </div>
 
 </template>
 
@@ -28,7 +13,7 @@ export default {
     name: 'ListItem',
     components: { Item },
     computed: {
-        ...mapGetters({ cart: 'getCart' }),
+        ...mapGetters({ cart: 'getItems' }),
     },
 }
 </script>
@@ -38,4 +23,5 @@ thead > tr > th {
     font-size: 13px;
     font-weight: bold;
 }
+
 </style>

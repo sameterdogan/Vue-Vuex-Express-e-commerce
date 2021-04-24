@@ -113,7 +113,6 @@ export const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
         if (store.getters.authenticated === null) {
-            console.log(store.getters.authenticated)
             next({
                 path: '/auth/login',
                 params: { nextUrl: to.fullPath },

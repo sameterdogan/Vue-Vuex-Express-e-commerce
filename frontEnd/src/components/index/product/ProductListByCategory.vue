@@ -3,7 +3,7 @@
         <h4 class='category-name'>{{ slugCategory }}</h4>
         <hr class='category-name-hr'>
         <div class='row'>
-            <div class='col-3' v-for='product in productsByCategory' :key='product._id'>
+            <div class='col-lg-3 col-md-4 col-sm-12' v-for='product in productsByCategory' :key='product._id'>
                 <Product :product='product' />
             </div>
 

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import axiosConfig from  "@/plugins/axiosConfig"
+import * as axiosConfig from  "@/plugins/axiosConfig"
 import VueCarousel from 'vue-carousel'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
