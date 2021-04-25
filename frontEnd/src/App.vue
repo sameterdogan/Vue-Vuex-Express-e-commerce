@@ -3,21 +3,20 @@
 
         <component :is='layout'>
             <component :is='quickView.component' :productId='quickView.productId'></component>
-            <message />
+            <messages/>
             <router-view></router-view>
-
         </component>
 
     </div>
 </template>
 
 <script>
-import Message from '@/components/message'
+import Messages from '@/components/messages/messages'
 
 const defaultLayout = 'default'
 export default {
     name: 'App',
-    components: { Message },
+    components: { Messages },
     data() {
         return {
             quickView:{
@@ -28,8 +27,6 @@ export default {
     },
     created() {
         this.$root.$on('quickView', componentInfo => {
-            console.log("bilgiler geldi")
-            console.log(componentInfo)
               this.quickView=componentInfo
         })
     },

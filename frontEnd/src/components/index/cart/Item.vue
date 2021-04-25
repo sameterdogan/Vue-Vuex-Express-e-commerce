@@ -56,13 +56,8 @@ export default {
     },
     watch:{
         item(newItem){
-            console.log(newItem)
-            console.log("wathca geldi")
             this.propsItem=JSON.parse(newItem)
         }
-    },
-    created() {
-      console.log(this.item)
     },
     methods: {
         qtyDown() {

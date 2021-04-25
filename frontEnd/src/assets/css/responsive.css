@@ -1,29 +1,30 @@
-@media screen and (max-width: 1440px){
+@media screen and (max-width: 1440px) {
 
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
 
 }
 
-@media screen and (max-width: 768px){
-    .DESKTOP-NAV{
+@media screen and (max-width: 768px) {
+    .new-arrivals {
         display: none;
     }
-    .FRAME-MENU{
-        display: none;
+    .main{
+        margin-top: 1rem;
     }
-    .list-icon{
-        display: block !important;
-    }
-    .new-arrivals{
-        display: none;
-    }
-
 }
 
-@media screen and (max-width: 426px){
- body{
-     font-size: 14px;
- }
+@media screen and (max-width: 426px) {
+    body {
+        font-size: 14px;
+    }
+
+    html, body {
+        font-size: 12px;
+    }
+    .main {
+        padding: .5rem;
+
+    }
 }

@@ -8,11 +8,7 @@ html,body{
 .VueCarousel-navigation-button{
     font-size: 3rem;
 }
-@media screen and (max-width: 480px)  {
-    html,body{
-        font-size: 12px;
-    }
-}
+
 table {
     border-spacing: 0;
     border-collapse: collapse;
@@ -36,6 +32,8 @@ select{
 
 main{
     min-height: 93vh;
+    padding: 2rem;
+    margin-top:4rem;
 }
 .message{
     min-height: 100px;

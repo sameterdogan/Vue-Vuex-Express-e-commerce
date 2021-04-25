@@ -19,7 +19,7 @@
             <span class='badge badge-warning cart-count'> {{ cartCount }} </span>
         </button>
         <button >
-          <i class="bi bi-list header-icons list-icon"></i>
+          <i class="bi bi-list header-icons header-list-icon"></i>
         </button>
 
 
@@ -63,7 +63,7 @@ export default {
   font-size: 1.5rem;
 
 }
-.list-icon{
+.header-list-icon{
   display: none;
 }
 .badge {
@@ -81,6 +81,14 @@ export default {
     padding: 0 5px;
     vertical-align: top;
     margin-left: -10px;
+}
+@media screen and (max-width: 768px) {
+
+
+    .header-list-icon {
+        display: block !important;
+    }
+
 }
 
 </style>

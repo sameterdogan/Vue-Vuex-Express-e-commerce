@@ -1,6 +1,7 @@
 <template>
     <div>
-        <item v-for='item in cart.items' :key='item._id' :item='JSON.stringify(item)' />
+
+        <item v-if='' v-for='item in cart.items' :key='item._id' :item='JSON.stringify(item)' />
     </div>
 
 </template>

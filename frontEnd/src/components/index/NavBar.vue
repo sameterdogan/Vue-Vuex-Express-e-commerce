@@ -108,5 +108,11 @@ export default {
     transition: all .5s;
     color: #188BD2;
 }
+@media screen and (max-width: 768px) {
+    .DESKTOP-NAV {
+        display: none;
+    }
+
+}
 
 </style>

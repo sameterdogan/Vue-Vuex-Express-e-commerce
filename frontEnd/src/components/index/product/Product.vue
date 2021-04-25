@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class='card'>
-            <div class='card-img-top d-flex '>
+            <div class='card-img-top product-image-wrapper d-flex '>
                 <img :src='`http://localhost:5000/assets/images/productImages/${product.image}`' class='img-fluid'
                      alt=''>
                 <div class='black-fon'>
@@ -37,23 +37,23 @@ export default {
 
     name: 'Product',
     props: ['product'],
-    data(){
-      return{
-          item:{}
-      }
+    data() {
+        return {
+            item: {},
+        }
     },
     methods: {
         quickView() {
             this.$root.$emit('quickView', { component: QuickView, productId: this.product._id })
-            document.querySelector('body').style.setProperty("overflow","hidden")
-            this.$store.commit("INIT_QUICK_VIEW_PRODUCT", {})
+            document.querySelector('body').style.setProperty('overflow', 'hidden')
+            this.$store.commit('INIT_QUICK_VIEW_PRODUCT', {})
         },
-        addToCart(){
-            this.item={...this.$props.product}
-            this.item["quantity"]=1
-            this.$store.commit("ADD_TO_CART",this.item)
-            this.$store.commit("INIT_MESSAGE",{message:"Product has been added to cart",color:"success"})
-        }
+        addToCart() {
+            this.item = { ...this.$props.product }
+            this.item['quantity'] = 1
+            this.$store.commit('ADD_TO_CART', this.item)
+            this.$store.commit('INIT_MESSAGE', { message: 'Product has been added to cart', color: 'success' })
+        },
     },
 
 }
@@ -90,7 +90,7 @@ export default {
 
 .card-img-top {
     height: 220px;
-    display: flex ;
+    display: flex;
     align-items: center;
 }
 
@@ -113,7 +113,7 @@ export default {
     width: 100%;
     height: 100%;
     visibility: hidden;
-    background: rgba(0,0,0,.2);
+    background: rgba(0, 0, 0, .2);
     opacity: 0;
     z-index: 2;
     transition: all .5s;
@@ -123,12 +123,23 @@ export default {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     background-color: #FBF2F6;
     visibility: hidden;
     opacity: 0;
     z-index: 3;
     transition: all .5s;
+
+}
+
+@media screen and (max-width: 426px) {
+    .product-image-wrapper {
+        height: 130px !important;
+    }
+
+    .card-body {
+        padding: 0;
+    }
 
 }
 

@@ -8,11 +8,11 @@
                         <button @click='closeQuickView' class='btn btn-outline-secondary btn-sm  close-quick-view'>
                             &times;
                         </button>
-                        <div class='col-6 text-center'>
+                        <div class='col-lg-6 col-md-6 col-12 text-center'>
                             <img class='quick-view-image img-fluid '
                                  :src='`http://localhost:5000/assets/images/productImages/${product.image}`' alt=''>
                         </div>
-                        <div class='col-6'>
+                        <div class='col-lg-6 col-md-6 col-12'>
                             <h1 class='quick-view-name quick-view-property '>{{ product.name }}</h1>
                             <h5 class='quick-view-price quick-view-property '>Price: <span class='lead'>{{ product.price
                                 }} $</span>
@@ -63,6 +63,7 @@ export default {
 <style scoped>
 
 
+
 .quick-view-wrapper {
     position: fixed;
     display: flex;
@@ -98,5 +99,22 @@ export default {
     top: 20px;
     z-index: 3000;
 }
-
+@media screen and (max-width: 768px) {
+    .quick-view-card-content{
+        padding: 2rem;
+    }
+    .quick-view-name{
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
+@media screen and (max-width: 426px) {
+    .quick-view-card-content{
+        padding: 1rem;
+    }
+    .quick-view-name{
+        font-size: 25px;
+        font-weight: bold;
+    }
+}
 </style>

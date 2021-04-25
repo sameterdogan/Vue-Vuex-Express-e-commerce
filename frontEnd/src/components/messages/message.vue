@@ -43,17 +43,13 @@
 <script>
 export default {
       name: 'message',
+      props:["message"],
       methods: {
             dismiss() {
-                  this.$store.commit("INIT_MESSAGE",{message:"",color:""}) ;
+                  this.$store.commit("DELETE_MESSAGE",this.message.id) ;
             }
       },
-      computed:{
-            message(){
-                  return this.$store.getters.getMessage
-            }
 
-      }
 }
 </script>
 
@@ -81,9 +77,7 @@ export default {
       float: right;
 }
 .message-card {
-      position: fixed;
-      right: 50px;
-      bottom: 50px;
+    position: relative;
       max-width: 400px;
       min-width: 200px;
 }

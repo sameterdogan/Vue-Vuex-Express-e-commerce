@@ -1,5 +1,5 @@
 <template>
-      <div class='container-fluid my-5 p-5'>
+      <div class='container-fluid'>
 
             <div class='row'>
                   <div class='col-lg-3 new-arrivals'>
@@ -29,6 +29,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
+
 
 </style>
