@@ -13,10 +13,15 @@ import {
     getBySlugProduct,
     getProductsByCategory,
     getNewArrivalsProducts,
-    getQuickViewProduct
+    getQuickViewProduct,
 } from '../controllers/product'
+import {checkout,callbackUrl} from "../controllers/payment"
 
 const router = express.Router()
+
+router.post("/checkout/payment",checkout)
+
+router.post("/callback/url/call/s",callbackUrl)
 
 router.get('/', productsQuery, getProducts)
 
@@ -24,19 +29,17 @@ router.get('/', productsQuery, getProducts)
 router.get('/category/:slugCategory', productsByCategoryQuery, getProductsByCategory)
 
 
-
-router.get("/quick-view/:productId",getQuickViewProduct)
+router.get('/quick-view/:productId', getQuickViewProduct)
 
 
 router.get('/new-arrivals', getNewArrivalsProducts)
 
 
-
 router.get('/:slugProduct', getBySlugProduct)
 
 
-router.use(isLogin)
-router.use(isAdmin)
+/*router.use(isLogin)
+router.use(isAdmin)*/
 
 router.post('/',
     productImageMuter.single('image'),
@@ -49,7 +52,6 @@ router.put('/:productId',
     editProduct,
 )
 router.delete('/:productId', deleteProduct)
-
 
 
 export default router

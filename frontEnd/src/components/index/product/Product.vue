@@ -1,13 +1,12 @@
 <template>
     <div>
         <div class='card'>
-            <div class='card-img-top product-image-wrapper d-flex '>
+            <div class=' product-image-wrapper d-flex '>
                 <img :src='`http://localhost:5000/assets/images/productImages/${product.image}`' class='img-fluid'
                      alt=''>
                 <div class='black-fon'>
-                    <button @click='quickView' class='btn quick-view'>Quick View</button>
+                    <button @click='quickView' class='btn quick-view-button'>Quick View</button>
                 </div>
-
             </div>
             <div class='card-body text-center'>
                 <p class='product-name-wrapper'>
@@ -19,7 +18,6 @@
                         {{ product.name }}
                     </router-link>
                 </p>
-
                 <p class='product-price'><b>$ {{ product.price }}</b></p>
                 <button @click='addToCart' class='add-to-cart-button btn btn-sm btn-block'> ADD TO CART</button>
             </div>
@@ -59,7 +57,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='css'>
 .product-name-wrapper {
     line-height: 21px;
     height: 41px;
@@ -87,24 +85,22 @@ export default {
     font-family: inherit !important;
     height: 25px;
 }
-
-.card-img-top {
+.product-image-wrapper{
     height: 220px;
     display: flex;
     align-items: center;
 }
-
-.card-img-top:hover .quick-view {
+.product-image-wrapper:hover .quick-view-button {
     visibility: visible;
     opacity: 1;
 }
 
-.card-img-top:hover .black-fon {
+.product-image-wrapper:hover .black-fon {
     visibility: visible;
     opacity: 1;
 }
 
-.card-img-top img {
+.product-image-wrapper img {
     position: absolute;
 }
 
@@ -119,7 +115,7 @@ export default {
     transition: all .5s;
 }
 
-.quick-view {
+.quick-view-button {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -131,14 +127,34 @@ export default {
     transition: all .5s;
 
 }
+@media screen and (max-width: 1024px) {
+    .product-image-wrapper {
+        height: 160px ;
+    }
+    .quick-view-button{
+        font-size: 14px;
+    }
 
+}
+@media screen and (max-width: 768px) {
+    .product-image-wrapper {
+        height: 150px ;
+    }
+    .quick-view-button{
+        font-size: 13px;
+    }
+
+}
 @media screen and (max-width: 426px) {
     .product-image-wrapper {
-        height: 130px !important;
+        height: 130px ;
     }
 
     .card-body {
         padding: 0;
+    }
+    .quick-view-button{
+        font-size: 12px;
     }
 
 }

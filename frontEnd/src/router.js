@@ -100,6 +100,19 @@ export const router = new VueRouter({
             component: () => import('@/pages/index/Cart'),
         },
         {
+            name: 'checkout',
+            path: '/cart-checkout',
+            component: () => import('@/pages/index/CartCheckout'),
+            meta: {
+                layout: 'blank',
+            },
+        },
+        {
+            name: 'result-checkout',
+            path: '/result-checkout/:result',
+            component: () => import('@/pages/index/ResultCheckout'),
+        },
+        {
             path: '*',
             name: 'notFound',
             component: () => import('@/pages/error/404'),

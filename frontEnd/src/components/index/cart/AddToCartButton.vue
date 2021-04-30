@@ -26,12 +26,12 @@ export default {
 
         },
         qtyUp() {
-            if (Number(this.$refs.qtyInput.value) < this.$props.product.stock) {
+            if (Number(this.$refs.qtyInput.value) < this.product.stock) {
                 this.$refs.qtyInput.value = Number(this.$refs.qtyInput.value) + 1
             }
         },
         addToCart(){
-            this.item=[...this.$props.product]
+            this.item={...this.product}
             this.item["quantity"]=Number(this.$refs.qtyInput.value)
             this.$store.commit("ADD_TO_CART",this.item)
             this.$store.commit("INIT_MESSAGE",{message:"Product has been added to cart",color:"success"})

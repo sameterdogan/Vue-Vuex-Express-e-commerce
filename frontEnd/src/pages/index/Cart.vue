@@ -1,6 +1,8 @@
 <template>
 
     <div class='container'>
+        <div id='gist'></div>
+        <div @submit.prevent='toPayment' id='iyzipay-checkout-form' class='popup'></div>
         <h2 class='cart-title'>SHOPPING CART</h2>
         <hr class='cart-title-hr'>
         <div class='row'>
@@ -32,7 +34,7 @@
                   </div>
                   <div class='card-body'>
                       <h4><span>TOTAL</span>  <span class='float-right'>$ {{totalPrice}}</span></h4>
-                      <button class='btn btn-block btn-primary btn-sm my-4'>PROCEED TO CHECKOUT</button>
+                      <button @click='toCheckout' class='btn btn-block btn-primary btn-sm my-4'>PROCEED TO CHECKOUT</button>
                   </div>
               </div>
             </div>
@@ -50,7 +52,14 @@ export default {
     computed:{
         ...mapGetters({ items: 'getItems' }),
         ...mapGetters({totalPrice:"getTotalPrice"})
-    }
+    },
+    methods:{
+        toCheckout(){
+            this.$store.dispatch("toCheckout")
+        },
+
+    },
+
 }
 </script>
 

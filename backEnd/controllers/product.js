@@ -3,6 +3,8 @@ import CustomError from '../helpers/error/CustomError'
 import asyncErrorWrapper from '../helpers/error/asyncErrorWrapper'
 
 
+
+
 export const getProducts = async (req, res, next) => {
     const products = await req.getProductsQuery.lean()
     res.status(200).json({
@@ -34,7 +36,6 @@ export const getNewArrivalsProducts = asyncErrorWrapper(async (req, res, next) =
     })
 })
 
-
 export const getBySlugProduct = asyncErrorWrapper(async (req, res, next) => {
     const product = await ProductModel.findOne({
         slugProduct: req.params.slugProduct,
@@ -61,6 +62,7 @@ export const getQuickViewProduct = asyncErrorWrapper(async (req, res, next) => {
         quickView,
     })
 })
+
 export const addProduct = asyncErrorWrapper(async (req, res, next) => {
     req.body.image = req.productImage
     const newProduct = await ProductModel.create(req.body)

@@ -1,3 +1,6 @@
+import axios from 'axios'
+import {router} from '@/router'
+
 const storageCart=JSON.parse(localStorage.getItem("cart"))
 const cart=storageCart?storageCart:{
     items: [],
@@ -43,6 +46,14 @@ const ModuleCart = {
                 localStorage.setItem('cart', JSON.stringify(state.cart))
             }
         }
+    },
+    actions:{
+      toCheckout(){
+          axios.post(`payment/checkout`)
+              .then(res=>{
+                  router.push({name:"checkout",params:{checkoutForm:res.data.checkoutFormContent}})
+              })
+      }
     },
     getters: {
         getCart(state) {
