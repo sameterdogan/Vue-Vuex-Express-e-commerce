@@ -62,42 +62,7 @@ export default {
 
 
 
-.modal-wrapper {
-    position: fixed;
-    display: flex;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color:rgba(0,0,0,.2) ;
-    z-index: 10;
-    opacity: 1;
-}
 
-.modal-cart {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 1000px;
-    margin: 1.25rem auto;
-}
-
-.modal-cart-content {
-    position: relative;
-    width: 100%;
-    background-color: #fff;
-    background-clip:padding-box ;
-    border-radius:.3rem ;
-    padding: 4rem;
-}
-
-.close-modal{
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    z-index: 3000;
-    cursor: pointer;
-}
 @media screen and (max-width: 768px) {
     .modal-cart-content{
         padding: 2rem;

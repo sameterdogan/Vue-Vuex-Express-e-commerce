@@ -1,0 +1,4852 @@
+{ "counties":[
+  {
+    "id": 1,
+    "district": "19 MAYIS",
+    "province_id": 55
+  },
+  {
+    "id": 2,
+    "district": "ABANA",
+    "province_id": 37
+  },
+  {
+    "id": 3,
+    "district": "ACIGÖL",
+    "province_id": 50
+  },
+  {
+    "id": 4,
+    "district": "ACIPAYAM",
+    "province_id": 20
+  },
+  {
+    "id": 5,
+    "district": "ADAKLI",
+    "province_id": 12
+  },
+  {
+    "id": 6,
+    "district": "ADALAR",
+    "province_id": 34
+  },
+  {
+    "id": 7,
+    "district": "ADAPAZARI",
+    "province_id": 54
+  },
+  {
+    "id": 8,
+    "district": "ADİLCEVAZ",
+    "province_id": 13
+  },
+  {
+    "id": 9,
+    "district": "AFŞİN",
+    "province_id": 46
+  },
+  {
+    "id": 10,
+    "district": "AĞAÇÖREN",
+    "province_id": 68
+  },
+  {
+    "id": 11,
+    "district": "AĞIN",
+    "province_id": 23
+  },
+  {
+    "id": 12,
+    "district": "AĞLASUN",
+    "province_id": 15
+  },
+  {
+    "id": 13,
+    "district": "AĞLI",
+    "province_id": 37
+  },
+  {
+    "id": 14,
+    "district": "AHIRLI",
+    "province_id": 42
+  },
+  {
+    "id": 15,
+    "district": "AHLAT",
+    "province_id": 13
+  },
+  {
+    "id": 16,
+    "district": "AHMETLİ",
+    "province_id": 45
+  },
+  {
+    "id": 17,
+    "district": "AKÇAABAT",
+    "province_id": 61
+  },
+  {
+    "id": 18,
+    "district": "AKÇADAĞ",
+    "province_id": 44
+  },
+  {
+    "id": 19,
+    "district": "AKÇAKALE",
+    "province_id": 63
+  },
+  {
+    "id": 20,
+    "district": "AKÇAKENT",
+    "province_id": 40
+  },
+  {
+    "id": 21,
+    "district": "AKÇAKOCA",
+    "province_id": 81
+  },
+  {
+    "id": 22,
+    "district": "AKDAĞMADENİ",
+    "province_id": 66
+  },
+  {
+    "id": 23,
+    "district": "AKDENİZ",
+    "province_id": 33
+  },
+  {
+    "id": 24,
+    "district": "AKHİSAR",
+    "province_id": 45
+  },
+  {
+    "id": 25,
+    "district": "AKINCILAR",
+    "province_id": 58
+  },
+  {
+    "id": 26,
+    "district": "AKKIŞLA",
+    "province_id": 38
+  },
+  {
+    "id": 27,
+    "district": "AKKUŞ",
+    "province_id": 52
+  },
+  {
+    "id": 28,
+    "district": "AKÖREN",
+    "province_id": 42
+  },
+  {
+    "id": 29,
+    "district": "AKPINAR",
+    "province_id": 40
+  },
+  {
+    "id": 30,
+    "district": "AKSEKİ",
+    "province_id": 7
+  },
+  {
+    "id": 31,
+    "district": "AKSU",
+    "province_id": 7
+  },
+  {
+    "id": 32,
+    "district": "AKSU",
+    "province_id": 32
+  },
+  {
+    "id": 33,
+    "district": "AKŞEHİR",
+    "province_id": 42
+  },
+  {
+    "id": 34,
+    "district": "AKYAKA",
+    "province_id": 36
+  },
+  {
+    "id": 35,
+    "district": "AKYAZI",
+    "province_id": 54
+  },
+  {
+    "id": 36,
+    "district": "AKYURT",
+    "province_id": 6
+  },
+  {
+    "id": 37,
+    "district": "ALACA",
+    "province_id": 19
+  },
+  {
+    "id": 38,
+    "district": "ALACAKAYA",
+    "province_id": 23
+  },
+  {
+    "id": 39,
+    "district": "ALAÇAM",
+    "province_id": 55
+  },
+  {
+    "id": 40,
+    "district": "ALADAĞ",
+    "province_id": 1
+  },
+  {
+    "id": 41,
+    "district": "ALANYA",
+    "province_id": 7
+  },
+  {
+    "id": 42,
+    "district": "ALAPLI",
+    "province_id": 67
+  },
+  {
+    "id": 43,
+    "district": "ALAŞEHİR",
+    "province_id": 45
+  },
+  {
+    "id": 44,
+    "district": "ALİAĞA",
+    "province_id": 35
+  },
+  {
+    "id": 45,
+    "district": "ALMUS",
+    "province_id": 60
+  },
+  {
+    "id": 46,
+    "district": "ALPU",
+    "province_id": 26
+  },
+  {
+    "id": 47,
+    "district": "ALTIEYLÜL",
+    "province_id": 10
+  },
+  {
+    "id": 48,
+    "district": "ALTINDAĞ",
+    "province_id": 6
+  },
+  {
+    "id": 49,
+    "district": "ALTINEKİN",
+    "province_id": 42
+  },
+  {
+    "id": 50,
+    "district": "ALTINORDU",
+    "province_id": 52
+  },
+  {
+    "id": 51,
+    "district": "ALTINOVA",
+    "province_id": 77
+  },
+  {
+    "id": 52,
+    "district": "ALTINÖZÜ",
+    "province_id": 31
+  },
+  {
+    "id": 53,
+    "district": "ALTINTAŞ",
+    "province_id": 43
+  },
+  {
+    "id": 54,
+    "district": "ALTINYAYLA",
+    "province_id": 15
+  },
+  {
+    "id": 55,
+    "district": "ALTINYAYLA",
+    "province_id": 58
+  },
+  {
+    "id": 56,
+    "district": "ALTUNHİSAR",
+    "province_id": 51
+  },
+  {
+    "id": 57,
+    "district": "ALUCRA",
+    "province_id": 28
+  },
+  {
+    "id": 58,
+    "district": "AMASRA",
+    "province_id": 74
+  },
+  {
+    "id": 59,
+    "district": "ANAMUR",
+    "province_id": 33
+  },
+  {
+    "id": 60,
+    "district": "ANDIRIN",
+    "province_id": 46
+  },
+  {
+    "id": 61,
+    "district": "ANTAKYA",
+    "province_id": 31
+  },
+  {
+    "id": 62,
+    "district": "ARABAN",
+    "province_id": 27
+  },
+  {
+    "id": 63,
+    "district": "ARAÇ",
+    "province_id": 37
+  },
+  {
+    "id": 64,
+    "district": "ARAKLI",
+    "province_id": 61
+  },
+  {
+    "id": 65,
+    "district": "ARALIK",
+    "province_id": 76
+  },
+  {
+    "id": 66,
+    "district": "ARAPGİR",
+    "province_id": 44
+  },
+  {
+    "id": 67,
+    "district": "ARDANUÇ",
+    "province_id": 8
+  },
+  {
+    "id": 68,
+    "district": "ARDEŞEN",
+    "province_id": 53
+  },
+  {
+    "id": 69,
+    "district": "ARGUVAN",
+    "province_id": 44
+  },
+  {
+    "id": 70,
+    "district": "ARHAVİ",
+    "province_id": 8
+  },
+  {
+    "id": 71,
+    "district": "ARICAK",
+    "province_id": 23
+  },
+  {
+    "id": 72,
+    "district": "ARİFİYE",
+    "province_id": 54
+  },
+  {
+    "id": 73,
+    "district": "ARMUTLU",
+    "province_id": 77
+  },
+  {
+    "id": 74,
+    "district": "ARNAVUTKÖY",
+    "province_id": 34
+  },
+  {
+    "id": 75,
+    "district": "ARPAÇAY",
+    "province_id": 36
+  },
+  {
+    "id": 76,
+    "district": "ARSİN",
+    "province_id": 61
+  },
+  {
+    "id": 77,
+    "district": "ARSUZ",
+    "province_id": 31
+  },
+  {
+    "id": 78,
+    "district": "ARTOVA",
+    "province_id": 60
+  },
+  {
+    "id": 79,
+    "district": "ARTUKLU",
+    "province_id": 47
+  },
+  {
+    "id": 80,
+    "district": "ASARCIK",
+    "province_id": 55
+  },
+  {
+    "id": 81,
+    "district": "ASLANAPA",
+    "province_id": 43
+  },
+  {
+    "id": 82,
+    "district": "AŞKALE",
+    "province_id": 25
+  },
+  {
+    "id": 83,
+    "district": "ATABEY",
+    "province_id": 32
+  },
+  {
+    "id": 84,
+    "district": "ATAKUM",
+    "province_id": 55
+  },
+  {
+    "id": 85,
+    "district": "ATAŞEHİR",
+    "province_id": 34
+  },
+  {
+    "id": 86,
+    "district": "ATKARACALAR",
+    "province_id": 18
+  },
+  {
+    "id": 87,
+    "district": "AVANOS",
+    "province_id": 50
+  },
+  {
+    "id": 88,
+    "district": "AVCILAR",
+    "province_id": 34
+  },
+  {
+    "id": 89,
+    "district": "AYANCIK",
+    "province_id": 57
+  },
+  {
+    "id": 90,
+    "district": "AYAŞ",
+    "province_id": 6
+  },
+  {
+    "id": 91,
+    "district": "AYBASTI",
+    "province_id": 52
+  },
+  {
+    "id": 92,
+    "district": "AYDINCIK",
+    "province_id": 33
+  },
+  {
+    "id": 93,
+    "district": "AYDINCIK",
+    "province_id": 66
+  },
+  {
+    "id": 94,
+    "district": "AYDINTEPE",
+    "province_id": 69
+  },
+  {
+    "id": 95,
+    "district": "AYRANCI",
+    "province_id": 70
+  },
+  {
+    "id": 96,
+    "district": "AYVACIK",
+    "province_id": 17
+  },
+  {
+    "id": 97,
+    "district": "AYVACIK",
+    "province_id": 55
+  },
+  {
+    "id": 98,
+    "district": "AYVALIK",
+    "province_id": 10
+  },
+  {
+    "id": 99,
+    "district": "AZDAVAY",
+    "province_id": 37
+  },
+  {
+    "id": 100,
+    "district": "AZİZİYE",
+    "province_id": 25
+  },
+  {
+    "id": 101,
+    "district": "BABADAĞ",
+    "province_id": 20
+  },
+  {
+    "id": 102,
+    "district": "BABAESKİ",
+    "province_id": 39
+  },
+  {
+    "id": 103,
+    "district": "BAFRA",
+    "province_id": 55
+  },
+  {
+    "id": 104,
+    "district": "BAĞCILAR",
+    "province_id": 34
+  },
+  {
+    "id": 105,
+    "district": "BAĞLAR",
+    "province_id": 21
+  },
+  {
+    "id": 106,
+    "district": "BAHÇE",
+    "province_id": 80
+  },
+  {
+    "id": 107,
+    "district": "BAHÇELİEVLER",
+    "province_id": 34
+  },
+  {
+    "id": 108,
+    "district": "BAHÇESARAY",
+    "province_id": 65
+  },
+  {
+    "id": 109,
+    "district": "BAHŞİLİ",
+    "province_id": 71
+  },
+  {
+    "id": 110,
+    "district": "BAKIRKÖY",
+    "province_id": 34
+  },
+  {
+    "id": 111,
+    "district": "BAKLAN",
+    "province_id": 20
+  },
+  {
+    "id": 112,
+    "district": "BALA",
+    "province_id": 6
+  },
+  {
+    "id": 113,
+    "district": "BALÇOVA",
+    "province_id": 35
+  },
+  {
+    "id": 114,
+    "district": "BALIŞEYH",
+    "province_id": 71
+  },
+  {
+    "id": 115,
+    "district": "BALYA",
+    "province_id": 10
+  },
+  {
+    "id": 116,
+    "district": "BANAZ",
+    "province_id": 64
+  },
+  {
+    "id": 117,
+    "district": "BANDIRMA",
+    "province_id": 10
+  },
+  {
+    "id": 118,
+    "district": "BASKİL",
+    "province_id": 23
+  },
+  {
+    "id": 119,
+    "district": "BAŞAKŞEHİR",
+    "province_id": 34
+  },
+  {
+    "id": 120,
+    "district": "BAŞÇİFTLİK",
+    "province_id": 60
+  },
+  {
+    "id": 121,
+    "district": "BAŞİSKELE",
+    "province_id": 41
+  },
+  {
+    "id": 122,
+    "district": "BAŞKALE",
+    "province_id": 65
+  },
+  {
+    "id": 123,
+    "district": "BAŞMAKÇI",
+    "province_id": 3
+  },
+  {
+    "id": 124,
+    "district": "BAŞYAYLA",
+    "province_id": 70
+  },
+  {
+    "id": 125,
+    "district": "BATTALGAZİ",
+    "province_id": 44
+  },
+  {
+    "id": 126,
+    "district": "BAYAT",
+    "province_id": 3
+  },
+  {
+    "id": 127,
+    "district": "BAYAT",
+    "province_id": 19
+  },
+  {
+    "id": 128,
+    "district": "BAYINDIR",
+    "province_id": 35
+  },
+  {
+    "id": 129,
+    "district": "BAYKAN",
+    "province_id": 56
+  },
+  {
+    "id": 130,
+    "district": "BAYRAKLI",
+    "province_id": 35
+  },
+  {
+    "id": 131,
+    "district": "BAYRAMİÇ",
+    "province_id": 17
+  },
+  {
+    "id": 132,
+    "district": "BAYRAMÖREN",
+    "province_id": 18
+  },
+  {
+    "id": 133,
+    "district": "BAYRAMPAŞA",
+    "province_id": 34
+  },
+  {
+    "id": 134,
+    "district": "BEKİLLİ",
+    "province_id": 20
+  },
+  {
+    "id": 135,
+    "district": "BELEN",
+    "province_id": 31
+  },
+  {
+    "id": 136,
+    "district": "BERGAMA",
+    "province_id": 35
+  },
+  {
+    "id": 137,
+    "district": "BESNİ",
+    "province_id": 2
+  },
+  {
+    "id": 138,
+    "district": "BEŞİKDÜZÜ",
+    "province_id": 61
+  },
+  {
+    "id": 139,
+    "district": "BEŞİKTAŞ",
+    "province_id": 34
+  },
+  {
+    "id": 140,
+    "district": "BEŞİRİ",
+    "province_id": 72
+  },
+  {
+    "id": 141,
+    "district": "BEYAĞAÇ",
+    "province_id": 20
+  },
+  {
+    "id": 142,
+    "district": "BEYDAĞ",
+    "province_id": 35
+  },
+  {
+    "id": 143,
+    "district": "BEYKOZ",
+    "province_id": 34
+  },
+  {
+    "id": 144,
+    "district": "BEYLİKDÜZÜ",
+    "province_id": 34
+  },
+  {
+    "id": 145,
+    "district": "BEYLİKOVA",
+    "province_id": 26
+  },
+  {
+    "id": 146,
+    "district": "BEYOĞLU",
+    "province_id": 34
+  },
+  {
+    "id": 147,
+    "district": "BEYPAZARI",
+    "province_id": 6
+  },
+  {
+    "id": 148,
+    "district": "BEYŞEHİR",
+    "province_id": 42
+  },
+  {
+    "id": 149,
+    "district": "BEYTÜŞŞEBAP",
+    "province_id": 73
+  },
+  {
+    "id": 150,
+    "district": "BİGA",
+    "province_id": 17
+  },
+  {
+    "id": 151,
+    "district": "BİGADİÇ",
+    "province_id": 10
+  },
+  {
+    "id": 152,
+    "district": "BİRECİK",
+    "province_id": 63
+  },
+  {
+    "id": 153,
+    "district": "BİSMİL",
+    "province_id": 21
+  },
+  {
+    "id": 154,
+    "district": "BODRUM",
+    "province_id": 48
+  },
+  {
+    "id": 155,
+    "district": "BOĞAZKALE",
+    "province_id": 19
+  },
+  {
+    "id": 156,
+    "district": "BOĞAZLIYAN",
+    "province_id": 66
+  },
+  {
+    "id": 157,
+    "district": "BOLVADİN",
+    "province_id": 3
+  },
+  {
+    "id": 158,
+    "district": "BOR",
+    "province_id": 51
+  },
+  {
+    "id": 159,
+    "district": "BORÇKA",
+    "province_id": 8
+  },
+  {
+    "id": 160,
+    "district": "BORNOVA",
+    "province_id": 35
+  },
+  {
+    "id": 161,
+    "district": "BOYABAT",
+    "province_id": 57
+  },
+  {
+    "id": 162,
+    "district": "BOZCAADA",
+    "province_id": 17
+  },
+  {
+    "id": 163,
+    "district": "BOZDOĞAN",
+    "province_id": 9
+  },
+  {
+    "id": 164,
+    "district": "BOZKIR",
+    "province_id": 42
+  },
+  {
+    "id": 165,
+    "district": "BOZKURT",
+    "province_id": 20
+  },
+  {
+    "id": 166,
+    "district": "BOZKURT",
+    "province_id": 37
+  },
+  {
+    "id": 167,
+    "district": "BOZOVA",
+    "province_id": 63
+  },
+  {
+    "id": 168,
+    "district": "BOZTEPE",
+    "province_id": 40
+  },
+  {
+    "id": 169,
+    "district": "BOZÜYÜK",
+    "province_id": 11
+  },
+  {
+    "id": 170,
+    "district": "BOZYAZI",
+    "province_id": 33
+  },
+  {
+    "id": 171,
+    "district": "BUCA",
+    "province_id": 35
+  },
+  {
+    "id": 172,
+    "district": "BUCAK",
+    "province_id": 15
+  },
+  {
+    "id": 173,
+    "district": "BUHARKENT",
+    "province_id": 9
+  },
+  {
+    "id": 174,
+    "district": "BULANCAK",
+    "province_id": 28
+  },
+  {
+    "id": 175,
+    "district": "BULANIK",
+    "province_id": 49
+  },
+  {
+    "id": 176,
+    "district": "BULDAN",
+    "province_id": 20
+  },
+  {
+    "id": 177,
+    "district": "BURHANİYE",
+    "province_id": 10
+  },
+  {
+    "id": 178,
+    "district": "BÜNYAN",
+    "province_id": 38
+  },
+  {
+    "id": 179,
+    "district": "BÜYÜKÇEKMECE",
+    "province_id": 34
+  },
+  {
+    "id": 180,
+    "district": "BÜYÜKORHAN",
+    "province_id": 16
+  },
+  {
+    "id": 181,
+    "district": "CANİK",
+    "province_id": 55
+  },
+  {
+    "id": 182,
+    "district": "CEYHAN",
+    "province_id": 1
+  },
+  {
+    "id": 183,
+    "district": "CEYLANPINAR",
+    "province_id": 63
+  },
+  {
+    "id": 184,
+    "district": "CİDE",
+    "province_id": 37
+  },
+  {
+    "id": 185,
+    "district": "CİHANBEYLİ",
+    "province_id": 42
+  },
+  {
+    "id": 186,
+    "district": "CİZRE",
+    "province_id": 73
+  },
+  {
+    "id": 187,
+    "district": "CUMAYERİ",
+    "province_id": 81
+  },
+  {
+    "id": 188,
+    "district": "ÇAĞLAYANCERİT",
+    "province_id": 46
+  },
+  {
+    "id": 189,
+    "district": "ÇAL",
+    "province_id": 20
+  },
+  {
+    "id": 190,
+    "district": "ÇALDIRAN",
+    "province_id": 65
+  },
+  {
+    "id": 191,
+    "district": "ÇAMARDI",
+    "province_id": 51
+  },
+  {
+    "id": 192,
+    "district": "ÇAMAŞ",
+    "province_id": 52
+  },
+  {
+    "id": 193,
+    "district": "ÇAMELİ",
+    "province_id": 20
+  },
+  {
+    "id": 194,
+    "district": "ÇAMLIDERE",
+    "province_id": 6
+  },
+  {
+    "id": 195,
+    "district": "ÇAMLIHEMŞİN",
+    "province_id": 53
+  },
+  {
+    "id": 196,
+    "district": "ÇAMLIYAYLA",
+    "province_id": 33
+  },
+  {
+    "id": 197,
+    "district": "ÇAMOLUK",
+    "province_id": 28
+  },
+  {
+    "id": 198,
+    "district": "ÇAN",
+    "province_id": 17
+  },
+  {
+    "id": 199,
+    "district": "ÇANAKÇI",
+    "province_id": 28
+  },
+  {
+    "id": 200,
+    "district": "ÇANDIR",
+    "province_id": 66
+  },
+  {
+    "id": 201,
+    "district": "ÇANKAYA",
+    "province_id": 6
+  },
+  {
+    "id": 202,
+    "district": "ÇARDAK",
+    "province_id": 20
+  },
+  {
+    "id": 203,
+    "district": "ÇARŞAMBA",
+    "province_id": 55
+  },
+  {
+    "id": 204,
+    "district": "ÇARŞIBAŞI",
+    "province_id": 61
+  },
+  {
+    "id": 205,
+    "district": "ÇAT",
+    "province_id": 25
+  },
+  {
+    "id": 206,
+    "district": "ÇATAK",
+    "province_id": 65
+  },
+  {
+    "id": 207,
+    "district": "ÇATALCA",
+    "province_id": 34
+  },
+  {
+    "id": 208,
+    "district": "ÇATALPINAR",
+    "province_id": 52
+  },
+  {
+    "id": 209,
+    "district": "ÇATALZEYTİN",
+    "province_id": 37
+  },
+  {
+    "id": 210,
+    "district": "ÇAVDARHİSAR",
+    "province_id": 43
+  },
+  {
+    "id": 211,
+    "district": "ÇAVDIR",
+    "province_id": 15
+  },
+  {
+    "id": 212,
+    "district": "ÇAY",
+    "province_id": 3
+  },
+  {
+    "id": 213,
+    "district": "ÇAYBAŞI",
+    "province_id": 52
+  },
+  {
+    "id": 214,
+    "district": "ÇAYCUMA",
+    "province_id": 67
+  },
+  {
+    "id": 215,
+    "district": "ÇAYELİ",
+    "province_id": 53
+  },
+  {
+    "id": 216,
+    "district": "ÇAYIRALAN",
+    "province_id": 66
+  },
+  {
+    "id": 217,
+    "district": "ÇAYIRLI",
+    "province_id": 24
+  },
+  {
+    "id": 218,
+    "district": "ÇAYIROVA",
+    "province_id": 41
+  },
+  {
+    "id": 219,
+    "district": "ÇAYKARA",
+    "province_id": 61
+  },
+  {
+    "id": 220,
+    "district": "ÇEKEREK",
+    "province_id": 66
+  },
+  {
+    "id": 221,
+    "district": "ÇEKMEKÖY",
+    "province_id": 34
+  },
+  {
+    "id": 222,
+    "district": "ÇELEBİ",
+    "province_id": 71
+  },
+  {
+    "id": 223,
+    "district": "ÇELİKHAN",
+    "province_id": 2
+  },
+  {
+    "id": 224,
+    "district": "ÇELTİK",
+    "province_id": 42
+  },
+  {
+    "id": 225,
+    "district": "ÇELTİKÇİ",
+    "province_id": 15
+  },
+  {
+    "id": 226,
+    "district": "ÇEMİŞGEZEK",
+    "province_id": 62
+  },
+  {
+    "id": 227,
+    "district": "ÇERKEŞ",
+    "province_id": 18
+  },
+  {
+    "id": 228,
+    "district": "ÇERKEZKÖY",
+    "province_id": 59
+  },
+  {
+    "id": 229,
+    "district": "ÇERMİK",
+    "province_id": 21
+  },
+  {
+    "id": 230,
+    "district": "ÇEŞME",
+    "province_id": 35
+  },
+  {
+    "id": 231,
+    "district": "ÇILDIR",
+    "province_id": 75
+  },
+  {
+    "id": 232,
+    "district": "ÇINAR",
+    "province_id": 21
+  },
+  {
+    "id": 233,
+    "district": "ÇINARCIK",
+    "province_id": 77
+  },
+  {
+    "id": 234,
+    "district": "ÇİÇEKDAĞI",
+    "province_id": 40
+  },
+  {
+    "id": 235,
+    "district": "ÇİFTELER",
+    "province_id": 26
+  },
+  {
+    "id": 236,
+    "district": "ÇİFTLİK",
+    "province_id": 51
+  },
+  {
+    "id": 237,
+    "district": "ÇİFTLİKKÖY",
+    "province_id": 77
+  },
+  {
+    "id": 238,
+    "district": "ÇİĞLİ",
+    "province_id": 35
+  },
+  {
+    "id": 239,
+    "district": "ÇİLİMLİ",
+    "province_id": 81
+  },
+  {
+    "id": 240,
+    "district": "ÇİNE",
+    "province_id": 9
+  },
+  {
+    "id": 241,
+    "district": "ÇİVRİL",
+    "province_id": 20
+  },
+  {
+    "id": 242,
+    "district": "ÇOBANLAR",
+    "province_id": 3
+  },
+  {
+    "id": 243,
+    "district": "ÇORLU",
+    "province_id": 59
+  },
+  {
+    "id": 244,
+    "district": "ÇUBUK",
+    "province_id": 6
+  },
+  {
+    "id": 245,
+    "district": "ÇUKURCA",
+    "province_id": 30
+  },
+  {
+    "id": 246,
+    "district": "ÇUKUROVA",
+    "province_id": 1
+  },
+  {
+    "id": 247,
+    "district": "ÇUMRA",
+    "province_id": 42
+  },
+  {
+    "id": 248,
+    "district": "ÇÜNGÜŞ",
+    "province_id": 21
+  },
+  {
+    "id": 249,
+    "district": "DADAY",
+    "province_id": 37
+  },
+  {
+    "id": 250,
+    "district": "DALAMAN",
+    "province_id": 48
+  },
+  {
+    "id": 251,
+    "district": "DAMAL",
+    "province_id": 75
+  },
+  {
+    "id": 252,
+    "district": "DARENDE",
+    "province_id": 44
+  },
+  {
+    "id": 253,
+    "district": "DARGEÇİT",
+    "province_id": 47
+  },
+  {
+    "id": 254,
+    "district": "DARICA",
+    "province_id": 41
+  },
+  {
+    "id": 255,
+    "district": "DATÇA",
+    "province_id": 48
+  },
+  {
+    "id": 256,
+    "district": "DAZKIRI",
+    "province_id": 3
+  },
+  {
+    "id": 257,
+    "district": "DEFNE",
+    "province_id": 31
+  },
+  {
+    "id": 258,
+    "district": "DELİCE",
+    "province_id": 71
+  },
+  {
+    "id": 259,
+    "district": "DEMİRCİ",
+    "province_id": 45
+  },
+  {
+    "id": 260,
+    "district": "DEMİRKÖY",
+    "province_id": 39
+  },
+  {
+    "id": 261,
+    "district": "DEMİRÖZÜ",
+    "province_id": 69
+  },
+  {
+    "id": 262,
+    "district": "DEMRE",
+    "province_id": 7
+  },
+  {
+    "id": 263,
+    "district": "DERBENT",
+    "province_id": 42
+  },
+  {
+    "id": 264,
+    "district": "DEREBUCAK",
+    "province_id": 42
+  },
+  {
+    "id": 265,
+    "district": "DERELİ",
+    "province_id": 28
+  },
+  {
+    "id": 266,
+    "district": "DEREPAZARI",
+    "province_id": 53
+  },
+  {
+    "id": 267,
+    "district": "DERİK",
+    "province_id": 47
+  },
+  {
+    "id": 268,
+    "district": "DERİNCE",
+    "province_id": 41
+  },
+  {
+    "id": 269,
+    "district": "DERİNKUYU",
+    "province_id": 50
+  },
+  {
+    "id": 270,
+    "district": "DERNEKPAZARI",
+    "province_id": 61
+  },
+  {
+    "id": 271,
+    "district": "DEVELİ",
+    "province_id": 38
+  },
+  {
+    "id": 272,
+    "district": "DEVREK",
+    "province_id": 67
+  },
+  {
+    "id": 273,
+    "district": "DEVREKANİ",
+    "province_id": 37
+  },
+  {
+    "id": 274,
+    "district": "DİCLE",
+    "province_id": 21
+  },
+  {
+    "id": 275,
+    "district": "DİDİM",
+    "province_id": 9
+  },
+  {
+    "id": 276,
+    "district": "DİGOR",
+    "province_id": 36
+  },
+  {
+    "id": 277,
+    "district": "DİKİLİ",
+    "province_id": 35
+  },
+  {
+    "id": 278,
+    "district": "DİKMEN",
+    "province_id": 57
+  },
+  {
+    "id": 279,
+    "district": "DİLOVASI",
+    "province_id": 41
+  },
+  {
+    "id": 280,
+    "district": "DİNAR",
+    "province_id": 3
+  },
+  {
+    "id": 281,
+    "district": "DİVRİĞİ",
+    "province_id": 58
+  },
+  {
+    "id": 282,
+    "district": "DİYADİN",
+    "province_id": 4
+  },
+  {
+    "id": 283,
+    "district": "DODURGA",
+    "province_id": 19
+  },
+  {
+    "id": 284,
+    "district": "DOĞANHİSAR",
+    "province_id": 42
+  },
+  {
+    "id": 285,
+    "district": "DOĞANKENT",
+    "province_id": 28
+  },
+  {
+    "id": 286,
+    "district": "DOĞANŞAR",
+    "province_id": 58
+  },
+  {
+    "id": 287,
+    "district": "DOĞANŞEHİR",
+    "province_id": 44
+  },
+  {
+    "id": 288,
+    "district": "DOĞANYOL",
+    "province_id": 44
+  },
+  {
+    "id": 289,
+    "district": "DOĞANYURT",
+    "province_id": 37
+  },
+  {
+    "id": 290,
+    "district": "DOĞUBAYAZIT",
+    "province_id": 4
+  },
+  {
+    "id": 291,
+    "district": "DOMANİÇ",
+    "province_id": 43
+  },
+  {
+    "id": 292,
+    "district": "DÖRTDİVAN",
+    "province_id": 14
+  },
+  {
+    "id": 293,
+    "district": "DÖRTYOL",
+    "province_id": 31
+  },
+  {
+    "id": 294,
+    "district": "DÖŞEMEALTI",
+    "province_id": 7
+  },
+  {
+    "id": 295,
+    "district": "DULKADİROĞLU",
+    "province_id": 46
+  },
+  {
+    "id": 296,
+    "district": "DUMLUPINAR",
+    "province_id": 43
+  },
+  {
+    "id": 297,
+    "district": "DURAĞAN",
+    "province_id": 57
+  },
+  {
+    "id": 298,
+    "district": "DURSUNBEY",
+    "province_id": 10
+  },
+  {
+    "id": 299,
+    "district": "DÜZİÇİ",
+    "province_id": 80
+  },
+  {
+    "id": 300,
+    "district": "DÜZKÖY",
+    "province_id": 61
+  },
+  {
+    "id": 301,
+    "district": "ECEABAT",
+    "province_id": 17
+  },
+  {
+    "id": 302,
+    "district": "EDREMİT",
+    "province_id": 10
+  },
+  {
+    "id": 303,
+    "district": "EDREMİT",
+    "province_id": 65
+  },
+  {
+    "id": 304,
+    "district": "EFELER",
+    "province_id": 9
+  },
+  {
+    "id": 305,
+    "district": "EFLANİ",
+    "province_id": 78
+  },
+  {
+    "id": 306,
+    "district": "EĞİL",
+    "province_id": 21
+  },
+  {
+    "id": 307,
+    "district": "EĞİRDİR",
+    "province_id": 32
+  },
+  {
+    "id": 308,
+    "district": "EKİNÖZÜ",
+    "province_id": 46
+  },
+  {
+    "id": 309,
+    "district": "ELBEYLİ",
+    "province_id": 79
+  },
+  {
+    "id": 310,
+    "district": "ELBİSTAN",
+    "province_id": 46
+  },
+  {
+    "id": 311,
+    "district": "ELDİVAN",
+    "province_id": 18
+  },
+  {
+    "id": 312,
+    "district": "ELEŞKİRT",
+    "province_id": 4
+  },
+  {
+    "id": 313,
+    "district": "ELMADAĞ",
+    "province_id": 6
+  },
+  {
+    "id": 314,
+    "district": "ELMALI",
+    "province_id": 7
+  },
+  {
+    "id": 315,
+    "district": "EMET",
+    "province_id": 43
+  },
+  {
+    "id": 316,
+    "district": "EMİRDAĞ",
+    "province_id": 3
+  },
+  {
+    "id": 317,
+    "district": "EMİRGAZİ",
+    "province_id": 42
+  },
+  {
+    "id": 318,
+    "district": "ENEZ",
+    "province_id": 22
+  },
+  {
+    "id": 319,
+    "district": "ERBAA",
+    "province_id": 60
+  },
+  {
+    "id": 320,
+    "district": "ERCİŞ",
+    "province_id": 65
+  },
+  {
+    "id": 321,
+    "district": "ERDEK",
+    "province_id": 10
+  },
+  {
+    "id": 322,
+    "district": "ERDEMLİ",
+    "province_id": 33
+  },
+  {
+    "id": 323,
+    "district": "EREĞLİ",
+    "province_id": 42
+  },
+  {
+    "id": 324,
+    "district": "EREĞLİ",
+    "province_id": 67
+  },
+  {
+    "id": 325,
+    "district": "ERENLER",
+    "province_id": 54
+  },
+  {
+    "id": 326,
+    "district": "ERFELEK",
+    "province_id": 57
+  },
+  {
+    "id": 327,
+    "district": "ERGANİ",
+    "province_id": 21
+  },
+  {
+    "id": 328,
+    "district": "ERGENE",
+    "province_id": 59
+  },
+  {
+    "id": 329,
+    "district": "ERMENEK",
+    "province_id": 70
+  },
+  {
+    "id": 330,
+    "district": "ERUH",
+    "province_id": 56
+  },
+  {
+    "id": 331,
+    "district": "ERZİN",
+    "province_id": 31
+  },
+  {
+    "id": 332,
+    "district": "ESENLER",
+    "province_id": 34
+  },
+  {
+    "id": 333,
+    "district": "ESENYURT",
+    "province_id": 34
+  },
+  {
+    "id": 334,
+    "district": "ESKİL",
+    "province_id": 68
+  },
+  {
+    "id": 335,
+    "district": "ESKİPAZAR",
+    "province_id": 78
+  },
+  {
+    "id": 336,
+    "district": "ESPİYE",
+    "province_id": 28
+  },
+  {
+    "id": 337,
+    "district": "EŞME",
+    "province_id": 64
+  },
+  {
+    "id": 338,
+    "district": "ETİMESGUT",
+    "province_id": 6
+  },
+  {
+    "id": 339,
+    "district": "EVCİLER",
+    "province_id": 3
+  },
+  {
+    "id": 340,
+    "district": "EVREN",
+    "province_id": 6
+  },
+  {
+    "id": 341,
+    "district": "EYNESİL",
+    "province_id": 28
+  },
+  {
+    "id": 342,
+    "district": "EYÜP",
+    "province_id": 34
+  },
+  {
+    "id": 343,
+    "district": "EYYÜBİYE",
+    "province_id": 63
+  },
+  {
+    "id": 344,
+    "district": "EZİNE",
+    "province_id": 17
+  },
+  {
+    "id": 345,
+    "district": "FATİH",
+    "province_id": 34
+  },
+  {
+    "id": 346,
+    "district": "FATSA",
+    "province_id": 52
+  },
+  {
+    "id": 347,
+    "district": "FEKE",
+    "province_id": 1
+  },
+  {
+    "id": 348,
+    "district": "FELAHİYE",
+    "province_id": 38
+  },
+  {
+    "id": 349,
+    "district": "FERİZLİ",
+    "province_id": 54
+  },
+  {
+    "id": 350,
+    "district": "FETHİYE",
+    "province_id": 48
+  },
+  {
+    "id": 351,
+    "district": "FINDIKLI",
+    "province_id": 53
+  },
+  {
+    "id": 352,
+    "district": "FİNİKE",
+    "province_id": 7
+  },
+  {
+    "id": 353,
+    "district": "FOÇA",
+    "province_id": 35
+  },
+  {
+    "id": 354,
+    "district": "GAZİEMİR",
+    "province_id": 35
+  },
+  {
+    "id": 355,
+    "district": "GAZİOSMANPAŞA",
+    "province_id": 34
+  },
+  {
+    "id": 356,
+    "district": "GAZİPAŞA",
+    "province_id": 7
+  },
+  {
+    "id": 357,
+    "district": "GEBZE",
+    "province_id": 41
+  },
+  {
+    "id": 358,
+    "district": "GEDİZ",
+    "province_id": 43
+  },
+  {
+    "id": 359,
+    "district": "GELENDOST",
+    "province_id": 32
+  },
+  {
+    "id": 360,
+    "district": "GELİBOLU",
+    "province_id": 17
+  },
+  {
+    "id": 361,
+    "district": "GEMEREK",
+    "province_id": 58
+  },
+  {
+    "id": 362,
+    "district": "GEMLİK",
+    "province_id": 16
+  },
+  {
+    "id": 363,
+    "district": "GENÇ",
+    "province_id": 12
+  },
+  {
+    "id": 364,
+    "district": "GERCÜŞ",
+    "province_id": 72
+  },
+  {
+    "id": 365,
+    "district": "GEREDE",
+    "province_id": 14
+  },
+  {
+    "id": 366,
+    "district": "GERGER",
+    "province_id": 2
+  },
+  {
+    "id": 367,
+    "district": "GERMENCİK",
+    "province_id": 9
+  },
+  {
+    "id": 368,
+    "district": "GERZE",
+    "province_id": 57
+  },
+  {
+    "id": 369,
+    "district": "GEVAŞ",
+    "province_id": 65
+  },
+  {
+    "id": 370,
+    "district": "GEYVE",
+    "province_id": 54
+  },
+  {
+    "id": 371,
+    "district": "GÖKÇEADA",
+    "province_id": 17
+  },
+  {
+    "id": 372,
+    "district": "GÖKÇEBEY",
+    "province_id": 67
+  },
+  {
+    "id": 373,
+    "district": "GÖKSUN",
+    "province_id": 46
+  },
+  {
+    "id": 374,
+    "district": "GÖLBAŞI",
+    "province_id": 2
+  },
+  {
+    "id": 375,
+    "district": "GÖLBAŞI",
+    "province_id": 6
+  },
+  {
+    "id": 376,
+    "district": "GÖLCÜK",
+    "province_id": 41
+  },
+  {
+    "id": 377,
+    "district": "GÖLE",
+    "province_id": 75
+  },
+  {
+    "id": 378,
+    "district": "GÖLHİSAR",
+    "province_id": 15
+  },
+  {
+    "id": 379,
+    "district": "GÖLKÖY",
+    "province_id": 52
+  },
+  {
+    "id": 380,
+    "district": "GÖLMARMARA",
+    "province_id": 45
+  },
+  {
+    "id": 381,
+    "district": "GÖLOVA",
+    "province_id": 58
+  },
+  {
+    "id": 382,
+    "district": "GÖLPAZARI",
+    "province_id": 11
+  },
+  {
+    "id": 383,
+    "district": "GÖLYAKA",
+    "province_id": 81
+  },
+  {
+    "id": 384,
+    "district": "GÖMEÇ",
+    "province_id": 10
+  },
+  {
+    "id": 385,
+    "district": "GÖNEN",
+    "province_id": 10
+  },
+  {
+    "id": 386,
+    "district": "GÖNEN",
+    "province_id": 32
+  },
+  {
+    "id": 387,
+    "district": "GÖRDES",
+    "province_id": 45
+  },
+  {
+    "id": 388,
+    "district": "GÖRELE",
+    "province_id": 28
+  },
+  {
+    "id": 389,
+    "district": "GÖYNÜCEK",
+    "province_id": 5
+  },
+  {
+    "id": 390,
+    "district": "GÖYNÜK",
+    "province_id": 14
+  },
+  {
+    "id": 391,
+    "district": "GÜCE",
+    "province_id": 28
+  },
+  {
+    "id": 392,
+    "district": "GÜÇLÜKONAK",
+    "province_id": 73
+  },
+  {
+    "id": 393,
+    "district": "GÜDÜL",
+    "province_id": 6
+  },
+  {
+    "id": 394,
+    "district": "GÜLAĞAÇ",
+    "province_id": 68
+  },
+  {
+    "id": 395,
+    "district": "GÜLNAR",
+    "province_id": 33
+  },
+  {
+    "id": 396,
+    "district": "GÜLŞEHİR",
+    "province_id": 50
+  },
+  {
+    "id": 397,
+    "district": "GÜLYALI",
+    "province_id": 52
+  },
+  {
+    "id": 398,
+    "district": "GÜMÜŞHACIKÖY",
+    "province_id": 5
+  },
+  {
+    "id": 399,
+    "district": "GÜMÜŞOVA",
+    "province_id": 81
+  },
+  {
+    "id": 400,
+    "district": "GÜNDOĞMUŞ",
+    "province_id": 7
+  },
+  {
+    "id": 401,
+    "district": "GÜNEY",
+    "province_id": 20
+  },
+  {
+    "id": 402,
+    "district": "GÜNEYSINIR",
+    "province_id": 42
+  },
+  {
+    "id": 403,
+    "district": "GÜNEYSU",
+    "province_id": 53
+  },
+  {
+    "id": 404,
+    "district": "GÜNGÖREN",
+    "province_id": 34
+  },
+  {
+    "id": 405,
+    "district": "GÜNYÜZÜ",
+    "province_id": 26
+  },
+  {
+    "id": 406,
+    "district": "GÜRGENTEPE",
+    "province_id": 52
+  },
+  {
+    "id": 407,
+    "district": "GÜROYMAK",
+    "province_id": 13
+  },
+  {
+    "id": 408,
+    "district": "GÜRPINAR",
+    "province_id": 65
+  },
+  {
+    "id": 409,
+    "district": "GÜRSU",
+    "province_id": 16
+  },
+  {
+    "id": 410,
+    "district": "GÜRÜN",
+    "province_id": 58
+  },
+  {
+    "id": 411,
+    "district": "GÜZELBAHÇE",
+    "province_id": 35
+  },
+  {
+    "id": 412,
+    "district": "GÜZELYURT",
+    "province_id": 68
+  },
+  {
+    "id": 413,
+    "district": "HACIBEKTAŞ",
+    "province_id": 50
+  },
+  {
+    "id": 414,
+    "district": "HACILAR",
+    "province_id": 38
+  },
+  {
+    "id": 415,
+    "district": "HADİM",
+    "province_id": 42
+  },
+  {
+    "id": 416,
+    "district": "HAFİK",
+    "province_id": 58
+  },
+  {
+    "id": 417,
+    "district": "HALFETİ",
+    "province_id": 63
+  },
+  {
+    "id": 418,
+    "district": "HALİLİYE",
+    "province_id": 63
+  },
+  {
+    "id": 419,
+    "district": "HALKAPINAR",
+    "province_id": 42
+  },
+  {
+    "id": 420,
+    "district": "HAMAMÖZÜ",
+    "province_id": 5
+  },
+  {
+    "id": 421,
+    "district": "HAMUR",
+    "province_id": 4
+  },
+  {
+    "id": 422,
+    "district": "HAN",
+    "province_id": 26
+  },
+  {
+    "id": 423,
+    "district": "HANAK",
+    "province_id": 75
+  },
+  {
+    "id": 424,
+    "district": "HANİ",
+    "province_id": 21
+  },
+  {
+    "id": 425,
+    "district": "HANÖNÜ",
+    "province_id": 37
+  },
+  {
+    "id": 426,
+    "district": "HARMANCIK",
+    "province_id": 16
+  },
+  {
+    "id": 427,
+    "district": "HARRAN",
+    "province_id": 63
+  },
+  {
+    "id": 428,
+    "district": "HASANBEYLİ",
+    "province_id": 80
+  },
+  {
+    "id": 429,
+    "district": "HASANKEYF",
+    "province_id": 72
+  },
+  {
+    "id": 430,
+    "district": "HASKÖY",
+    "province_id": 49
+  },
+  {
+    "id": 431,
+    "district": "HASSA",
+    "province_id": 31
+  },
+  {
+    "id": 432,
+    "district": "HAVRAN",
+    "province_id": 10
+  },
+  {
+    "id": 433,
+    "district": "HAVSA",
+    "province_id": 22
+  },
+  {
+    "id": 434,
+    "district": "HAVZA",
+    "province_id": 55
+  },
+  {
+    "id": 435,
+    "district": "HAYMANA",
+    "province_id": 6
+  },
+  {
+    "id": 436,
+    "district": "HAYRABOLU",
+    "province_id": 59
+  },
+  {
+    "id": 437,
+    "district": "HAYRAT",
+    "province_id": 61
+  },
+  {
+    "id": 438,
+    "district": "HAZRO",
+    "province_id": 21
+  },
+  {
+    "id": 439,
+    "district": "HEKİMHAN",
+    "province_id": 44
+  },
+  {
+    "id": 440,
+    "district": "HEMŞİN",
+    "province_id": 53
+  },
+  {
+    "id": 441,
+    "district": "HENDEK",
+    "province_id": 54
+  },
+  {
+    "id": 442,
+    "district": "HINIS",
+    "province_id": 25
+  },
+  {
+    "id": 443,
+    "district": "HİLVAN",
+    "province_id": 63
+  },
+  {
+    "id": 444,
+    "district": "HİSARCIK",
+    "province_id": 43
+  },
+  {
+    "id": 445,
+    "district": "HİZAN",
+    "province_id": 13
+  },
+  {
+    "id": 446,
+    "district": "HOCALAR",
+    "province_id": 3
+  },
+  {
+    "id": 447,
+    "district": "HONAZ",
+    "province_id": 20
+  },
+  {
+    "id": 448,
+    "district": "HOPA",
+    "province_id": 8
+  },
+  {
+    "id": 449,
+    "district": "HORASAN",
+    "province_id": 25
+  },
+  {
+    "id": 450,
+    "district": "HOZAT",
+    "province_id": 62
+  },
+  {
+    "id": 451,
+    "district": "HÜYÜK",
+    "province_id": 42
+  },
+  {
+    "id": 452,
+    "district": "ILGAZ",
+    "province_id": 18
+  },
+  {
+    "id": 453,
+    "district": "ILGIN",
+    "province_id": 42
+  },
+  {
+    "id": 454,
+    "district": "İBRADI",
+    "province_id": 7
+  },
+  {
+    "id": 455,
+    "district": "İDİL",
+    "province_id": 73
+  },
+  {
+    "id": 456,
+    "district": "İHSANGAZİ",
+    "province_id": 37
+  },
+  {
+    "id": 457,
+    "district": "İHSANİYE",
+    "province_id": 3
+  },
+  {
+    "id": 458,
+    "district": "İKİZCE",
+    "province_id": 52
+  },
+  {
+    "id": 459,
+    "district": "İKİZDERE",
+    "province_id": 53
+  },
+  {
+    "id": 460,
+    "district": "İLİÇ",
+    "province_id": 24
+  },
+  {
+    "id": 461,
+    "district": "İLKADIM",
+    "province_id": 55
+  },
+  {
+    "id": 462,
+    "district": "İMAMOĞLU",
+    "province_id": 1
+  },
+  {
+    "id": 463,
+    "district": "İMRANLI",
+    "province_id": 58
+  },
+  {
+    "id": 464,
+    "district": "İNCESU",
+    "province_id": 38
+  },
+  {
+    "id": 465,
+    "district": "İNCİRLİOVA",
+    "province_id": 9
+  },
+  {
+    "id": 466,
+    "district": "İNEBOLU",
+    "province_id": 37
+  },
+  {
+    "id": 467,
+    "district": "İNEGÖL",
+    "province_id": 16
+  },
+  {
+    "id": 468,
+    "district": "İNHİSAR",
+    "province_id": 11
+  },
+  {
+    "id": 469,
+    "district": "İNÖNÜ",
+    "province_id": 26
+  },
+  {
+    "id": 470,
+    "district": "İPEKYOLU",
+    "province_id": 65
+  },
+  {
+    "id": 471,
+    "district": "İPSALA",
+    "province_id": 22
+  },
+  {
+    "id": 472,
+    "district": "İSCEHİSAR",
+    "province_id": 3
+  },
+  {
+    "id": 473,
+    "district": "İSKENDERUN",
+    "province_id": 31
+  },
+  {
+    "id": 474,
+    "district": "İSKİLİP",
+    "province_id": 19
+  },
+  {
+    "id": 475,
+    "district": "İSLAHİYE",
+    "province_id": 27
+  },
+  {
+    "id": 476,
+    "district": "İSPİR",
+    "province_id": 25
+  },
+  {
+    "id": 477,
+    "district": "İVRİNDİ",
+    "province_id": 10
+  },
+  {
+    "id": 478,
+    "district": "İYİDERE",
+    "province_id": 53
+  },
+  {
+    "id": 479,
+    "district": "İZMİT",
+    "province_id": 41
+  },
+  {
+    "id": 480,
+    "district": "İZNİK",
+    "province_id": 16
+  },
+  {
+    "id": 481,
+    "district": "KABADÜZ",
+    "province_id": 52
+  },
+  {
+    "id": 482,
+    "district": "KABATAŞ",
+    "province_id": 52
+  },
+  {
+    "id": 483,
+    "district": "KADIKÖY",
+    "province_id": 34
+  },
+  {
+    "id": 484,
+    "district": "KADINHANI",
+    "province_id": 42
+  },
+  {
+    "id": 485,
+    "district": "KADIŞEHRİ",
+    "province_id": 66
+  },
+  {
+    "id": 486,
+    "district": "KADİRLİ",
+    "province_id": 80
+  },
+  {
+    "id": 487,
+    "district": "KAĞITHANE",
+    "province_id": 34
+  },
+  {
+    "id": 488,
+    "district": "KAĞIZMAN",
+    "province_id": 36
+  },
+  {
+    "id": 489,
+    "district": "KAHRAMANKAZAN",
+    "province_id": 6
+  },
+  {
+    "id": 490,
+    "district": "KAHTA",
+    "province_id": 2
+  },
+  {
+    "id": 491,
+    "district": "KALE",
+    "province_id": 20
+  },
+  {
+    "id": 492,
+    "district": "KALE",
+    "province_id": 44
+  },
+  {
+    "id": 493,
+    "district": "KALECİK",
+    "province_id": 6
+  },
+  {
+    "id": 494,
+    "district": "KALKANDERE",
+    "province_id": 53
+  },
+  {
+    "id": 495,
+    "district": "KAMAN",
+    "province_id": 40
+  },
+  {
+    "id": 496,
+    "district": "KANDIRA",
+    "province_id": 41
+  },
+  {
+    "id": 497,
+    "district": "KANGAL",
+    "province_id": 58
+  },
+  {
+    "id": 498,
+    "district": "KAPAKLI",
+    "province_id": 59
+  },
+  {
+    "id": 499,
+    "district": "KARABAĞLAR",
+    "province_id": 35
+  },
+  {
+    "id": 500,
+    "district": "KARABURUN",
+    "province_id": 35
+  },
+  {
+    "id": 501,
+    "district": "KARACABEY",
+    "province_id": 16
+  },
+  {
+    "id": 502,
+    "district": "KARACASU",
+    "province_id": 9
+  },
+  {
+    "id": 503,
+    "district": "KARAÇOBAN",
+    "province_id": 25
+  },
+  {
+    "id": 504,
+    "district": "KARAHALLI",
+    "province_id": 64
+  },
+  {
+    "id": 505,
+    "district": "KARAİSALI",
+    "province_id": 1
+  },
+  {
+    "id": 506,
+    "district": "KARAKEÇİLİ",
+    "province_id": 71
+  },
+  {
+    "id": 507,
+    "district": "KARAKOÇAN",
+    "province_id": 23
+  },
+  {
+    "id": 508,
+    "district": "KARAKOYUNLU",
+    "province_id": 76
+  },
+  {
+    "id": 509,
+    "district": "KARAKÖPRÜ",
+    "province_id": 63
+  },
+  {
+    "id": 510,
+    "district": "KARAMANLI",
+    "province_id": 15
+  },
+  {
+    "id": 511,
+    "district": "KARAMÜRSEL",
+    "province_id": 41
+  },
+  {
+    "id": 512,
+    "district": "KARAPINAR",
+    "province_id": 42
+  },
+  {
+    "id": 513,
+    "district": "KARAPÜRÇEK",
+    "province_id": 54
+  },
+  {
+    "id": 514,
+    "district": "KARASU",
+    "province_id": 54
+  },
+  {
+    "id": 515,
+    "district": "KARATAŞ",
+    "province_id": 1
+  },
+  {
+    "id": 516,
+    "district": "KARATAY",
+    "province_id": 42
+  },
+  {
+    "id": 517,
+    "district": "KARAYAZI",
+    "province_id": 25
+  },
+  {
+    "id": 518,
+    "district": "KARESİ",
+    "province_id": 10
+  },
+  {
+    "id": 519,
+    "district": "KARGI",
+    "province_id": 19
+  },
+  {
+    "id": 520,
+    "district": "KARKAMIŞ",
+    "province_id": 27
+  },
+  {
+    "id": 521,
+    "district": "KARLIOVA",
+    "province_id": 12
+  },
+  {
+    "id": 522,
+    "district": "KARPUZLU",
+    "province_id": 9
+  },
+  {
+    "id": 523,
+    "district": "KARŞIYAKA",
+    "province_id": 35
+  },
+  {
+    "id": 524,
+    "district": "KARTAL",
+    "province_id": 34
+  },
+  {
+    "id": 525,
+    "district": "KARTEPE",
+    "province_id": 41
+  },
+  {
+    "id": 526,
+    "district": "KAŞ",
+    "province_id": 7
+  },
+  {
+    "id": 527,
+    "district": "KAVAK",
+    "province_id": 55
+  },
+  {
+    "id": 528,
+    "district": "KAVAKLIDERE",
+    "province_id": 48
+  },
+  {
+    "id": 529,
+    "district": "KAYAPINAR",
+    "province_id": 21
+  },
+  {
+    "id": 530,
+    "district": "KAYNARCA",
+    "province_id": 54
+  },
+  {
+    "id": 531,
+    "district": "KAYNAŞLI",
+    "province_id": 81
+  },
+  {
+    "id": 532,
+    "district": "KAZIMKARABEKİR",
+    "province_id": 70
+  },
+  {
+    "id": 533,
+    "district": "KEBAN",
+    "province_id": 23
+  },
+  {
+    "id": 534,
+    "district": "KEÇİBORLU",
+    "province_id": 32
+  },
+  {
+    "id": 535,
+    "district": "KEÇİÖREN",
+    "province_id": 6
+  },
+  {
+    "id": 536,
+    "district": "KELES",
+    "province_id": 16
+  },
+  {
+    "id": 537,
+    "district": "KELKİT",
+    "province_id": 29
+  },
+  {
+    "id": 538,
+    "district": "KEMAH",
+    "province_id": 24
+  },
+  {
+    "id": 539,
+    "district": "KEMALİYE",
+    "province_id": 24
+  },
+  {
+    "id": 540,
+    "district": "KEMALPAŞA",
+    "province_id": 35
+  },
+  {
+    "id": 541,
+    "district": "KEMER",
+    "province_id": 7
+  },
+  {
+    "id": 542,
+    "district": "KEMER",
+    "province_id": 15
+  },
+  {
+    "id": 543,
+    "district": "KEPEZ",
+    "province_id": 7
+  },
+  {
+    "id": 544,
+    "district": "KEPSUT",
+    "province_id": 10
+  },
+  {
+    "id": 545,
+    "district": "KESKİN",
+    "province_id": 71
+  },
+  {
+    "id": 546,
+    "district": "KESTEL",
+    "province_id": 16
+  },
+  {
+    "id": 547,
+    "district": "KEŞAN",
+    "province_id": 22
+  },
+  {
+    "id": 548,
+    "district": "KEŞAP",
+    "province_id": 28
+  },
+  {
+    "id": 549,
+    "district": "KIBRISCIK",
+    "province_id": 14
+  },
+  {
+    "id": 550,
+    "district": "KINIK",
+    "province_id": 35
+  },
+  {
+    "id": 551,
+    "district": "KIRIKHAN",
+    "province_id": 31
+  },
+  {
+    "id": 552,
+    "district": "KIRKAĞAÇ",
+    "province_id": 45
+  },
+  {
+    "id": 553,
+    "district": "KIZILCAHAMAM",
+    "province_id": 6
+  },
+  {
+    "id": 554,
+    "district": "KIZILIRMAK",
+    "province_id": 18
+  },
+  {
+    "id": 555,
+    "district": "KIZILÖREN",
+    "province_id": 3
+  },
+  {
+    "id": 556,
+    "district": "KIZILTEPE",
+    "province_id": 47
+  },
+  {
+    "id": 557,
+    "district": "KİĞI",
+    "province_id": 12
+  },
+  {
+    "id": 558,
+    "district": "KİLİMLİ",
+    "province_id": 67
+  },
+  {
+    "id": 559,
+    "district": "KİRAZ",
+    "province_id": 35
+  },
+  {
+    "id": 560,
+    "district": "KOCAALİ",
+    "province_id": 54
+  },
+  {
+    "id": 561,
+    "district": "KOCAKÖY",
+    "province_id": 21
+  },
+  {
+    "id": 562,
+    "district": "KOCASİNAN",
+    "province_id": 38
+  },
+  {
+    "id": 563,
+    "district": "KOÇARLI",
+    "province_id": 9
+  },
+  {
+    "id": 564,
+    "district": "KOFÇAZ",
+    "province_id": 39
+  },
+  {
+    "id": 565,
+    "district": "KONAK",
+    "province_id": 35
+  },
+  {
+    "id": 566,
+    "district": "KONYAALTI",
+    "province_id": 7
+  },
+  {
+    "id": 567,
+    "district": "KORGAN",
+    "province_id": 52
+  },
+  {
+    "id": 568,
+    "district": "KORGUN",
+    "province_id": 18
+  },
+  {
+    "id": 569,
+    "district": "KORKUT",
+    "province_id": 49
+  },
+  {
+    "id": 570,
+    "district": "KORKUTELİ",
+    "province_id": 7
+  },
+  {
+    "id": 571,
+    "district": "KOVANCILAR",
+    "province_id": 23
+  },
+  {
+    "id": 572,
+    "district": "KOYULHİSAR",
+    "province_id": 58
+  },
+  {
+    "id": 573,
+    "district": "KOZAKLI",
+    "province_id": 50
+  },
+  {
+    "id": 574,
+    "district": "KOZAN",
+    "province_id": 1
+  },
+  {
+    "id": 575,
+    "district": "KOZLU",
+    "province_id": 67
+  },
+  {
+    "id": 576,
+    "district": "KOZLUK",
+    "province_id": 72
+  },
+  {
+    "id": 577,
+    "district": "KÖPRÜBAŞI",
+    "province_id": 45
+  },
+  {
+    "id": 578,
+    "district": "KÖPRÜBAŞI",
+    "province_id": 61
+  },
+  {
+    "id": 579,
+    "district": "KÖPRÜKÖY",
+    "province_id": 25
+  },
+  {
+    "id": 580,
+    "district": "KÖRFEZ",
+    "province_id": 41
+  },
+  {
+    "id": 581,
+    "district": "KÖSE",
+    "province_id": 29
+  },
+  {
+    "id": 582,
+    "district": "KÖŞK",
+    "province_id": 9
+  },
+  {
+    "id": 583,
+    "district": "KÖYCEĞİZ",
+    "province_id": 48
+  },
+  {
+    "id": 584,
+    "district": "KULA",
+    "province_id": 45
+  },
+  {
+    "id": 585,
+    "district": "KULP",
+    "province_id": 21
+  },
+  {
+    "id": 586,
+    "district": "KULU",
+    "province_id": 42
+  },
+  {
+    "id": 587,
+    "district": "KULUNCAK",
+    "province_id": 44
+  },
+  {
+    "id": 588,
+    "district": "KUMLU",
+    "province_id": 31
+  },
+  {
+    "id": 589,
+    "district": "KUMLUCA",
+    "province_id": 7
+  },
+  {
+    "id": 590,
+    "district": "KUMRU",
+    "province_id": 52
+  },
+  {
+    "id": 591,
+    "district": "KURŞUNLU",
+    "province_id": 18
+  },
+  {
+    "id": 592,
+    "district": "KURTALAN",
+    "province_id": 56
+  },
+  {
+    "id": 593,
+    "district": "KURUCAŞİLE",
+    "province_id": 74
+  },
+  {
+    "id": 594,
+    "district": "KUŞADASI",
+    "province_id": 9
+  },
+  {
+    "id": 595,
+    "district": "KUYUCAK",
+    "province_id": 9
+  },
+  {
+    "id": 596,
+    "district": "KÜÇÜKÇEKMECE",
+    "province_id": 34
+  },
+  {
+    "id": 597,
+    "district": "KÜRE",
+    "province_id": 37
+  },
+  {
+    "id": 598,
+    "district": "KÜRTÜN",
+    "province_id": 29
+  },
+  {
+    "id": 599,
+    "district": "LAÇİN",
+    "province_id": 19
+  },
+  {
+    "id": 600,
+    "district": "LADİK",
+    "province_id": 55
+  },
+  {
+    "id": 601,
+    "district": "LALAPAŞA",
+    "province_id": 22
+  },
+  {
+    "id": 602,
+    "district": "LAPSEKİ",
+    "province_id": 17
+  },
+  {
+    "id": 603,
+    "district": "LİCE",
+    "province_id": 21
+  },
+  {
+    "id": 604,
+    "district": "LÜLEBURGAZ",
+    "province_id": 39
+  },
+  {
+    "id": 605,
+    "district": "MAÇKA",
+    "province_id": 61
+  },
+  {
+    "id": 606,
+    "district": "MADEN",
+    "province_id": 23
+  },
+  {
+    "id": 607,
+    "district": "MAHMUDİYE",
+    "province_id": 26
+  },
+  {
+    "id": 608,
+    "district": "MALAZGİRT",
+    "province_id": 49
+  },
+  {
+    "id": 609,
+    "district": "MALKARA",
+    "province_id": 59
+  },
+  {
+    "id": 610,
+    "district": "MALTEPE",
+    "province_id": 34
+  },
+  {
+    "id": 611,
+    "district": "MAMAK",
+    "province_id": 6
+  },
+  {
+    "id": 612,
+    "district": "MANAVGAT",
+    "province_id": 7
+  },
+  {
+    "id": 613,
+    "district": "MANYAS",
+    "province_id": 10
+  },
+  {
+    "id": 614,
+    "district": "MARMARA",
+    "province_id": 10
+  },
+  {
+    "id": 615,
+    "district": "MARMARAEREĞLİSİ",
+    "province_id": 59
+  },
+  {
+    "id": 616,
+    "district": "MARMARİS",
+    "province_id": 48
+  },
+  {
+    "id": 617,
+    "district": "MAZGİRT",
+    "province_id": 62
+  },
+  {
+    "id": 618,
+    "district": "MAZIDAĞI",
+    "province_id": 47
+  },
+  {
+    "id": 619,
+    "district": "MECİTÖZÜ",
+    "province_id": 19
+  },
+  {
+    "id": 620,
+    "district": "MELİKGAZİ",
+    "province_id": 38
+  },
+  {
+    "id": 621,
+    "district": "MENDERES",
+    "province_id": 35
+  },
+  {
+    "id": 622,
+    "district": "MENEMEN",
+    "province_id": 35
+  },
+  {
+    "id": 623,
+    "district": "MENGEN",
+    "province_id": 14
+  },
+  {
+    "id": 624,
+    "district": "MENTEŞE",
+    "province_id": 48
+  },
+  {
+    "id": 625,
+    "district": "MERAM",
+    "province_id": 42
+  },
+  {
+    "id": 626,
+    "district": "MERİÇ",
+    "province_id": 22
+  },
+  {
+    "id": 627,
+    "district": "MERKEZ",
+    "province_id": 2
+  },
+  {
+    "id": 628,
+    "district": "MERKEZ",
+    "province_id": 3
+  },
+  {
+    "id": 629,
+    "district": "MERKEZ",
+    "province_id": 4
+  },
+  {
+    "id": 630,
+    "district": "MERKEZ",
+    "province_id": 5
+  },
+  {
+    "id": 631,
+    "district": "MERKEZ",
+    "province_id": 8
+  },
+  {
+    "id": 632,
+    "district": "MERKEZ",
+    "province_id": 11
+  },
+  {
+    "id": 633,
+    "district": "MERKEZ",
+    "province_id": 12
+  },
+  {
+    "id": 634,
+    "district": "MERKEZ",
+    "province_id": 13
+  },
+  {
+    "id": 635,
+    "district": "MERKEZ",
+    "province_id": 14
+  },
+  {
+    "id": 636,
+    "district": "MERKEZ",
+    "province_id": 15
+  },
+  {
+    "id": 637,
+    "district": "MERKEZ",
+    "province_id": 17
+  },
+  {
+    "id": 638,
+    "district": "MERKEZ",
+    "province_id": 18
+  },
+  {
+    "id": 639,
+    "district": "MERKEZ",
+    "province_id": 19
+  },
+  {
+    "id": 640,
+    "district": "MERKEZ",
+    "province_id": 22
+  },
+  {
+    "id": 641,
+    "district": "MERKEZ",
+    "province_id": 23
+  },
+  {
+    "id": 642,
+    "district": "MERKEZ",
+    "province_id": 24
+  },
+  {
+    "id": 643,
+    "district": "MERKEZ",
+    "province_id": 28
+  },
+  {
+    "id": 644,
+    "district": "MERKEZ",
+    "province_id": 29
+  },
+  {
+    "id": 645,
+    "district": "MERKEZ",
+    "province_id": 30
+  },
+  {
+    "id": 646,
+    "district": "MERKEZ",
+    "province_id": 32
+  },
+  {
+    "id": 647,
+    "district": "MERKEZ",
+    "province_id": 36
+  },
+  {
+    "id": 648,
+    "district": "MERKEZ",
+    "province_id": 37
+  },
+  {
+    "id": 649,
+    "district": "MERKEZ",
+    "province_id": 39
+  },
+  {
+    "id": 650,
+    "district": "MERKEZ",
+    "province_id": 40
+  },
+  {
+    "id": 651,
+    "district": "MERKEZ",
+    "province_id": 43
+  },
+  {
+    "id": 652,
+    "district": "MERKEZ",
+    "province_id": 49
+  },
+  {
+    "id": 653,
+    "district": "MERKEZ",
+    "province_id": 50
+  },
+  {
+    "id": 654,
+    "district": "MERKEZ",
+    "province_id": 51
+  },
+  {
+    "id": 655,
+    "district": "MERKEZ",
+    "province_id": 53
+  },
+  {
+    "id": 656,
+    "district": "MERKEZ",
+    "province_id": 56
+  },
+  {
+    "id": 657,
+    "district": "MERKEZ",
+    "province_id": 57
+  },
+  {
+    "id": 658,
+    "district": "MERKEZ",
+    "province_id": 58
+  },
+  {
+    "id": 659,
+    "district": "MERKEZ",
+    "province_id": 60
+  },
+  {
+    "id": 660,
+    "district": "MERKEZ",
+    "province_id": 62
+  },
+  {
+    "id": 661,
+    "district": "MERKEZ",
+    "province_id": 64
+  },
+  {
+    "id": 662,
+    "district": "MERKEZ",
+    "province_id": 66
+  },
+  {
+    "id": 663,
+    "district": "MERKEZ",
+    "province_id": 67
+  },
+  {
+    "id": 664,
+    "district": "MERKEZ",
+    "province_id": 68
+  },
+  {
+    "id": 665,
+    "district": "MERKEZ",
+    "province_id": 69
+  },
+  {
+    "id": 666,
+    "district": "MERKEZ",
+    "province_id": 70
+  },
+  {
+    "id": 667,
+    "district": "MERKEZ",
+    "province_id": 71
+  },
+  {
+    "id": 668,
+    "district": "MERKEZ",
+    "province_id": 72
+  },
+  {
+    "id": 669,
+    "district": "MERKEZ",
+    "province_id": 73
+  },
+  {
+    "id": 670,
+    "district": "MERKEZ",
+    "province_id": 74
+  },
+  {
+    "id": 671,
+    "district": "MERKEZ",
+    "province_id": 75
+  },
+  {
+    "id": 672,
+    "district": "MERKEZ",
+    "province_id": 76
+  },
+  {
+    "id": 673,
+    "district": "MERKEZ",
+    "province_id": 77
+  },
+  {
+    "id": 674,
+    "district": "MERKEZ",
+    "province_id": 78
+  },
+  {
+    "id": 675,
+    "district": "MERKEZ",
+    "province_id": 79
+  },
+  {
+    "id": 676,
+    "district": "MERKEZ",
+    "province_id": 80
+  },
+  {
+    "id": 677,
+    "district": "MERKEZ",
+    "province_id": 81
+  },
+  {
+    "id": 678,
+    "district": "MERKEZEFENDİ",
+    "province_id": 20
+  },
+  {
+    "id": 679,
+    "district": "MERZİFON",
+    "province_id": 5
+  },
+  {
+    "id": 680,
+    "district": "MESUDİYE",
+    "province_id": 52
+  },
+  {
+    "id": 681,
+    "district": "MEZİTLİ",
+    "province_id": 33
+  },
+  {
+    "id": 682,
+    "district": "MİDYAT",
+    "province_id": 47
+  },
+  {
+    "id": 683,
+    "district": "MİHALGAZİ",
+    "province_id": 26
+  },
+  {
+    "id": 684,
+    "district": "MİHALIÇÇIK",
+    "province_id": 26
+  },
+  {
+    "id": 685,
+    "district": "MİLAS",
+    "province_id": 48
+  },
+  {
+    "id": 686,
+    "district": "MUCUR",
+    "province_id": 40
+  },
+  {
+    "id": 687,
+    "district": "MUDANYA",
+    "province_id": 16
+  },
+  {
+    "id": 688,
+    "district": "MUDURNU",
+    "province_id": 14
+  },
+  {
+    "id": 689,
+    "district": "MURADİYE",
+    "province_id": 65
+  },
+  {
+    "id": 690,
+    "district": "MURATLI",
+    "province_id": 59
+  },
+  {
+    "id": 691,
+    "district": "MURATPAŞA",
+    "province_id": 7
+  },
+  {
+    "id": 692,
+    "district": "MURGUL",
+    "province_id": 8
+  },
+  {
+    "id": 693,
+    "district": "MUSABEYLİ",
+    "province_id": 79
+  },
+  {
+    "id": 694,
+    "district": "MUSTAFAKEMALPAŞA",
+    "province_id": 16
+  },
+  {
+    "id": 695,
+    "district": "MUT",
+    "province_id": 33
+  },
+  {
+    "id": 696,
+    "district": "MUTKİ",
+    "province_id": 13
+  },
+  {
+    "id": 697,
+    "district": "NALLIHAN",
+    "province_id": 6
+  },
+  {
+    "id": 698,
+    "district": "NARLIDERE",
+    "province_id": 35
+  },
+  {
+    "id": 699,
+    "district": "NARMAN",
+    "province_id": 25
+  },
+  {
+    "id": 700,
+    "district": "NAZIMİYE",
+    "province_id": 62
+  },
+  {
+    "id": 701,
+    "district": "NAZİLLİ",
+    "province_id": 9
+  },
+  {
+    "id": 702,
+    "district": "NİKSAR",
+    "province_id": 60
+  },
+  {
+    "id": 703,
+    "district": "NİLÜFER",
+    "province_id": 16
+  },
+  {
+    "id": 704,
+    "district": "NİZİP",
+    "province_id": 27
+  },
+  {
+    "id": 705,
+    "district": "NURDAĞI",
+    "province_id": 27
+  },
+  {
+    "id": 706,
+    "district": "NURHAK",
+    "province_id": 46
+  },
+  {
+    "id": 707,
+    "district": "NUSAYBİN",
+    "province_id": 47
+  },
+  {
+    "id": 708,
+    "district": "ODUNPAZARI",
+    "province_id": 26
+  },
+  {
+    "id": 709,
+    "district": "OF",
+    "province_id": 61
+  },
+  {
+    "id": 710,
+    "district": "OĞUZELİ",
+    "province_id": 27
+  },
+  {
+    "id": 711,
+    "district": "OĞUZLAR",
+    "province_id": 19
+  },
+  {
+    "id": 712,
+    "district": "OLTU",
+    "province_id": 25
+  },
+  {
+    "id": 713,
+    "district": "OLUR",
+    "province_id": 25
+  },
+  {
+    "id": 714,
+    "district": "ONİKİŞUBAT",
+    "province_id": 46
+  },
+  {
+    "id": 715,
+    "district": "ORHANELİ",
+    "province_id": 16
+  },
+  {
+    "id": 716,
+    "district": "ORHANGAZİ",
+    "province_id": 16
+  },
+  {
+    "id": 717,
+    "district": "ORTA",
+    "province_id": 18
+  },
+  {
+    "id": 718,
+    "district": "ORTACA",
+    "province_id": 48
+  },
+  {
+    "id": 719,
+    "district": "ORTAHİSAR",
+    "province_id": 61
+  },
+  {
+    "id": 720,
+    "district": "ORTAKÖY",
+    "province_id": 19
+  },
+  {
+    "id": 721,
+    "district": "ORTAKÖY",
+    "province_id": 68
+  },
+  {
+    "id": 722,
+    "district": "OSMANCIK",
+    "province_id": 19
+  },
+  {
+    "id": 723,
+    "district": "OSMANELİ",
+    "province_id": 11
+  },
+  {
+    "id": 724,
+    "district": "OSMANGAZİ",
+    "province_id": 16
+  },
+  {
+    "id": 725,
+    "district": "OTLUKBELİ",
+    "province_id": 24
+  },
+  {
+    "id": 726,
+    "district": "OVACIK",
+    "province_id": 62
+  },
+  {
+    "id": 727,
+    "district": "OVACIK",
+    "province_id": 78
+  },
+  {
+    "id": 728,
+    "district": "ÖDEMİŞ",
+    "province_id": 35
+  },
+  {
+    "id": 729,
+    "district": "ÖMERLİ",
+    "province_id": 47
+  },
+  {
+    "id": 730,
+    "district": "ÖZALP",
+    "province_id": 65
+  },
+  {
+    "id": 731,
+    "district": "ÖZVATAN",
+    "province_id": 38
+  },
+  {
+    "id": 732,
+    "district": "PALANDÖKEN",
+    "province_id": 25
+  },
+  {
+    "id": 733,
+    "district": "PALU",
+    "province_id": 23
+  },
+  {
+    "id": 734,
+    "district": "PAMUKKALE",
+    "province_id": 20
+  },
+  {
+    "id": 735,
+    "district": "PAMUKOVA",
+    "province_id": 54
+  },
+  {
+    "id": 736,
+    "district": "PASİNLER",
+    "province_id": 25
+  },
+  {
+    "id": 737,
+    "district": "PATNOS",
+    "province_id": 4
+  },
+  {
+    "id": 738,
+    "district": "PAYAS",
+    "province_id": 31
+  },
+  {
+    "id": 739,
+    "district": "PAZAR",
+    "province_id": 53
+  },
+  {
+    "id": 740,
+    "district": "PAZAR",
+    "province_id": 60
+  },
+  {
+    "id": 741,
+    "district": "PAZARCIK",
+    "province_id": 46
+  },
+  {
+    "id": 742,
+    "district": "PAZARLAR",
+    "province_id": 43
+  },
+  {
+    "id": 743,
+    "district": "PAZARYERİ",
+    "province_id": 11
+  },
+  {
+    "id": 744,
+    "district": "PAZARYOLU",
+    "province_id": 25
+  },
+  {
+    "id": 745,
+    "district": "PEHLİVANKÖY",
+    "province_id": 39
+  },
+  {
+    "id": 746,
+    "district": "PENDİK",
+    "province_id": 34
+  },
+  {
+    "id": 747,
+    "district": "PERŞEMBE",
+    "province_id": 52
+  },
+  {
+    "id": 748,
+    "district": "PERTEK",
+    "province_id": 62
+  },
+  {
+    "id": 749,
+    "district": "PERVARİ",
+    "province_id": 56
+  },
+  {
+    "id": 750,
+    "district": "PINARBAŞI",
+    "province_id": 37
+  },
+  {
+    "id": 751,
+    "district": "PINARBAŞI",
+    "province_id": 38
+  },
+  {
+    "id": 752,
+    "district": "PINARHİSAR",
+    "province_id": 39
+  },
+  {
+    "id": 753,
+    "district": "PİRAZİZ",
+    "province_id": 28
+  },
+  {
+    "id": 754,
+    "district": "POLATELİ",
+    "province_id": 79
+  },
+  {
+    "id": 755,
+    "district": "POLATLI",
+    "province_id": 6
+  },
+  {
+    "id": 756,
+    "district": "POSOF",
+    "province_id": 75
+  },
+  {
+    "id": 757,
+    "district": "POZANTI",
+    "province_id": 1
+  },
+  {
+    "id": 758,
+    "district": "PURSAKLAR",
+    "province_id": 6
+  },
+  {
+    "id": 759,
+    "district": "PÜLÜMÜR",
+    "province_id": 62
+  },
+  {
+    "id": 760,
+    "district": "PÜTÜRGE",
+    "province_id": 44
+  },
+  {
+    "id": 761,
+    "district": "REFAHİYE",
+    "province_id": 24
+  },
+  {
+    "id": 762,
+    "district": "REŞADİYE",
+    "province_id": 60
+  },
+  {
+    "id": 763,
+    "district": "REYHANLI",
+    "province_id": 31
+  },
+  {
+    "id": 764,
+    "district": "SAFRANBOLU",
+    "province_id": 78
+  },
+  {
+    "id": 765,
+    "district": "SAİMBEYLİ",
+    "province_id": 1
+  },
+  {
+    "id": 766,
+    "district": "SALIPAZARI",
+    "province_id": 55
+  },
+  {
+    "id": 767,
+    "district": "SALİHLİ",
+    "province_id": 45
+  },
+  {
+    "id": 768,
+    "district": "SAMANDAĞ",
+    "province_id": 31
+  },
+  {
+    "id": 769,
+    "district": "SAMSAT",
+    "province_id": 2
+  },
+  {
+    "id": 770,
+    "district": "SANCAKTEPE",
+    "province_id": 34
+  },
+  {
+    "id": 771,
+    "district": "SANDIKLI",
+    "province_id": 3
+  },
+  {
+    "id": 772,
+    "district": "SAPANCA",
+    "province_id": 54
+  },
+  {
+    "id": 773,
+    "district": "SARAY",
+    "province_id": 59
+  },
+  {
+    "id": 774,
+    "district": "SARAY",
+    "province_id": 65
+  },
+  {
+    "id": 775,
+    "district": "SARAYDÜZÜ",
+    "province_id": 57
+  },
+  {
+    "id": 776,
+    "district": "SARAYKENT",
+    "province_id": 66
+  },
+  {
+    "id": 777,
+    "district": "SARAYKÖY",
+    "province_id": 20
+  },
+  {
+    "id": 778,
+    "district": "SARAYÖNÜ",
+    "province_id": 42
+  },
+  {
+    "id": 779,
+    "district": "SARICAKAYA",
+    "province_id": 26
+  },
+  {
+    "id": 780,
+    "district": "SARIÇAM",
+    "province_id": 1
+  },
+  {
+    "id": 781,
+    "district": "SARIGÖL",
+    "province_id": 45
+  },
+  {
+    "id": 782,
+    "district": "SARIKAMIŞ",
+    "province_id": 36
+  },
+  {
+    "id": 783,
+    "district": "SARIKAYA",
+    "province_id": 66
+  },
+  {
+    "id": 784,
+    "district": "SARIOĞLAN",
+    "province_id": 38
+  },
+  {
+    "id": 785,
+    "district": "SARIVELİLER",
+    "province_id": 70
+  },
+  {
+    "id": 786,
+    "district": "SARIYAHŞİ",
+    "province_id": 68
+  },
+  {
+    "id": 787,
+    "district": "SARIYER",
+    "province_id": 34
+  },
+  {
+    "id": 788,
+    "district": "SARIZ",
+    "province_id": 38
+  },
+  {
+    "id": 789,
+    "district": "SARUHANLI",
+    "province_id": 45
+  },
+  {
+    "id": 790,
+    "district": "SASON",
+    "province_id": 72
+  },
+  {
+    "id": 791,
+    "district": "SAVAŞTEPE",
+    "province_id": 10
+  },
+  {
+    "id": 792,
+    "district": "SAVUR",
+    "province_id": 47
+  },
+  {
+    "id": 793,
+    "district": "SEBEN",
+    "province_id": 14
+  },
+  {
+    "id": 794,
+    "district": "SEFERİHİSAR",
+    "province_id": 35
+  },
+  {
+    "id": 795,
+    "district": "SELÇUK",
+    "province_id": 35
+  },
+  {
+    "id": 796,
+    "district": "SELÇUKLU",
+    "province_id": 42
+  },
+  {
+    "id": 797,
+    "district": "SELENDİ",
+    "province_id": 45
+  },
+  {
+    "id": 798,
+    "district": "SELİM",
+    "province_id": 36
+  },
+  {
+    "id": 799,
+    "district": "SENİRKENT",
+    "province_id": 32
+  },
+  {
+    "id": 800,
+    "district": "SERDİVAN",
+    "province_id": 54
+  },
+  {
+    "id": 801,
+    "district": "SERİK",
+    "province_id": 7
+  },
+  {
+    "id": 802,
+    "district": "SERİNHİSAR",
+    "province_id": 20
+  },
+  {
+    "id": 803,
+    "district": "SEYDİKEMER",
+    "province_id": 48
+  },
+  {
+    "id": 804,
+    "district": "SEYDİLER",
+    "province_id": 37
+  },
+  {
+    "id": 805,
+    "district": "SEYDİŞEHİR",
+    "province_id": 42
+  },
+  {
+    "id": 806,
+    "district": "SEYHAN",
+    "province_id": 1
+  },
+  {
+    "id": 807,
+    "district": "SEYİTGAZİ",
+    "province_id": 26
+  },
+  {
+    "id": 808,
+    "district": "SINDIRGI",
+    "province_id": 10
+  },
+  {
+    "id": 809,
+    "district": "SİLİFKE",
+    "province_id": 33
+  },
+  {
+    "id": 810,
+    "district": "SİLİVRİ",
+    "province_id": 34
+  },
+  {
+    "id": 811,
+    "district": "SİLOPİ",
+    "province_id": 73
+  },
+  {
+    "id": 812,
+    "district": "SİLVAN",
+    "province_id": 21
+  },
+  {
+    "id": 813,
+    "district": "SİMAV",
+    "province_id": 43
+  },
+  {
+    "id": 814,
+    "district": "SİNANPAŞA",
+    "province_id": 3
+  },
+  {
+    "id": 815,
+    "district": "SİNCAN",
+    "province_id": 6
+  },
+  {
+    "id": 816,
+    "district": "SİNCİK",
+    "province_id": 2
+  },
+  {
+    "id": 817,
+    "district": "SİVASLI",
+    "province_id": 64
+  },
+  {
+    "id": 818,
+    "district": "SİVEREK",
+    "province_id": 63
+  },
+  {
+    "id": 819,
+    "district": "SİVRİCE",
+    "province_id": 23
+  },
+  {
+    "id": 820,
+    "district": "SİVRİHİSAR",
+    "province_id": 26
+  },
+  {
+    "id": 821,
+    "district": "SOLHAN",
+    "province_id": 12
+  },
+  {
+    "id": 822,
+    "district": "SOMA",
+    "province_id": 45
+  },
+  {
+    "id": 823,
+    "district": "SORGUN",
+    "province_id": 66
+  },
+  {
+    "id": 824,
+    "district": "SÖĞÜT",
+    "province_id": 11
+  },
+  {
+    "id": 825,
+    "district": "SÖĞÜTLÜ",
+    "province_id": 54
+  },
+  {
+    "id": 826,
+    "district": "SÖKE",
+    "province_id": 9
+  },
+  {
+    "id": 827,
+    "district": "SULAKYURT",
+    "province_id": 71
+  },
+  {
+    "id": 828,
+    "district": "SULTANBEYLİ",
+    "province_id": 34
+  },
+  {
+    "id": 829,
+    "district": "SULTANDAĞI",
+    "province_id": 3
+  },
+  {
+    "id": 830,
+    "district": "SULTANGAZİ",
+    "province_id": 34
+  },
+  {
+    "id": 831,
+    "district": "SULTANHİSAR",
+    "province_id": 9
+  },
+  {
+    "id": 832,
+    "district": "SULUOVA",
+    "province_id": 5
+  },
+  {
+    "id": 833,
+    "district": "SULUSARAY",
+    "province_id": 60
+  },
+  {
+    "id": 834,
+    "district": "SUMBAS",
+    "province_id": 80
+  },
+  {
+    "id": 835,
+    "district": "SUNGURLU",
+    "province_id": 19
+  },
+  {
+    "id": 836,
+    "district": "SUR",
+    "province_id": 21
+  },
+  {
+    "id": 837,
+    "district": "SURUÇ",
+    "province_id": 63
+  },
+  {
+    "id": 838,
+    "district": "SUSURLUK",
+    "province_id": 10
+  },
+  {
+    "id": 839,
+    "district": "SUSUZ",
+    "province_id": 36
+  },
+  {
+    "id": 840,
+    "district": "SUŞEHRİ",
+    "province_id": 58
+  },
+  {
+    "id": 841,
+    "district": "SÜLEYMANPAŞA",
+    "province_id": 59
+  },
+  {
+    "id": 842,
+    "district": "SÜLOĞLU",
+    "province_id": 22
+  },
+  {
+    "id": 843,
+    "district": "SÜRMENE",
+    "province_id": 61
+  },
+  {
+    "id": 844,
+    "district": "SÜTÇÜLER",
+    "province_id": 32
+  },
+  {
+    "id": 845,
+    "district": "ŞABANÖZÜ",
+    "province_id": 18
+  },
+  {
+    "id": 846,
+    "district": "ŞAHİNBEY",
+    "province_id": 27
+  },
+  {
+    "id": 847,
+    "district": "ŞALPAZARI",
+    "province_id": 61
+  },
+  {
+    "id": 848,
+    "district": "ŞAPHANE",
+    "province_id": 43
+  },
+  {
+    "id": 849,
+    "district": "ŞARKIŞLA",
+    "province_id": 58
+  },
+  {
+    "id": 850,
+    "district": "ŞARKİKARAAĞAÇ",
+    "province_id": 32
+  },
+  {
+    "id": 851,
+    "district": "ŞARKÖY",
+    "province_id": 59
+  },
+  {
+    "id": 852,
+    "district": "ŞAVŞAT",
+    "province_id": 8
+  },
+  {
+    "id": 853,
+    "district": "ŞEBİNKARAHİSAR",
+    "province_id": 28
+  },
+  {
+    "id": 854,
+    "district": "ŞEFAATLİ",
+    "province_id": 66
+  },
+  {
+    "id": 855,
+    "district": "ŞEHİTKAMİL",
+    "province_id": 27
+  },
+  {
+    "id": 856,
+    "district": "ŞEHZADELER",
+    "province_id": 45
+  },
+  {
+    "id": 857,
+    "district": "ŞEMDİNLİ",
+    "province_id": 30
+  },
+  {
+    "id": 858,
+    "district": "ŞENKAYA",
+    "province_id": 25
+  },
+  {
+    "id": 859,
+    "district": "ŞENPAZAR",
+    "province_id": 37
+  },
+  {
+    "id": 860,
+    "district": "ŞEREFLİKOÇHİSAR",
+    "province_id": 6
+  },
+  {
+    "id": 861,
+    "district": "ŞİLE",
+    "province_id": 34
+  },
+  {
+    "id": 862,
+    "district": "ŞİRAN",
+    "province_id": 29
+  },
+  {
+    "id": 863,
+    "district": "ŞİRVAN",
+    "province_id": 56
+  },
+  {
+    "id": 864,
+    "district": "ŞİŞLİ",
+    "province_id": 34
+  },
+  {
+    "id": 865,
+    "district": "ŞUHUT",
+    "province_id": 3
+  },
+  {
+    "id": 866,
+    "district": "TALAS",
+    "province_id": 38
+  },
+  {
+    "id": 867,
+    "district": "TARAKLI",
+    "province_id": 54
+  },
+  {
+    "id": 868,
+    "district": "TARSUS",
+    "province_id": 33
+  },
+  {
+    "id": 869,
+    "district": "TAŞKENT",
+    "province_id": 42
+  },
+  {
+    "id": 870,
+    "district": "TAŞKÖPRÜ",
+    "province_id": 37
+  },
+  {
+    "id": 871,
+    "district": "TAŞLIÇAY",
+    "province_id": 4
+  },
+  {
+    "id": 872,
+    "district": "TAŞOVA",
+    "province_id": 5
+  },
+  {
+    "id": 873,
+    "district": "TATVAN",
+    "province_id": 13
+  },
+  {
+    "id": 874,
+    "district": "TAVAS",
+    "province_id": 20
+  },
+  {
+    "id": 875,
+    "district": "TAVŞANLI",
+    "province_id": 43
+  },
+  {
+    "id": 876,
+    "district": "TEFENNİ",
+    "province_id": 15
+  },
+  {
+    "id": 877,
+    "district": "TEKKEKÖY",
+    "province_id": 55
+  },
+  {
+    "id": 878,
+    "district": "TEKMAN",
+    "province_id": 25
+  },
+  {
+    "id": 879,
+    "district": "TEPEBAŞI",
+    "province_id": 26
+  },
+  {
+    "id": 880,
+    "district": "TERCAN",
+    "province_id": 24
+  },
+  {
+    "id": 881,
+    "district": "TERMAL",
+    "province_id": 77
+  },
+  {
+    "id": 882,
+    "district": "TERME",
+    "province_id": 55
+  },
+  {
+    "id": 883,
+    "district": "TİLLO",
+    "province_id": 56
+  },
+  {
+    "id": 884,
+    "district": "TİRE",
+    "province_id": 35
+  },
+  {
+    "id": 885,
+    "district": "TİREBOLU",
+    "province_id": 28
+  },
+  {
+    "id": 886,
+    "district": "TOMARZA",
+    "province_id": 38
+  },
+  {
+    "id": 887,
+    "district": "TONYA",
+    "province_id": 61
+  },
+  {
+    "id": 888,
+    "district": "TOPRAKKALE",
+    "province_id": 80
+  },
+  {
+    "id": 889,
+    "district": "TORBALI",
+    "province_id": 35
+  },
+  {
+    "id": 890,
+    "district": "TOROSLAR",
+    "province_id": 33
+  },
+  {
+    "id": 891,
+    "district": "TORTUM",
+    "province_id": 25
+  },
+  {
+    "id": 892,
+    "district": "TORUL",
+    "province_id": 29
+  },
+  {
+    "id": 893,
+    "district": "TOSYA",
+    "province_id": 37
+  },
+  {
+    "id": 894,
+    "district": "TUFANBEYLİ",
+    "province_id": 1
+  },
+  {
+    "id": 895,
+    "district": "TURGUTLU",
+    "province_id": 45
+  },
+  {
+    "id": 896,
+    "district": "TURHAL",
+    "province_id": 60
+  },
+  {
+    "id": 897,
+    "district": "TUŞBA",
+    "province_id": 65
+  },
+  {
+    "id": 898,
+    "district": "TUT",
+    "province_id": 2
+  },
+  {
+    "id": 899,
+    "district": "TUTAK",
+    "province_id": 4
+  },
+  {
+    "id": 900,
+    "district": "TUZLA",
+    "province_id": 34
+  },
+  {
+    "id": 901,
+    "district": "TUZLUCA",
+    "province_id": 76
+  },
+  {
+    "id": 902,
+    "district": "TUZLUKÇU",
+    "province_id": 42
+  },
+  {
+    "id": 903,
+    "district": "TÜRKELİ",
+    "province_id": 57
+  },
+  {
+    "id": 904,
+    "district": "TÜRKOĞLU",
+    "province_id": 46
+  },
+  {
+    "id": 905,
+    "district": "UĞURLUDAĞ",
+    "province_id": 19
+  },
+  {
+    "id": 906,
+    "district": "ULA",
+    "province_id": 48
+  },
+  {
+    "id": 907,
+    "district": "ULAŞ",
+    "province_id": 58
+  },
+  {
+    "id": 908,
+    "district": "ULUBEY",
+    "province_id": 52
+  },
+  {
+    "id": 909,
+    "district": "ULUBEY",
+    "province_id": 64
+  },
+  {
+    "id": 910,
+    "district": "ULUBORLU",
+    "province_id": 32
+  },
+  {
+    "id": 911,
+    "district": "ULUDERE",
+    "province_id": 73
+  },
+  {
+    "id": 912,
+    "district": "ULUKIŞLA",
+    "province_id": 51
+  },
+  {
+    "id": 913,
+    "district": "ULUS",
+    "province_id": 74
+  },
+  {
+    "id": 914,
+    "district": "URLA",
+    "province_id": 35
+  },
+  {
+    "id": 915,
+    "district": "UZUNDERE",
+    "province_id": 25
+  },
+  {
+    "id": 916,
+    "district": "UZUNKÖPRÜ",
+    "province_id": 22
+  },
+  {
+    "id": 917,
+    "district": "ÜMRANİYE",
+    "province_id": 34
+  },
+  {
+    "id": 918,
+    "district": "ÜNYE",
+    "province_id": 52
+  },
+  {
+    "id": 919,
+    "district": "ÜRGÜP",
+    "province_id": 50
+  },
+  {
+    "id": 920,
+    "district": "ÜSKÜDAR",
+    "province_id": 34
+  },
+  {
+    "id": 921,
+    "district": "ÜZÜMLÜ",
+    "province_id": 24
+  },
+  {
+    "id": 922,
+    "district": "VAKFIKEBİR",
+    "province_id": 61
+  },
+  {
+    "id": 923,
+    "district": "VARTO",
+    "province_id": 49
+  },
+  {
+    "id": 924,
+    "district": "VEZİRKÖPRÜ",
+    "province_id": 55
+  },
+  {
+    "id": 925,
+    "district": "VİRANŞEHİR",
+    "province_id": 63
+  },
+  {
+    "id": 926,
+    "district": "VİZE",
+    "province_id": 39
+  },
+  {
+    "id": 927,
+    "district": "YAĞLIDERE",
+    "province_id": 28
+  },
+  {
+    "id": 928,
+    "district": "YAHŞİHAN",
+    "province_id": 71
+  },
+  {
+    "id": 929,
+    "district": "YAHYALI",
+    "province_id": 38
+  },
+  {
+    "id": 930,
+    "district": "YAKAKENT",
+    "province_id": 55
+  },
+  {
+    "id": 931,
+    "district": "YAKUTİYE",
+    "province_id": 25
+  },
+  {
+    "id": 932,
+    "district": "YALIHÜYÜK",
+    "province_id": 42
+  },
+  {
+    "id": 933,
+    "district": "YALVAÇ",
+    "province_id": 32
+  },
+  {
+    "id": 934,
+    "district": "YAPRAKLI",
+    "province_id": 18
+  },
+  {
+    "id": 935,
+    "district": "YATAĞAN",
+    "province_id": 48
+  },
+  {
+    "id": 936,
+    "district": "YAVUZELİ",
+    "province_id": 27
+  },
+  {
+    "id": 937,
+    "district": "YAYLADAĞI",
+    "province_id": 31
+  },
+  {
+    "id": 938,
+    "district": "YAYLADERE",
+    "province_id": 12
+  },
+  {
+    "id": 939,
+    "district": "YAZIHAN",
+    "province_id": 44
+  },
+  {
+    "id": 940,
+    "district": "YEDİSU",
+    "province_id": 12
+  },
+  {
+    "id": 941,
+    "district": "YENİCE",
+    "province_id": 17
+  },
+  {
+    "id": 942,
+    "district": "YENİCE",
+    "province_id": 78
+  },
+  {
+    "id": 943,
+    "district": "YENİÇAĞA",
+    "province_id": 14
+  },
+  {
+    "id": 944,
+    "district": "YENİFAKILI",
+    "province_id": 66
+  },
+  {
+    "id": 945,
+    "district": "YENİMAHALLE",
+    "province_id": 6
+  },
+  {
+    "id": 946,
+    "district": "YENİPAZAR",
+    "province_id": 9
+  },
+  {
+    "id": 947,
+    "district": "YENİPAZAR",
+    "province_id": 11
+  },
+  {
+    "id": 948,
+    "district": "YENİŞARBADEMLİ",
+    "province_id": 32
+  },
+  {
+    "id": 949,
+    "district": "YENİŞEHİR",
+    "province_id": 16
+  },
+  {
+    "id": 950,
+    "district": "YENİŞEHİR",
+    "province_id": 21
+  },
+  {
+    "id": 951,
+    "district": "YENİŞEHİR",
+    "province_id": 33
+  },
+  {
+    "id": 952,
+    "district": "YERKÖY",
+    "province_id": 66
+  },
+  {
+    "id": 953,
+    "district": "YEŞİLHİSAR",
+    "province_id": 38
+  },
+  {
+    "id": 954,
+    "district": "YEŞİLLİ",
+    "province_id": 47
+  },
+  {
+    "id": 955,
+    "district": "YEŞİLOVA",
+    "province_id": 15
+  },
+  {
+    "id": 956,
+    "district": "YEŞİLYURT",
+    "province_id": 44
+  },
+  {
+    "id": 957,
+    "district": "YEŞİLYURT",
+    "province_id": 60
+  },
+  {
+    "id": 958,
+    "district": "YIĞILCA",
+    "province_id": 81
+  },
+  {
+    "id": 959,
+    "district": "YILDIRIM",
+    "province_id": 16
+  },
+  {
+    "id": 960,
+    "district": "YILDIZELİ",
+    "province_id": 58
+  },
+  {
+    "id": 961,
+    "district": "YOMRA",
+    "province_id": 61
+  },
+  {
+    "id": 962,
+    "district": "YUMURTALIK",
+    "province_id": 1
+  },
+  {
+    "id": 963,
+    "district": "YUNAK",
+    "province_id": 42
+  },
+  {
+    "id": 964,
+    "district": "YUNUSEMRE",
+    "province_id": 45
+  },
+  {
+    "id": 965,
+    "district": "YUSUFELİ",
+    "province_id": 8
+  },
+  {
+    "id": 966,
+    "district": "YÜKSEKOVA",
+    "province_id": 30
+  },
+  {
+    "id": 967,
+    "district": "YÜREĞİR",
+    "province_id": 1
+  },
+  {
+    "id": 968,
+    "district": "ZARA",
+    "province_id": 58
+  },
+  {
+    "id": 969,
+    "district": "ZEYTİNBURNU",
+    "province_id": 34
+  },
+  {
+    "id": 970,
+    "district": "ZİLE",
+    "province_id": 60
+  }
+]}

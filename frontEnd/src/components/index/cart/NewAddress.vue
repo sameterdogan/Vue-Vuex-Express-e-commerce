@@ -20,15 +20,18 @@
                                  <input type="tel" class="form-control" placeholder="Phone ">
                              </div>
                              <div class="col">
-                                 <select name='povince' class='form-control' id='province'>
-                                     <option value='istanbul'>istanbul</option>
+                                 <select v-model='chosenProvinceId' @change='provinceChange($event)' name='province' class='form-control' id='province'>
+                                     <option v-for='province in provinces' :value='province.id' :key='province.id'>{{province.province}}</option>
+
                                  </select>
+                                 {{chosenProvince}}
                              </div>
                          </div>
                          <div class="row">
                              <div class='col'>
-                                 <select name='district' class='form-control' id='district'>
-                                     <option value='Ümraniye'>Ümraniye</option>
+                                 <select  name='district' class='form-control' id='district'>
+                                     <option value='choose' disabled> choose</option>
+                                     <option  v-for='district in counties' :key='district.id' :value='district.id'>{{district.district}}</option>
                                  </select>
                              </div>
                              <div class='col'>
@@ -50,8 +53,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
     name: 'NewAddress',
+    data(){
+        return{
+            chosenProvinceId:34
+        }
+    },
+    created() {
+        this.$store.dispatch("initProvinces")
+        this.$store.dispatch("initCounties",34)
+    },
     methods:{
         handleNewAddress(){
             console.log("clisk")
@@ -60,6 +74,13 @@ export default {
             this.$emit('closeNewAddress')
             document.querySelector('body').style.setProperty('overflow', 'visible')
         },
+        provinceChange($event){
+            this.$store.dispatch("initCounties",Number($event.target.value))
+        }
+    },
+    computed:{
+        ...mapGetters({provinces:"getProvinces"}),
+        ...mapGetters({counties:"getCounties"})
     }
 }
 </script>
