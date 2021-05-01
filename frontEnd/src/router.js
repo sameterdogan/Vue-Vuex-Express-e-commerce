@@ -100,6 +100,11 @@ export const router = new VueRouter({
             component: () => import('@/pages/index/Cart'),
         },
         {
+            name: 'address-selection',
+            path: '/address-selection',
+            component: () => import('@/pages/index/AddressSelection'),
+        },
+        {
             name: 'checkout',
             path: '/cart-checkout',
             component: () => import('@/pages/index/CartCheckout'),
@@ -109,7 +114,7 @@ export const router = new VueRouter({
         },
         {
             name: 'result-checkout',
-            path: '/result-checkout/:result',
+            path: '/result-checkout',
             component: () => import('@/pages/index/ResultCheckout'),
         },
         {

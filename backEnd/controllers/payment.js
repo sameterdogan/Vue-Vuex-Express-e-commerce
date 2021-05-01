@@ -88,6 +88,6 @@ export const callbackUrl = async (req, res, next) => {
         token: req.body.token,
     }, function(err, result) {
         console.log(err, result)
-        res.redirect(`http://localhost:8080/result-checkout/${err?false:true}`)
+        res.redirect(`http://localhost:8080/result-checkout?result=${JSON.stringify(result)}`)
     })
 }

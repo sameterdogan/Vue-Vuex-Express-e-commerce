@@ -29,7 +29,10 @@ select{
     background-color: #ffffff !important;
     border: solid black 1px !important;
 }
-
+.button-color{
+    background-color: #0177C1 !important;
+    color: white !important;
+}
 main{
     min-height: 93vh;
     padding: 2rem;

@@ -1,8 +1,6 @@
 <template>
 
     <div class='container'>
-        <div id='gist'></div>
-        <div @submit.prevent='toPayment' id='iyzipay-checkout-form' class='popup'></div>
         <h2 class='cart-title'>SHOPPING CART</h2>
         <hr class='cart-title-hr'>
         <div class='row'>
@@ -26,17 +24,8 @@
 
                 </div>
             </div>
-
             <div class='col-lg-4'>
-              <div class='cart'>
-                  <div class='card-header'>
-                      ORDER SUMMARY
-                  </div>
-                  <div class='card-body'>
-                      <h4><span>TOTAL</span>  <span class='float-right'>$ {{totalPrice}}</span></h4>
-                      <button @click='toCheckout' class='btn btn-block btn-primary btn-sm my-4'>PROCEED TO CHECKOUT</button>
-                  </div>
-              </div>
+             <order-summary/>
             </div>
         </div>
     </div>
@@ -45,20 +34,20 @@
 <script>
 import { mapGetters } from 'vuex'
 import Item from '@/components/index/cart/Item'
+import OrderSummary from '@/components/index/cart/OrderSummary'
 
 export default {
     name: 'Cart',
-    components: { Item, },
+    components: { OrderSummary, Item, },
+    created() {
+        if(this.$route.params.successPayment){
+            console.log(this.$route.params.successPayment)
+        }
+    },
     computed:{
         ...mapGetters({ items: 'getItems' }),
-        ...mapGetters({totalPrice:"getTotalPrice"})
     },
-    methods:{
-        toCheckout(){
-            this.$store.dispatch("toCheckout")
-        },
 
-    },
 
 }
 </script>

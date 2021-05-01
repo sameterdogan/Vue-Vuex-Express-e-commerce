@@ -1,11 +1,9 @@
 <template>
     <div>
-        <div class='quick-view-wrapper'>
-
-
-                <div class='quick-view-card'>
-                    <div class='row quick-view-card-content'>
-                        <button @click='closeQuickView' class='btn btn-outline-secondary btn-sm  close-quick-view'>
+        <div class='modal-wrapper'>
+                <div class='modal-cart'>
+                    <div class='row modal-cart-content'>
+                        <button @click='closeQuickView' class='btn btn-outline-secondary btn-sm  close-modal'>
                             &times;
                         </button>
                         <div class='col-lg-6 col-md-6 col-12 text-center'>
@@ -60,11 +58,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 
 
 
-.quick-view-wrapper {
+.modal-wrapper {
     position: fixed;
     display: flex;
     top: 0;
@@ -76,7 +74,7 @@ export default {
     opacity: 1;
 }
 
-.quick-view-card {
+.modal-cart {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,7 +82,7 @@ export default {
     margin: 1.25rem auto;
 }
 
-.quick-view-card-content {
+.modal-cart-content {
     position: relative;
     width: 100%;
     background-color: #fff;
@@ -93,14 +91,15 @@ export default {
     padding: 4rem;
 }
 
-.close-quick-view {
+.close-modal{
     position: absolute;
     right: 20px;
     top: 20px;
     z-index: 3000;
+    cursor: pointer;
 }
 @media screen and (max-width: 768px) {
-    .quick-view-card-content{
+    .modal-cart-content{
         padding: 2rem;
     }
     .quick-view-name{
@@ -109,7 +108,7 @@ export default {
     }
 }
 @media screen and (max-width: 426px) {
-    .quick-view-card-content{
+    .modal-cart-content{
         padding: 1rem;
     }
     .quick-view-name{

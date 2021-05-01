@@ -45,6 +45,13 @@ const ModuleCart = {
                 console.log(state.cart.totalPrice)
                 localStorage.setItem('cart', JSON.stringify(state.cart))
             }
+        },
+        RESET_CART(state){
+            localStorage.removeItem("cart")
+            state.cart={
+                items:[],
+                totalPrice:0
+            }
         }
     },
     actions:{
