@@ -5,7 +5,6 @@ const moduleMessage = {
     },
     mutations: {
         INIT_MESSAGE: (state, message) => {
-            console.log(Math.random())
             message.id=Date.now()*Math.random()
             state.messages.push(message)
             setTimeout(()=>{

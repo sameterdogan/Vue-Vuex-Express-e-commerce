@@ -10,7 +10,6 @@ export const getCategories = async (req, res, next) => {
         categories,
     })
 }
-
 export const getByIdCategory = async (req, res, next) => {
     try {
         const category = await CategoryModel.findById(req.params.categoryId)

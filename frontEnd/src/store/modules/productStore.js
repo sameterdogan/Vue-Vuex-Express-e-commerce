@@ -141,14 +141,12 @@ const moduleProduct = {
             return state.product
         },
         getRelatedProducts(state) {
-            console.log(state.relatedProducts)
             return state.relatedProducts
         },
         getNewArrivals(state) {
             return state.newArrivals
         },
         getProductsByCategory(state) {
-            console.log('computed tetiklendi')
             return state.productsByCategory
         },
         getQuickViewProduct(state){

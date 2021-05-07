@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import store from '@/store'
+import store from '@/store/store'
 
 Vue.use(VueRouter)
 
@@ -103,6 +103,10 @@ export const router = new VueRouter({
             name: 'address-selection',
             path: '/address-selection',
             component: () => import('@/pages/index/AddressSelection'),
+            meta: {
+                layout: 'default',
+                requiresAuth: true,
+            },
         },
         {
             name: 'checkout',
@@ -110,12 +114,18 @@ export const router = new VueRouter({
             component: () => import('@/pages/index/CartCheckout'),
             meta: {
                 layout: 'blank',
+                requiresAuth: true,
+
             },
         },
         {
             name: 'result-checkout',
             path: '/result-checkout',
             component: () => import('@/pages/index/ResultCheckout'),
+            meta: {
+                layout: 'default',
+                requiresAuth: true,
+            },
         },
         {
             path: '*',

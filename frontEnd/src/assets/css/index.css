@@ -17,18 +17,18 @@ td {
     text-align: center;
     font-weight: normal;
 }
-input,textarea{
+/*input,textarea{
     box-shadow: none !important;
     outline: none !important;
 }
 input:not([type=file]),select,textarea{
     border: 1px solid black !important;
     border-radius: 1rem !important;
-}
-select{
+}*/
+/*select{
     background-color: #ffffff !important;
     border: solid black 1px !important;
-}
+}*/
 .button-color{
     background-color: #0177C1 !important;
     color: white !important;
@@ -71,7 +71,7 @@ main{
     background-color: #fff;
     background-clip:padding-box ;
     border-radius:.3rem ;
-    padding: 4rem;
+    padding: 3rem
 }
 
 .close-modal{
@@ -80,4 +80,39 @@ main{
     top: 20px;
     z-index: 3000;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 1440px) {
+
+}
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    .new-arrivals {
+        display: none;
+    }
+    .main{
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    body {
+        font-size: 14px;
+    }
+
+    html, body {
+        font-size: 12px;
+    }
+    .main {
+        padding: .5rem;
+
+    }
+    .modal-cart-content{
+        padding: 4rem 2rem;
+    }
 }

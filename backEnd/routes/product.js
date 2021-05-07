@@ -15,13 +15,9 @@ import {
     getNewArrivalsProducts,
     getQuickViewProduct,
 } from '../controllers/product'
-import {checkout,callbackUrl} from "../controllers/payment"
 
 const router = express.Router()
 
-router.post("/checkout/payment",checkout)
-
-router.post("/callback/url/call/s",callbackUrl)
 
 router.get('/', productsQuery, getProducts)
 

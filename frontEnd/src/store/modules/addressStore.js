@@ -2,43 +2,98 @@ import axios from 'axios'
 
 const moduleAddress = {
     state: {
-        provinces: null,
+        cities: null,
         counties: null,
+        neighborhoods:null,
+        addresses:[],
+        address:{}
     },
     mutations: {
-        INIT_PROVINCES(state, province) {
-            state.provinces = province
+        INIT_CITIES(state, city) {
+            state.cities = city
         },
 
         INIT_COUNTIES(state, counties) {
             state.counties = counties
         },
+        INIT_NEIGHBORHOODS(state,neighborhoods){
+            state.neighborhoods=neighborhoods
+        },
+        INIT_ADDRESSES(state,addresses){
+          state.addresses =addresses
+        },
+        INIT_ADDRESS(state,address){
+          state.address=address
+        },
+        ADD_ADDRESS(state,address){
+            state.addresses.push(address)
+        }
     },
     actions: {
-        initProvinces({ commit }) {
-            axios({ url: '/json/province.json', baseURL: '' })
+        initCities({ commit }) {
+             axios({ url: '/json/city.json', baseURL: '' })
                 .then(res => {
-                    console.log(res.data.provinces)
-                    commit('INIT_PROVINCES', res.data.provinces)
-                }).catch(err => console.log(err.response))
+                    console.log(res.data.cities)
+                    commit('INIT_CITIES', res.data.cities)
+                })
         },
-        initCounties({ commit }, provinceId) {
-            axios({ url: '/json/district.json', baseURL: '' })
+        initCounties({ commit }, cityId) {
+             axios({ url: '/json/district.json', baseURL: '' })
                 .then(res => {
                     console.log(res.data.counties)
-                    const filterDistrict = res.data.counties.filter(district => district.province_id === provinceId)
+                    const filterDistrict = res.data.counties.filter(district => district.city_id === cityId)
                     commit('INIT_COUNTIES', filterDistrict)
-                }).catch(err => console.log(err.response))
+                })
         },
+        initNeighborhoods({commit},districtId){
+             axios({ url: '/json/neighborhood.json', baseURL: '' })
+                .then(res => {
+                    console.log(res.data.neighborhoods)
+                    const filterNeighborhoods = res.data.neighborhoods.filter(neighborhood => neighborhood.district_id === districtId)
+                    console.log(filterNeighborhoods)
+                    commit('INIT_NEIGHBORHOODS', filterNeighborhoods)
+                })
+        },
+        initAddresses({commit}){
+            axios.get("address")
+                .then(res=>{
+                    commit("INIT_ADDRESSES",res.data.addresses)
+                    console.log(res.data)
+                })
+        },
+        initAddress({commit},addressId){
+          axios.get(`address/${addressId}`)
+              .then(res=>{
+                  commit("INIT_ADDRESS",res.data.address)
+                  console.log(res.data)
+              })
+        },
+        addAddress({commit},address){
+            axios.post("address/add-address",address)
+                .then(res=>{
+                    console.log(res.data)
+                    commit("ADD_ADDRESS",res.data.addAddress)
+
+                })
+        }
     },
 
     getters: {
-        getProvinces(state) {
-            return state.provinces
+        getCities(state) {
+            return state.cities
         },
         getCounties(state) {
             return state.counties
         },
+        getNeighborhoods(state){
+            return state.neighborhoods
+        },
+        getAddresses(state){
+            return state.addresses
+        },
+        getAddress(state){
+            return state.address
+        }
     },
 }
 

@@ -59,11 +59,32 @@ ProductSchema.pre('save', function(next) {
     next()
 })
 
-ProductSchema.pre('remove',  function(next) {
-         fs.unlink(path.join(rootDir, '/assets/images/productImages/' + this.image))
-             .catch(err=>console.log(err))
-         next()
+ProductSchema.pre('remove', function(next) {
+    fs.unlink(path.join(rootDir, '/assets/images/productImages/' + this.image))
+        .catch(err => console.log(err))
+    next()
 })
 
+ProductSchema.statics.stockCheckProduct = (products, orderProducts) => {
+    const stockError={
+        messages:[],
+        productsIdAndStock:[]
+    }
+
+    products.forEach(product => {
+
+        for (const orderProduct of orderProducts) {
+            if (String(product._id) === orderProduct._id) {
+                if (product.stock < orderProduct.quantity) {
+                    stockError.messages.push(`${product.name} You can buy a maximum of ${product.stock} products.`)
+                    stockError.productsIdAndStock.push({_id:product._id,stock:product.stock})
+                }
+            }
+        }
+    })
+    return stockError
+
+
+}
 export default mongoose.model('Product', ProductSchema)
 

@@ -8,10 +8,16 @@ const OrderSchema=new Schema({
         ref:"User",
         required:true
     },
+    address:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Address",
+        required:true
+    },
     items:[],
     totalPrice:{
         type:Number,
-    }
+    },
+
 })
 
 export default mongoose.model("Order",OrderSchema)

@@ -23,10 +23,14 @@
             ${{propsItem.price}}
         </div>
         <div class='col-3'>
+            <p v-if='stockError===true' class='stock-error' >{{stockErrorInfo.stock}}</p>
+            {{stockError}}
             <button @click='qtyDown' class='btn qty-down shadow-none'>-</button>
-            <input ref='cartQtyInput' class='input-qty' type='text' disabled
+            <input ref='cartQtyInput' :class="{'input-stock-error':stockError }" class='input-qty' type='text' disabled
                    :value='propsItem.quantity'>
             <button @click='qtyUp' class='btn qut-up shadow-none'>+</button>
+
+
 
         </div>
         <div class='col-1'>
@@ -47,11 +51,25 @@
 <script>
 export default {
     name: 'Item',
-    props: ['item'],
+    props: ['item',"stockErrorProductsIdAndStock"],
     data() {
         return {
             propsItem:JSON.parse(this.item),
             changeItem: {},
+            stockErrorInfo:{},
+            stockError:false
+        }
+    },
+    created() {
+        console.log(this.stockErrorProductsIdAndStock)
+        if (this.stockErrorProductsIdAndStock){
+            for (let s=0;s<this.stockErrorProductsIdAndStock.length;s++){
+                if (this.stockErrorProductsIdAndStock[s]._id===this.propsItem._id){
+                    this.stockErrorInfo=this.stockErrorProductsIdAndStock[s]
+                    this.stockError=true
+                    this.$refs.cartQtyInput.style.border="solid red 1px"
+                }
+            }
         }
     },
     watch:{
@@ -61,17 +79,18 @@ export default {
     },
     methods: {
         qtyDown() {
-
             if (Number(this.$refs.cartQtyInput.value) > 1) {
                 this.$store.commit('DECREASE_ITEM', this.propsItem._id)
+                console.log(Number(this.$refs.cartQtyInput.value))
+                console.log(this.stockErrorInfo.stock)
+                if (Number(this.$refs.cartQtyInput.value)-1<=this.stockErrorInfo.stock){
+                    this.$refs.cartQtyInput.style.border="solid rgba(118, 118, 118, 0.3) 1px"
+                }
             }
-
         },
         qtyUp() {
             if (Number(this.$refs.cartQtyInput.value) < this.propsItem.stock) {
-                this.changeItem = { ...this.propsItem }
-                this.changeItem['quantity'] = 1
-                this.$store.commit('ADD_TO_CART', this.changeItem)
+                this.$store.commit("INCREASE_ITEM",this.propsItem._id)
             }
         },
         deleteFromCart() {
@@ -117,6 +136,9 @@ tbody > tr > td:not(.first-td) {
 .input-qty {
     width: 60px;
     text-align: center;
+}
+.input-stock-error{
+    border: solid red 1px;
 }
 
 

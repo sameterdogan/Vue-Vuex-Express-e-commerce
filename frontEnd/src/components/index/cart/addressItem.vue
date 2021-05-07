@@ -2,18 +2,20 @@
     <div class='address-wrapper'>
         <div class='address-option'>
             <div class="form-check">
-                <input class="form-check-input address-radio" type="radio" name="address" id="address-radio">
-                <label class="form-check-label address-radio-label" for="address-radio">
-                    Ümraniye/İstanbul
+                <input class="form-check-input address-radio" @change='changeAddress()' type="radio" :value='address._id' v-model='pickedAddress' name="address" :id="randomRadioId">
+                <label class="form-check-label address-radio-label" :for="randomRadioId">
+                    <p class='district '>{{address.district}} </p>
+                    /
+                    <p class='city'>{{address.city}} </p>
+
                 </label>
             </div>
         </div>
         <div class='address-info-cart'>
-
-            <span class='name'>Samet Erdoğan</span>
-            <span class='phone'>535 971 0150</span>
-            <span class='neighborhood'>Kazım Karabeki...</span>
-            <span class='province-district'>Ümraniye/İstanbul</span>
+            <span class='name'>{{address.name}} {{address.surname}}</span>
+            <span class='phone'>{{address.phone}}</span>
+            <span class='neighborhood'>{{address.neighborhood}}</span>
+            <span class='province-district'>{{address.district}}</span>
         </div>
     </div>
 </template>
@@ -21,10 +23,22 @@
 <script>
 export default {
     name: 'addressItem',
+    props:["address"],
+    data(){
+        return{
+            randomRadioId:new Date()*Math.random(),
+            pickedAddress:null
+        }
+    },
+    methods:{
+        changeAddress(){
+            this.$store.dispatch("initAddress",this.pickedAddress)
+        }
+    }
 }
 </script>
 
-<style scoped>
+<style >
 .address-info-cart{
     position: relative;
     width: 176px;
@@ -49,6 +63,22 @@ export default {
 }
 .address-radio-label{
     color: #0177C1;
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 16px;
+    cursor: pointer;
+    font-style: italic;
 }
+.address-radio-label p{
+    display: inline-block;
+    text-transform: lowercase;
+    margin: 0;
+}
+.address-radio-label p::first-letter{
+    text-transform: capitalize;
+}
+
+
+
 </style>

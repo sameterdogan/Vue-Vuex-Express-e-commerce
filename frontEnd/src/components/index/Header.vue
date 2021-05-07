@@ -34,7 +34,7 @@ import { mapGetters } from 'vuex'
 export default {
   name: "Header",
     computed:{
-      ...mapGetters({cartCount:"getCartCount"})
+      ...mapGetters({cartCount:"getCartCount"}),
     }
 }
 </script>

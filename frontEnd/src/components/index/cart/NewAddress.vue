@@ -1,54 +1,83 @@
 <template>
     <div class='modal-wrapper'>
-          <div class='modal-cart'>
-                 <div class='row modal-cart-content'>
-                    <div class='new-address-modal-title-wrapper'>
-                        <span class='new-address-modal-title'>  New Address Create</span>
-                        <span @click='closeQuickView' class='float-right close-modal'>&times;</span>
+        <div class='modal-cart'>
+            <div class='row modal-cart-content'>
+                <span @click='closeQuickView' class='float-right close-modal'>&times;</span>
+                <form class='new-address-modal-form'>
+                    <div class='row'>
+                        <div class='col-lg-6 col-md-6 col-sm-12 my-1'>
+                            <label for=''>Name</label>
+                            <input type='text' v-model='address.name' class='form-control' aria-label='First name'>
+                        </div>
+                        <div class='col-lg-6 col-md-6 col-sm-12 my-1'>
+                            <label for=''>Surname</label>
+                            <input type='text' v-model='address.surname' class='form-control' >
+                        </div>
                     </div>
-                     <form class='new-address-modal-form'>
-                         <div class="row">
-                             <div class="col">
-                                 <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-                             </div>
-                             <div class="col">
-                                 <input type="text" class="form-control" placeholder="Last name">
-                             </div>
-                         </div>
-                         <div class="row my-3">
-                             <div class="col">
-                                 <input type="tel" class="form-control" placeholder="Phone ">
-                             </div>
-                             <div class="col">
-                                 <select v-model='chosenProvinceId' @change='provinceChange($event)' name='province' class='form-control' id='province'>
-                                     <option v-for='province in provinces' :value='province.id' :key='province.id'>{{province.province}}</option>
+                    <div class='row '>
+                        <div class='col-lg-6 col-md-6 col-sm-12 my-1'>
+                            <label for=''>Phone</label>
+                            <input type='tel' v-model='address.phone' class='form-control'>
+                        </div>
+                        <div class='col-lg-6 col-md-6 col-sm-12 my-1'>
+                            <label for=''>City</label>
+                            <select @change='cityChange()'
+                                    name='city'
+                                    class='form-control' id='city'
+                                    v-model='address.chosenCity'>
+                                <option v-for='city in cities'
+                                        :value='{id:city.id,city:city.city}'
+                                        :key='city.id'
+                                >
+                                    {{ city.city }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-lg-6 col-md-6 col-sm-12 my-1'>
+                            <label for=''>District</label>
+                            <select id='districtSelect'
+                                    @change='districtChange()'
+                                    disabled
+                                    name='district'
+                                    class='form-control'
+                                    v-model='address.chosenDistrict'>
 
-                                 </select>
-                                 {{chosenProvince}}
-                             </div>
-                         </div>
-                         <div class="row">
-                             <div class='col'>
-                                 <select  name='district' class='form-control' id='district'>
-                                     <option value='choose' disabled> choose</option>
-                                     <option  v-for='district in counties' :key='district.id' :value='district.id'>{{district.district}}</option>
-                                 </select>
-                             </div>
-                             <div class='col'>
-                                 <select name='neighborhood' class='form-control' id='neighborhood'>
-                                     <option value=''>Kazım karabekir mah.</option>
-                                 </select>
-                             </div>
-                         </div>
-                         <div>
-                             <textarea name='adresss' placeholder='Address' class='form-control my-3' id='' cols='30' rows='10'></textarea>
-                         </div>
-                         <button type='button' @click='handleNewAddress' class='btn btn-block button-color'>
-                             Save
-                         </button>
-                     </form>
-                 </div>
-          </div>
+                                <option v-for='district in counties'
+                                        :key='district.id'
+                                        :value='{id:district.id,district:district.district}'
+                                >
+                                    {{ district.district }}
+                                </option>
+                            </select>
+                        </div>
+                        <div class='col-lg-6 col-md-6 col-sm-12 my-1'>
+                            <label for=''>Neighborhood</label>
+                            <select
+                                id='neighborhoodSelect'
+                                name='neighborhood'
+                                v-model='address.chosenNeighborhood'
+                                disabled
+                                class='form-control'>
+                                <option v-for='neighborhood in neighborhoods'
+                                        :key='neighborhood.id'
+                                        :value='{id:neighborhood.id,neighborhood:neighborhood.neighborhood}'>
+                                    {{ neighborhood.neighborhood }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <textarea  v-model='address.textAreaAddress' class='form-control my-3' id='' cols='30' rows='10'></textarea>
+                    </div>
+                    <button type='button' @click='handleNewAddress' class='btn btn-block button-color'>
+                        Save
+                    </button>
+
+                </form>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -57,34 +86,82 @@ import { mapGetters } from 'vuex'
 
 export default {
     name: 'NewAddress',
-    data(){
-        return{
-            chosenProvinceId:34
+    data() {
+        return {
+            address: {
+                chosenCity: {
+                    city: null,
+                    id: null,
+                },
+                chosenDistrict: {
+                    district: null,
+                    id: null,
+                },
+                chosenNeighborhood: {
+                    neighborhood: null,
+                    id: null,
+                },
+                name:null,
+                surname:null,
+                phone:null,
+                textAreaAddress:null,
+            },
         }
+
     },
     created() {
-        this.$store.dispatch("initProvinces")
-        this.$store.dispatch("initCounties",34)
-    },
-    methods:{
-        handleNewAddress(){
-            console.log("clisk")
-        },
+        this.$store.dispatch('initCities')
+    }
+    ,
+    methods: {
+        handleNewAddress() {
+              const newAddress={
+                  name:this.address.name,
+                  surname:this.address.surname,
+                  phone:String(this.address.phone),
+                  city:this.address.chosenCity.city,
+                  district:this.address.chosenDistrict.district,
+                  neighborhood:this.address.chosenNeighborhood.neighborhood,
+                  zipCode:"3000",
+                  address:this.address.textAreaAddress
+              }
+           this.$store.dispatch("addAddress",newAddress)
+        }
+        ,
         closeQuickView() {
             this.$emit('closeNewAddress')
             document.querySelector('body').style.setProperty('overflow', 'visible')
-        },
-        provinceChange($event){
-            this.$store.dispatch("initCounties",Number($event.target.value))
         }
-    },
-    computed:{
-        ...mapGetters({provinces:"getProvinces"}),
-        ...mapGetters({counties:"getCounties"})
+        ,
+        cityChange() {
+            this.$store.dispatch('initCounties', Number(this.address.chosenCity.id))
+            document.getElementById("districtSelect").removeAttribute("disabled")
+            document.getElementById("neighborhoodSelect").setAttribute("disabled","disabled")
+            this.address.chosenNeighborhood={id:null,neighborhood: null}
+        }
+        ,
+        districtChange() {
+            this.$store.dispatch('initNeighborhoods', Number(this.address.chosenDistrict.id))
+            document.getElementById("neighborhoodSelect").removeAttribute("disabled")
+        },
     }
+    ,
+    computed: {
+        ...mapGetters({ cities: 'getCities' }),
+        ...mapGetters({ counties: 'getCounties' }),
+        ...mapGetters({ neighborhoods: 'getNeighborhoods' }),
+    },
+    watch: {},
 }
 </script>
 
 <style scoped>
-
+textarea{
+    height: 100px;
+}
+label{
+    font-weight:700 ;
+    font-size: 12px;
+    line-height: 16px;
+}
 </style>

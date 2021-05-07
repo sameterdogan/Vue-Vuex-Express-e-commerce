@@ -5,7 +5,7 @@
         <hr class='cart-title-hr'>
         <div class='row'>
             <div v-if='items.length>0' class='col-lg-8'>
-                <item  v-for='item in items' :key='item._id' :item='JSON.stringify(item)' />
+                <item  v-for='item in items' :key='item._id' :item='JSON.stringify(item)' :stockErrorProductsIdAndStock='stockErrorProductsIdAndStock' />
             </div>
             <div v-else class='col-lg-8'>
                 <div class='my-5 text-center'>
@@ -19,7 +19,6 @@
                     >
                         Home
                     </router-link>
-
 
 
                 </div>
@@ -39,7 +38,13 @@ import OrderSummary from '@/components/index/cart/OrderSummary'
 export default {
     name: 'Cart',
     components: { OrderSummary, Item, },
+    data(){
+        return{
+            stockErrorProductsIdAndStock:[]
+        }
+    },
     created() {
+        this.stockErrorProductsIdAndStock=this.$route.params.stockErrorProductsIdAndStock
         if(this.$route.params.successPayment){
             console.log(this.$route.params.successPayment)
         }

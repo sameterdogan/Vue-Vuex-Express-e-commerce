@@ -49,6 +49,7 @@ export default {
     name: 'NavBar',
     created() {
         this.$store.dispatch('initCategories')
+
     },
     computed: {
         ...mapGetters({ categories: 'getCategories' })

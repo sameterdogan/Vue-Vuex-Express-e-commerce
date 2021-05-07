@@ -58,7 +58,6 @@ name: "Register",
   },
   methods:{
   register(){
-
         axios.post("auth/register",this.user)
         .then(res=>{
               console.log(res)
