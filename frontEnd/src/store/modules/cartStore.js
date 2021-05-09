@@ -1,5 +1,5 @@
-import axios from  "axios"
-import {router} from   "@/router"
+import axios from 'axios'
+import { router } from '@/router'
 
 const storageCart = JSON.parse(localStorage.getItem('cart'))
 const cart = storageCart ? storageCart : {
@@ -13,6 +13,7 @@ const ModuleCart = {
     },
     mutations: {
         ADD_TO_CART(state, item) {
+            console.log(item)
             const cartItemsIndex = state.cart.items.findIndex(i => i._id === item._id)
             if (cartItemsIndex >= 0) {
                 state.cart.items[cartItemsIndex].quantity += item.quantity
@@ -66,16 +67,18 @@ const ModuleCart = {
         },
     },
     actions: {
-        checkout(orderId) {
-            axios.post('payment/checkout', orderId)
-                .then(res => {
-                    console.log(orderId)
-                    console.log('geliasdsa')
-                    console.log(res.data)
-                    router.push({ name: 'checkout', params: { checkoutForm: res.data.checkoutFormContent } })
-                }).catch(err => {
-                console.log(err.response)
-            })
+         checkout(_,orderId) {
+
+                axios.post(`payment/checkout/${orderId}`)
+                    .then(res=>{
+                        console.log(res.data)
+                        router.push({ name: 'checkout', params: { checkoutForm: res.data.checkoutFormContent } })
+                    })
+                    .catch(err=>{
+                        console.log(err.response)
+                    })
+
+
         },
     },
     getters: {

@@ -8,7 +8,7 @@ import ProductModel from '../../models/product'
 export default async (req, res, next) => {
     try {
         let searchCount, defaultCount
-        let query = ProductModel.find()
+        let query = ProductModel.find().populate({path:"category",select:"category"})
         const filterKeys = ['gender', 'color', 'name', 'price']
         const filterObject = filterQueryMethod(filterKeys, query, req) //search query
         if (filterObject.filter) {
@@ -25,10 +25,8 @@ export default async (req, res, next) => {
             query
         )
         query = paginationObject.query
-
         req.getProductsQuery = query
         req.isEndIndex = paginationObject.isEndIndex
-        console.log('geldi')
         next()
     } catch (err) {
         next(err)

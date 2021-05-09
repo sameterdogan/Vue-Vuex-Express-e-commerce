@@ -1,5 +1,7 @@
 import Iyzipay from 'iyzipay'
 import OrderModel from "../models/order"
+import moment from "moment"
+moment.locale("tr")
 
 const iyzipay = new Iyzipay({
     uri: 'https://sandbox-api.iyzipay.com',
@@ -8,74 +10,58 @@ const iyzipay = new Iyzipay({
 })
 export const checkout = async (req, res, next) => {
 
-
-    const order= await OrderModel.findById(req.params.orderId).populate([{path:"address"},{path:"user"}])
-
+    const order= await OrderModel.findById(req.params.orderId).populate([{path:"address"},{path:"user"},{path:"category"}])
+    order.items.forEach(item=>{
+        item["id"]=item._id
+        item["itemType"]=Iyzipay.BASKET_ITEM_TYPE.PHYSICAL
+        item["category1"]=item.category.category
+        item["price"]=String(item.price*item.quantity)
+        delete item["_id"]
+    })
+    const date=new Date()
+    console.log(order.items)
+    console.log(`${date.getFullYear()}-${date.getDay()}-${date.getMonth()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`)
     const request = {
         locale: Iyzipay.LOCALE.TR,
-        conversationId: order._id,
-        price: "1",
-        paidPrice: "1.2",
-        currency: Iyzipay.CURRENCY.USD,
+        conversationId:String(order._id),
+        price: String(order.totalPrice),
+        paidPrice: String(order.totalPrice),
+        currency: Iyzipay.CURRENCY.TRY,
+        basketId: 'B67832',
         paymentGroup: Iyzipay.PAYMENT_GROUP.PRODUCT,
-        callbackUrl: 'http://localhost:5000/api/order/callback',
+        callbackUrl: 'http://localhost:5000/api/payment/callback',
         enabledInstallments: [2, 3, 6, 9],
         buyer: {
-            id: order.user._id,
-            name: order.address.name,
-            surname: order.address.name,
-            gsmNumber: order.address.phone,
+            id: String(order.user._id),
+            name: order.user.name,
+            surname: order.user.name,
+            gsmNumber: String(order.user.phone),
             email: order.user.email,
             identityNumber: '74300864791',
             lastLoginDate: '2015-10-05 12:43:35',
-            registrationDate: '2013-04-21 15:12:09',
-            registrationAddress: order.address.address,
+            registrationDate:`${date.getFullYear()}-${date.getDay()}-${date.getMonth()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
+            registrationAddress: String(order.address.address),
             ip: '85.34.78.112',
             city: order.address.city,
             country: 'Turkey',
-            zipCode: order.address.zipCode,
+            zipCode: order.address.zipCode
         },
         shippingAddress: {
-            contactName: 'Jane Doe',
+            contactName: order.address.name,
             city: order.address.city,
             country: 'Turkey',
             address: order.address.address,
-            zipCode: order.address.zipCode,
+            zipCode: order.address.zipCode
         },
         billingAddress: {
-            contactName: 'Jane Doe',
+            contactName: order.address.name,
             city: order.address.city,
             country: 'Turkey',
             address: order.address.address,
-            zipCode: order.address.zipCode,
+            zipCode: order.address.zipCode
         },
-        basketItems: [
-            {
-                id: 'BI101',
-                name: 'Binocular',
-                category1: 'Collectibles',
-                category2: 'Accessories',
-                itemType: Iyzipay.BASKET_ITEM_TYPE.PHYSICAL,
-                price: '0.3'
-            },
-            {
-                id: 'BI102',
-                name: 'Game code',
-                category1: 'Game',
-                category2: 'Online Game Items',
-                itemType: Iyzipay.BASKET_ITEM_TYPE.VIRTUAL,
-                price: '0.5'
-            },
-            {
-                id: 'BI103',
-                name: 'Usb',
-                category1: 'Electronics',
-                category2: 'Usb / Cable',
-                itemType: Iyzipay.BASKET_ITEM_TYPE.PHYSICAL,
-                price: '0.2'
-            }
-        ],
-    }
+        basketItems: order.items
+    };
     iyzipay.checkoutFormInitialize.create(request, function(err, result) {
         console.log(result)
         res.status(200)

@@ -34,7 +34,7 @@ const ProductSchema = new Schema(
         },
         category: {
             type: String,
-            ref: 'category',
+            ref: 'Category',
             required: true,
         },
         slugProduct: { type: String },

@@ -8,6 +8,11 @@ const OrderSchema=new Schema({
         ref:"User",
         required:true
     },
+    status:{
+        type:'Number',
+        enum:[0,1,2],
+        default:0
+    },
     address:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Address",

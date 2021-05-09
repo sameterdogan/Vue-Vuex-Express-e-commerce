@@ -34,8 +34,9 @@ export default {
             const orderInfo={
                 address:address._id,
                 items:cart.items,
-                price:cart.totalPrice
+                totalPrice:cart.totalPrice
             }
+            console.log(orderInfo.items)
             this.$store.dispatch('addOrder',orderInfo)
         },
 
