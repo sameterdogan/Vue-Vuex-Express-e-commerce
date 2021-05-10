@@ -19,14 +19,13 @@
                     >
                         Home
                     </router-link>
-
-
                 </div>
             </div>
             <div class='col-lg-4'>
              <order-summary/>
             </div>
         </div>
+        <component :is='paymentResultModal' @closePaymentResult='closePaymentResultModal' :paymentResult='paymentResult'></component>
     </div>
 </template>
 
@@ -34,19 +33,42 @@
 import { mapGetters } from 'vuex'
 import Item from '@/components/index/cart/Item'
 import OrderSummary from '@/components/index/cart/OrderSummary'
+import PaymentResultModal from "@/components/index/cart/PaymentResultModal"
 
 export default {
     name: 'Cart',
-    components: { OrderSummary, Item, },
+    components: { OrderSummary, Item,PaymentResultModal },
     data(){
         return{
-            stockErrorProductsIdAndStock:[]
+            stockErrorProductsIdAndStock:[],
+            paymentResultModal:null,
+            paymentResult:null
         }
     },
     created() {
+        if (this.$route.query.paymentResult){
+            this.paymentResult=JSON.parse(this.$route.query.paymentResult)
+            if(this.paymentResult.status==="failure"){
+                this.paymentResultModal=PaymentResultModal
+
+                console.log(this.paymentResultModal)
+                /*this.$store.dispatch("toCheckout")*/
+            }else{
+                console.log()
+                this.$store.commit("RESET_CART")
+                this.$store.commit("INIT_MESSAGE",{message:"Payment transaction is successful",color:"success"})
+                /*this.$router.push({name:"cart-details"})*/
+                this.paymentResult=JSON.parse(this.$route.query.paymentResult)
+                this.paymentResultModal=PaymentResultModal
+
+                console.log(this.paymentResultModal)
+            }
+        }
         this.stockErrorProductsIdAndStock=this.$route.params.stockErrorProductsIdAndStock
-        if(this.$route.params.successPayment){
-            console.log(this.$route.params.successPayment)
+    },
+    methods:{
+        closePaymentResultModal(){
+                this.paymentResultModal=null
         }
     },
     computed:{

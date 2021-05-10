@@ -13,9 +13,8 @@ export default {
         }
     },
     created() {
-        this.result=JSON.parse(this.$route.query.result)
+        this.result=JSON.parse(this.$route.query.paymentResult)
         if(this.result.status==="failure"){
-            console.log("errora geldi")
             this.$store.dispatch("toCheckout")
 
         }else{

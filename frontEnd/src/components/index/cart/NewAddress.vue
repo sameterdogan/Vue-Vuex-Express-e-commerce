@@ -2,7 +2,7 @@
     <div class='modal-wrapper'>
         <div class='modal-cart'>
             <div class='row modal-cart-content'>
-                <span @click='closeQuickView' class='float-right close-modal'>&times;</span>
+                <span @click='closeNewAddress' class='float-right close-modal'>&times;</span>
                 <form class='new-address-modal-form'>
                     <div class='row'>
                         <div class='col-lg-6 col-md-6 col-sm-12 my-1'>
@@ -128,7 +128,7 @@ export default {
            this.$store.dispatch("addAddress",newAddress)
         }
         ,
-        closeQuickView() {
+        closeNewAddress() {
             this.$emit('closeNewAddress')
             document.querySelector('body').style.setProperty('overflow', 'visible')
         }
