@@ -22,10 +22,6 @@ import ListNewArrival from '@/components/index/product/NewArrivals/ListNewArriva
 export default {
       name: 'Home',
       components: { ListProduct, SearchOptions,ListNewArrival },
-      data() {
-            return {
-            }
-      }
 }
 </script>
 

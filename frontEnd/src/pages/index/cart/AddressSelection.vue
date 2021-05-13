@@ -15,7 +15,7 @@
 
 <script>
 import OrderSummary from '@/components/index/cart/OrderSummary'
-import ListAddress from '@/components/index/cart/ListAddress'
+import ListAddress from '@/components/index/cart/address/ListAddress'
 
 
 export default {

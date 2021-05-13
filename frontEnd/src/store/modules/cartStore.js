@@ -68,7 +68,6 @@ const ModuleCart = {
     },
     actions: {
          checkout(_,orderId) {
-
                 axios.post(`payment/checkout/${orderId}`)
                     .then(res=>{
                         console.log(res.data)

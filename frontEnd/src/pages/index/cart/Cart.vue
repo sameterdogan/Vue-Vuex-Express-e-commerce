@@ -5,7 +5,7 @@
         <hr class='cart-title-hr'>
         <div class='row'>
             <div v-if='items.length>0' class='col-lg-8'>
-                <item  v-for='item in items' :key='item._id' :item='JSON.stringify(item)' :stockErrorProductsIdAndStock='stockErrorProductsIdAndStock' />
+                <item  v-for='item in items' :key='item._id' :item='JSON.stringify(item)'/>
             </div>
             <div v-else class='col-lg-8'>
                 <div class='my-5 text-center'>
@@ -50,21 +50,16 @@ export default {
             this.paymentResult=JSON.parse(this.$route.query.paymentResult)
             if(this.paymentResult.status==="failure"){
                 this.paymentResultModal=PaymentResultModal
-
                 console.log(this.paymentResultModal)
                 /*this.$store.dispatch("toCheckout")*/
             }else{
-                console.log()
                 this.$store.commit("RESET_CART")
                 this.$store.commit("INIT_MESSAGE",{message:"Payment transaction is successful",color:"success"})
                 /*this.$router.push({name:"cart-details"})*/
                 this.paymentResult=JSON.parse(this.$route.query.paymentResult)
                 this.paymentResultModal=PaymentResultModal
-
-                console.log(this.paymentResultModal)
             }
         }
-        this.stockErrorProductsIdAndStock=this.$route.params.stockErrorProductsIdAndStock
     },
     methods:{
         closePaymentResultModal(){

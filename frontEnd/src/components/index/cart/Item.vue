@@ -22,20 +22,18 @@
         <div class='col-1'>
             ${{propsItem.price}}
         </div>
-        <div class='col-3'>
-            <p v-if='stockError===true' class='stock-error' >{{stockErrorInfo.stock}}</p>
-            {{stockError}}
-            <button @click='qtyDown' class='btn qty-down shadow-none'>-</button>
-            <input ref='cartQtyInput' :class="{'input-stock-error':stockError }" class='input-qty' type='text' disabled
-                   :value='propsItem.quantity'>
-            <button @click='qtyUp' class='btn qut-up shadow-none'>+</button>
-
-
+        <div class='col-3 text-center'>
+            <p v-if='booleanStockError' class='message-stock-error ' > last {{stockErrorInfo.stock}} product ! </p>
+            <p class='input-qty-wrapper'>
+                <button @click='qtyDown' class='btn qty-down shadow-none'>-</button>
+                <input ref='cartQtyInput' :class="{'input-stock-error':booleanStockError}" class='input-qty' type='text' disabled
+                       :value='propsItem.quantity'>
+                <button @click='qtyUp' class='btn qut-up shadow-none'>+</button>
+            </p>
 
         </div>
         <div class='col-1'>
             <span ref='itemTotalPrice'> ${{propsItem.price*propsItem.quantity}}</span>
-
         </div>
         <div class='col-1'>
             <a class='deleteButton' @click='deleteFromCart'><i class='bi bi-x'></i></a>
@@ -49,48 +47,57 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
     name: 'Item',
-    props: ['item',"stockErrorProductsIdAndStock"],
+    props: ['item'],
     data() {
         return {
             propsItem:JSON.parse(this.item),
             changeItem: {},
-            stockErrorInfo:{},
-            stockError:false
+            stockErrorInfo:null,
+            booleanStockError:false
+
         }
     },
     created() {
-        console.log(this.stockErrorProductsIdAndStock)
-        if (this.stockErrorProductsIdAndStock){
-            for (let s=0;s<this.stockErrorProductsIdAndStock.length;s++){
-                if (this.stockErrorProductsIdAndStock[s]._id===this.propsItem._id){
-                    this.stockErrorInfo=this.stockErrorProductsIdAndStock[s]
-                    this.stockError=true
-                    this.$refs.cartQtyInput.style.border="solid red 1px"
-                }
-            }
-        }
+        this.checkStockError()
     },
     watch:{
         item(newItem){
             this.propsItem=JSON.parse(newItem)
         }
     },
+    computed:{
+      ...mapGetters({stockErrorProductsIdAndStock:"getStockErrorProductsInfo"})
+    },
     methods: {
+        checkStockError(){
+            if (this.stockErrorProductsIdAndStock){
+                for (let s=0;s<this.stockErrorProductsIdAndStock.length;s++){
+                    if (this.stockErrorProductsIdAndStock[s]._id===this.propsItem._id){
+                        this.stockErrorInfo=this.stockErrorProductsIdAndStock[s]
+                        this.booleanStockError=true
+                    }
+                }
+            }
+        },
         qtyDown() {
             if (Number(this.$refs.cartQtyInput.value) > 1) {
                 this.$store.commit('DECREASE_ITEM', this.propsItem._id)
-                console.log(Number(this.$refs.cartQtyInput.value))
-                console.log(this.stockErrorInfo.stock)
+
                 if (Number(this.$refs.cartQtyInput.value)-1<=this.stockErrorInfo.stock){
-                    this.$refs.cartQtyInput.style.border="solid rgba(118, 118, 118, 0.3) 1px"
+                    this.$store.dispatch("deleteStockErrorProduct",this.propsItem._id)
+                    this.booleanStockError=false
                 }
             }
         },
         qtyUp() {
             if (Number(this.$refs.cartQtyInput.value) < this.propsItem.stock) {
                 this.$store.commit("INCREASE_ITEM",this.propsItem._id)
+            }else{
+                this.$store.commit("INIT_MESSAGE",{message:`maximum ${this.booleanStockError?this.stockErrorInfo.stock: this.$refs.cartQtyInput.value} can be bought`,color:"danger"})
             }
         },
         deleteFromCart() {
@@ -140,6 +147,9 @@ tbody > tr > td:not(.first-td) {
 .input-stock-error{
     border: solid red 1px;
 }
-
-
+.message-stock-error{
+    color: red;
+    font-size: 13px;
+    margin: 0;
+}
 </style>

@@ -29,3 +29,19 @@ export const addOrder = asyncErrorWrapper(async (req, res, next) => {
     })
 
 })
+export const getUserOrders=asyncErrorWrapper(async (req,res,next)=>{
+    const orders=await OrderModel.find({user:req.user._id}).populate([{path:"user"},{path:"address"}])
+    res.status(200).json({
+        success:true,
+        message:"User's orders listed.",
+        orders
+    })
+})
+export const getOrderById=asyncErrorWrapper(async (req,res,next)=>{
+    const order=await OrderModel.findById(req.params.orderId).populate([{path:"user"},{path:"address"}])
+    res.status(200).json({
+        success:true,
+        message:"The order has been brought.",
+        order
+    })
+})

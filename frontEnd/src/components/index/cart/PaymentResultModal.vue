@@ -35,6 +35,7 @@ export default {
 
 .success-payment-result,.error-payment-result{
     text-align: center;
+    margin: .2rem auto;
 }
 .success-payment-icon{
     font-size: 6rem;

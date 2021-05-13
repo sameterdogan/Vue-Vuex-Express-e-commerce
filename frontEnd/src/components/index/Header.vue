@@ -7,7 +7,11 @@
       </div>
       <div class="header-options">
         <button >
-          <i class="bi bi-person-fill header-icons"></i>
+            <router-link
+                tag='i'
+                class='bi bi-person-fill header-icons'
+                :to="{name:'profile'}"
+            ></router-link>
         </button>
         <button>
             <router-link

@@ -1,7 +1,6 @@
 <template>
 
-    <div>
-
+    <div class='p-5'>
         <div id='gist'></div>
         <div @submit.prevent='toPayment' id='iyzipay-checkout-form' class='responsive'></div>
     </div>

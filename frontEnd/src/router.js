@@ -86,23 +86,23 @@ export const router = new VueRouter({
         {
             name: 'products-by-category',
             path: '/product/:slugCategory',
-            component: () => import('@/pages/index/ProductsByCategory'),
+            component: () => import('@/pages/index/product/ProductsByCategory'),
         },
         {
             name: 'product-details',
             path: '/product/:slugProduct/details',
-            component: () => import('@/pages/index/ProductDetails'),
+            component: () => import('@/pages/index/product/ProductDetails'),
         },
         //cart
         {
             name: 'cart-details',
             path: '/cart',
-            component: () => import('@/pages/index/Cart'),
+            component: () => import('@/pages/index/cart/Cart'),
         },
         {
             name: 'address-selection',
             path: '/address-selection',
-            component: () => import('@/pages/index/AddressSelection'),
+            component: () => import('@/pages/index/cart/AddressSelection'),
             meta: {
                 layout: 'default',
                 requiresAuth: true,
@@ -110,21 +110,12 @@ export const router = new VueRouter({
         },
         {
             name: 'checkout',
-            path: '/cart-checkout',
-            component: () => import('@/pages/index/CartCheckout'),
+            path: '/cart-checkout/:checkoutForm',
+            component: () => import('@/pages/index/cart/CartCheckout'),
             meta: {
                 layout: 'blank',
                 requiresAuth: true,
 
-            },
-        },
-        {
-            name: 'result-checkout',
-            path: '/result-checkout',
-            component: () => import('@/pages/index/ResultCheckout'),
-            meta: {
-                layout: 'default',
-                requiresAuth: true,
             },
         },
         {
@@ -133,6 +124,16 @@ export const router = new VueRouter({
             component: () => import('@/pages/error/404'),
             meta: {
                 layout: 'blank',
+            },
+        },
+        //profile
+        {
+            name: 'profile',
+            path: '/profile',
+            component: () => import('@/pages/index/profile/Profile'),
+            meta: {
+                layout: 'default',
+                requiresAuth: true,
             },
         },
     ],

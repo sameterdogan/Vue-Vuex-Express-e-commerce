@@ -5,45 +5,69 @@ const moduleOrder = {
     state: {
         orders: [],
         order: {},
+        stockErrorProductsInfo: [],
     },
     mutations: {
         INIT_ORDERS(state, orders) {
             state.orders = orders
         },
+        INIT_ORDER(state,order){
+          state.order=order
+        },
         ADD_ORDER(state, order) {
             state.orders.push(order)
         },
+        INIT_STOCK_ERROR_PRODUCTS_INFO(state, products) {
+            state.stockErrorProductsInfo = products
+        },
+        DELETE_STOCK_ERROR_PRODUCT(state, productId) {
+            const productIndex = state.stockErrorProductsInfo.findIndex(product => product._id === productId)
+            if (productIndex >= 0)
+                state.stockErrorProductsInfo.splice(productIndex, 1)
+        },
     },
     actions: {
-
         initOrders({ commit }) {
-            axios.post('/order').then(res => {
+            axios.get('/order').then(res => {
                 console.log(res.data)
                 commit('INIT_ORDERS', res.data.orders)
             })
         },
-         addOrder({ commit, dispatch }, orderInfo) {
-              axios.post('/order/add-order', orderInfo)
-                  .then(res=>{
-                      console.log(res.data.order._id)
-                      dispatch('checkout', res.data.order._id)
-                      commit('ADD_ORDER', res.data.order)
-                  })
-                  .catch(err=>{
-                      console.log(err)
-                      if (err.response.data.stockErrorProductsIdAndStock) {
-                          router.push({
-                              name: 'cart-details',
-                              params: { stockErrorProductsIdAndStock: err.response.data.stockErrorProductsIdAndStock },
-                          })
-                      }
-                  })
+        initOrder({commit},orderId){
+          axios.get(`/order/${orderId}`)
+              .then(res=>{
+                  commit("INIT_ORDER",res.data.order)
+              })
+        },
+        addOrder({ commit, dispatch }, orderInfo) {
+            axios.post('/order/add-order', orderInfo)
+                .then(res => {
+                    commit('ADD_ORDER', res.data.order)
+                    dispatch('checkout', res.data.order._id)
 
+                })
+                .catch(err => {
+                    console.log(err)
+                    if (err.response.data.stockErrorProductsIdAndStock) {
+                        commit('INIT_STOCK_ERROR_PRODUCTS_INFO', err.response.data.stockErrorProductsIdAndStock)
+                        router.push({ name: 'cart-details' })
+                    }
+                })
+
+        },
+        deleteStockErrorProduct({ commit }, productId) {
+            commit('DELETE_STOCK_ERROR_PRODUCT', productId)
         },
     },
     getters: {
+        getOrders(state){
+          return state.orders
+        },
         getOrder(state) {
             return state.order
+        },
+        getStockErrorProductsInfo(state) {
+            return state.stockErrorProductsInfo
         },
     }
     ,

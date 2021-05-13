@@ -1,6 +1,7 @@
 import Iyzipay from 'iyzipay'
 import OrderModel from '../models/order'
-import moment from 'moment'
+import asyncErrorWrapper from '../helpers/error/asyncErrorWrapper'
+
 
 const iyzipay = new Iyzipay({
     uri: 'https://sandbox-api.iyzipay.com',
@@ -10,6 +11,7 @@ const iyzipay = new Iyzipay({
 export const checkout = async (req, res, next) => {
 
     const order = await OrderModel.findById(req.params.orderId).populate([{ path: 'address' }, { path: 'user' }, { path: 'category' }])
+
     order.items.forEach(item => {
         item['id'] = item._id
         item['itemType'] = Iyzipay.BASKET_ITEM_TYPE.PHYSICAL
@@ -67,20 +69,18 @@ export const checkout = async (req, res, next) => {
             })
     })
 }
-export const callbackUrl = async (req, res, next) => {
+export const callbackUrl = asyncErrorWrapper(async (req, res, next) => {
     iyzipay.checkoutForm.retrieve({
         locale: Iyzipay.LOCALE.TR,
         conversationId: req.params.conversationId,//conversationId = orderId
         token: req.body.token,
     }, async function(err, result) {
         if (result.status === 'success') {
-            console.log(req.params.conversationId)
             await OrderModel.findByIdAndUpdate(req.params.conversationId, { status: 1 })
         } else {
             await OrderModel.findByIdAndUpdate(req.params.conversationId, { status: 2 })
         }
-        console.log(req.body)
         console.log(err, result)
         res.redirect(`http://localhost:8080/cart?paymentResult=${JSON.stringify(result)}`)
     })
-}
+})

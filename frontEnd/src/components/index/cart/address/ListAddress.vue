@@ -5,28 +5,29 @@
             <i class='bi bi-plus new-address-button-icon'></i>
             <span class='new-address-button-text'>Add new address</span>
         </div>
-        <address-item v-for='address in addresses' :key='address._id' :address='address'/>
+        <address-item v-for='address in addresses' :key='address._id' :address='address' />
         <component :is='newAddress' @closeNewAddress='closeNewAddressModal' />
     </div>
 
 </template>
 
 <script>
-import AddressItem from '@/components/index/cart/addressItem'
-import NewAddress from '@/components/index/cart/NewAddress'
-import  {mapGetters} from "vuex"
+import AddressItem from '@/components/index/cart/address/addressItem'
+import NewAddress from '@/components/index/cart/address/NewAddress'
+import { mapGetters } from 'vuex'
+
 export default {
     name: 'ListAddress',
-    components: {NewAddress, AddressItem },
-    data(){
-        return{
-        newAddress:null
+    components: { NewAddress, AddressItem },
+    data() {
+        return {
+            newAddress: null,
         }
     },
     created() {
-        this.$store.dispatch("initAddresses")
+        this.$store.dispatch('initAddresses')
     },
-    methods:{
+    methods: {
         showNewAddress() {
             this.newAddress = 'NewAddress'
         },
@@ -34,10 +35,9 @@ export default {
             this.newAddress = null
         },
     },
-    computed:{
-
-        ...mapGetters({addresses:"getAddresses"})
-    }
+    computed: {
+        ...mapGetters({ addresses: 'getAddresses' }),
+    },
 }
 </script>
 

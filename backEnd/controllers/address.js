@@ -24,6 +24,7 @@ export const addAddress = asyncErrorWrapper(async (req, res, next) => {
         addAddress,
     })
 })
+
 export const getByIdAddress = asyncErrorWrapper(async (req, res, next) => {
     const address = await AddressModel.findById(req.params.addressId)
     if (!address) return next(new CustomError('Address not found', 404))
