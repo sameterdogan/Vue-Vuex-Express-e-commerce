@@ -10,8 +10,12 @@ const OrderSchema=new Schema({
     },
     status:{
         type:'Number',
-        enum:[0,1,2],
+        enum:[0,1,2,3,],
         default:0
+        //0=sipariş hazırlanıyor :is preparing
+        //1=reddedildi          :Rejected
+        //2=kargoda             :in cargo
+        //3=teslim edildi       :was delivered
     },
     address:{
         type:mongoose.Schema.Types.ObjectId,

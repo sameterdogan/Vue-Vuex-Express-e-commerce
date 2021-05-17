@@ -9,10 +9,10 @@ axios.interceptors.response.use(function (response) {
     if (error.response) {
         if (error.response.data.messages){
             for (let m=0;m<error.response.data.messages.length;m++){
-                store.commit('INIT_MESSAGE', {message: error.response.data.messages[m],color:"danger" }) // just taking some guesses here
+                store.dispatch('initMessage', {message: error.response.data.messages[m],color:"danger" }) // just taking some guesses here
             }
         }else{
-            store.commit('INIT_MESSAGE', {message: error.response.data.message,color:"danger" }) // just taking some guesses here
+            store.dispatch('initMessage', {message: error.response.data.message,color:"danger" }) // just taking some guesses here
         }
     } else if (error.request) {
         console.log(error.request);

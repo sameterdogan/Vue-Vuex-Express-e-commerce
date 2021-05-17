@@ -126,11 +126,29 @@ export const router = new VueRouter({
                 layout: 'blank',
             },
         },
-        //profile
+        //account
         {
-            name: 'profile',
-            path: '/profile',
-            component: () => import('@/pages/index/profile/Profile'),
+            name: 'account',
+            path: '/account/orders',
+            component: () => import('@/pages/index/account/Orders'),
+            meta: {
+                layout: 'default',
+                requiresAuth: true,
+            },
+        },
+        {
+            name: 'order-detail',
+            path: '/account/orders/:orderId',
+            component: () => import('@/pages/index/account/OrderDetail'),
+            meta: {
+                layout: 'default',
+                requiresAuth: true,
+            },
+        },
+        {
+            name: 'my-user-information',
+            path: '/account/my-user-information',
+            component: () => import('@/pages/index/account/MyUserInformation'),
             meta: {
                 layout: 'default',
                 requiresAuth: true,

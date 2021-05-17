@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import OrderItem from '@/components/index/profile/order/OrderItem'
+import OrderItem from '@/components/index/account/order/OrderItem'
 import { mapGetters } from 'vuex'
 export default {
     name: 'listOrder',

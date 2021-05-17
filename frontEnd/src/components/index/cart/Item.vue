@@ -102,7 +102,7 @@ export default {
         },
         deleteFromCart() {
             this.$store.commit('DELETE_FROM_CART', this.propsItem._id)
-            this.$store.commit("INIT_MESSAGE",{message:"The product has been removed from the cart",color:"success"})
+
         },
     },
 

@@ -4,11 +4,11 @@ const moduleMessage = {
         messages:[],
     },
     mutations: {
-        INIT_MESSAGE: (state, message) => {
-            message.id=Date.now()*Math.random()
-            state.messages.push(message)
+        INIT_MESSAGE: (state, messageObject) => {
+            messageObject.id=Date.now()*Math.random()
+            state.messages.push(messageObject)
             setTimeout(()=>{
-               const messageIndex= state.messages.findIndex(m=>m.id===message.id)
+               const messageIndex= state.messages.findIndex(m=>m.id===messageObject.id)
                 if(messageIndex>=0){
                     state.messages.splice(messageIndex,1)
                 }
@@ -19,6 +19,14 @@ const moduleMessage = {
             if(messageIndex>=0){
                 state.messages.splice(messageIndex,1)
             }
+        }
+    },
+    actions:{
+        initMessage({commit},messageObject){
+            commit("INIT_MESSAGE",messageObject)
+        },
+        deleteMessage({commit},messageId){
+            commit("DELETE_MESSAGE",messageId)
         }
     },
     getters: {

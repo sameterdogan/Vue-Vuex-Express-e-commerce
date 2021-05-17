@@ -30,9 +30,9 @@ const ModuleCart = {
             console.log(cartItemsIndex)
             if (cartItemsIndex >= 0) {
                 state.cart.totalPrice -= state.cart.items[cartItemsIndex].quantity * state.cart.items[cartItemsIndex].price
-                console.log()
                 state.cart.items.splice(cartItemsIndex, 1)
                 localStorage.setItem('cart', JSON.stringify(state.cart))
+
             }
         },
         DECREASE_ITEM(state, itemId) {

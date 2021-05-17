@@ -10,7 +10,7 @@
             <router-link
                 tag='i'
                 class='bi bi-person-fill header-icons'
-                :to="{name:'profile'}"
+                :to="{name:'account'}"
             ></router-link>
         </button>
         <button>

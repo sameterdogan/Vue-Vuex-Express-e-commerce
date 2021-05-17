@@ -76,9 +76,9 @@ export const callbackUrl = asyncErrorWrapper(async (req, res, next) => {
         token: req.body.token,
     }, async function(err, result) {
         if (result.status === 'success') {
-            await OrderModel.findByIdAndUpdate(req.params.conversationId, { status: 1 })
+            await OrderModel.findByIdAndUpdate(req.params.conversationId, { status: 0 })
         } else {
-            await OrderModel.findByIdAndUpdate(req.params.conversationId, { status: 2 })
+            await OrderModel.findByIdAndUpdate(req.params.conversationId, { status: 1 })
         }
         console.log(err, result)
         res.redirect(`http://localhost:8080/cart?paymentResult=${JSON.stringify(result)}`)
