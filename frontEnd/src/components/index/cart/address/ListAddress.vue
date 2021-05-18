@@ -6,14 +6,14 @@
             <span class='new-address-button-text'>Add new address</span>
         </div>
         <address-item v-for='address in addresses' :key='address._id' :address='address' />
-        <component :is='newAddress' @closeNewAddress='closeNewAddressModal' />
+        <component :is='newAddress' @closeAddressModal='closeAddressModal' />
     </div>
 
 </template>
 
 <script>
 import AddressItem from '@/components/index/cart/address/addressItem'
-import NewAddress from '@/components/index/cart/address/NewAddress'
+import NewAddress from '@/components/index/cart/address/addressModal'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -31,7 +31,7 @@ export default {
         showNewAddress() {
             this.newAddress = 'NewAddress'
         },
-        closeNewAddressModal() {
+        closeAddressModal() {
             this.newAddress = null
         },
     },

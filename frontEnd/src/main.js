@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import * as axiosConfig from  "@/plugins/axiosConfig"
+import VueMask from "v-mask"
 import VueCarousel from 'vue-carousel'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -22,6 +23,7 @@ Vue.component('default-layout', Default)
 Vue.component('ValidationProvider', ValidationProvider)
 Vue.component('ValidationObserver', ValidationObserver)
 Vue.use(VueCarousel)
+Vue.use(VueMask)
 Vue.config.productionTip = false
 
 store.dispatch('attempt', localStorage.getItem('token')).then(() => {

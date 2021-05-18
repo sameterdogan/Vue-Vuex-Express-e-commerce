@@ -5,7 +5,6 @@ import asyncErrorWrapper from "../helpers/error/asyncErrorWrapper"
 
 
 export const addOrder = asyncErrorWrapper(async (req, res, next) => {
-    console.log("çalıştı")
     req.body["user"]=req.user._id
     console.log(req.body)
     const orderInfo = req.body
@@ -30,7 +29,7 @@ export const addOrder = asyncErrorWrapper(async (req, res, next) => {
 
 })
 export const getUserOrders=asyncErrorWrapper(async (req,res,next)=>{
-    const orders=await OrderModel.find({user:req.user._id}).populate([{path:"user"},{path:"address"}])
+    const orders=await OrderModel.find({user:req.user._id,status:{$ne:1}}).populate([{path:"user"},{path:"address"}])
     res.status(200).json({
         success:true,
         message:"User's orders listed.",

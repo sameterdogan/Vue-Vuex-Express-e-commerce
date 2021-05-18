@@ -34,6 +34,9 @@ export default {
             case 'my-user-information':
                 this.sidebarList[1].color = '#0077C1'
                 break
+            case 'account-address':
+                this.sidebarList[2].color = '#0077C1'
+                break
         }
     },
     data() {
@@ -46,10 +49,10 @@ export default {
                     routerName: 'my-user-information',
                     color: '#999',
                 },
+                { name: 'Address', icon: 'bi bi-geo-alt-fill', routerName: 'account-address', color: '#999' },
             ],
         }
     },
-    methods: {},
 }
 </script>
 

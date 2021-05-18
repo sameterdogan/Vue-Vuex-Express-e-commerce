@@ -87,7 +87,7 @@ export default {
             if (Number(this.$refs.cartQtyInput.value) > 1) {
                 this.$store.commit('DECREASE_ITEM', this.propsItem._id)
 
-                if (Number(this.$refs.cartQtyInput.value)-1<=this.stockErrorInfo.stock){
+                if (this.stockErrorInfo && Number(this.$refs.cartQtyInput.value)-1<=this.stockErrorInfo.stock){
                     this.$store.dispatch("deleteStockErrorProduct",this.propsItem._id)
                     this.booleanStockError=false
                 }

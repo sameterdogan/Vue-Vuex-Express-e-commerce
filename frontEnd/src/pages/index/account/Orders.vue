@@ -3,13 +3,13 @@
     <div class='container'>
         <div class='row'>
             <div class='col-lg-3 col-md-12 col-sm-3'>
-                <side-bar/>
+                <side-bar />
             </div>
             <div class='col-lg-9 col-md-12 col-sm-9'>
-                <div class='row my-orders-info'>
+                <div class='my-orders-info'>
                     <h1>My Orders</h1>
                 </div>
-               <list-order/>
+                <list-order />
             </div>
         </div>
     </div>
@@ -19,6 +19,7 @@
 import SideBar from '@/components/index/account/Sidebar'
 
 import ListOrder from '@/components/index/account/order/listOrder'
+
 export default {
     name: 'Profile',
     components: { ListOrder, SideBar },
@@ -31,8 +32,8 @@ export default {
     padding: 1rem 1.5rem;
     margin-bottom: 2rem;
     border-radius: .5rem;
-    margin-left:1px ;
-    margin-right:1px ;
+    margin-left: 1px;
+    margin-right: 1px;
 
 }
 

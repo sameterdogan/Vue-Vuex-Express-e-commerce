@@ -4,7 +4,6 @@
         <div class='col-lg-3 col-md-4 col-6 my-2' v-for='product in products' :key='product._id'>
             <Product :product='product' />
         </div>
-
     </div>
 </template>
 

@@ -1,5 +1,5 @@
 import express from "express"
-import {addAddress,editAddress,getByUserIdAddress,getByIdAddress} from "../controllers/address"
+import {addAddress,editAddress,getByUserIdAddress,getByIdAddress,deleteAddress} from "../controllers/address"
 import {isLogin} from "../middlewares/auth/auth"
 
 
@@ -10,6 +10,7 @@ router.get("/",getByUserIdAddress)
 router.get("/:addressId",getByIdAddress)
 router.post("/add-address",addAddress)
 router.put("/edit-address/:addressId",editAddress)
+router.delete("/delete-address/:addressId",deleteAddress)
 
 
 

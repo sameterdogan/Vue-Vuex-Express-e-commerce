@@ -15,7 +15,7 @@
             </span>
 
             <span>
-                {{address.district}}/{{address.city}}
+                {{address.district.districtName}}/{{address.city.cityName}}
             </span>
 
 

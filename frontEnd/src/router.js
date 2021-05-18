@@ -154,6 +154,15 @@ export const router = new VueRouter({
                 requiresAuth: true,
             },
         },
+        {
+            name: 'account-address',
+            path: '/account/address',
+            component: () => import('@/pages/index/account/Address'),
+            meta: {
+                layout: 'default',
+                requiresAuth: true,
+            },
+        },
     ],
     mode: 'history',
 })

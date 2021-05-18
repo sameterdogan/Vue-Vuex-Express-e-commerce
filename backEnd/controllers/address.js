@@ -36,6 +36,7 @@ export const getByIdAddress = asyncErrorWrapper(async (req, res, next) => {
 })
 
 export const editAddress = asyncErrorWrapper(async (req, res, next) => {
+    console.log(req.params.addressId)
     const editAddress = await AddressModel.findById(req.params.addressId)
     if (!editAddress) return next(new CustomError('Address not found', 404))
     for (const key in req.body) {
@@ -45,7 +46,15 @@ export const editAddress = asyncErrorWrapper(async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-        message: 'Address added successfully',
+        message: 'Address edit successfully',
         editAddress,
+    })
+})
+export const deleteAddress = asyncErrorWrapper(async (req, res, next) => {
+    const deleteAddress = await AddressModel.findByIdAndDelete(req.params.addressId)
+    if(!deleteAddress)return next(new CustomError("Address not found !",404))
+    res.status(200).json({
+        success: true,
+        message: 'Address was deleted successfully',
     })
 })

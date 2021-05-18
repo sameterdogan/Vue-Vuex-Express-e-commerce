@@ -11,7 +11,7 @@ const OrderSchema=new Schema({
     status:{
         type:'Number',
         enum:[0,1,2,3,],
-        default:0
+        default:1
         //0=sipariş hazırlanıyor :is preparing
         //1=reddedildi          :Rejected
         //2=kargoda             :in cargo

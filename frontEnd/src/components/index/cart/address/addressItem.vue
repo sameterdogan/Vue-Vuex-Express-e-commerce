@@ -4,9 +4,9 @@
             <div class="form-check">
                 <input class="form-check-input address-radio" @change='changeAddress()' type="radio" :value='address._id' v-model='pickedAddress' name="address" :id="randomRadioId">
                 <label class="form-check-label address-radio-label" :for="randomRadioId">
-                    <p class='district '>{{address.district}} </p>
+                    <p class='district '>{{address.district.districtName}} </p>
                     /
-                    <p class='city'>{{address.city}} </p>
+                    <p class='city'>{{address.city.cityName}} </p>
 
                 </label>
             </div>
@@ -14,8 +14,8 @@
         <div class='address-info-cart'>
             <span class='name'>{{address.name}} {{address.surname}}</span>
             <span class='phone'>{{address.phone}}</span>
-            <span class='neighborhood'>{{address.neighborhood}}</span>
-            <span class='province-district'>{{address.district}}</span>
+            <span class='neighborhood'>{{address.neighborhood.neighborhoodName}}</span>
+            <span class='province-district'>{{address.district.districtName}} / {{address.city.cityName}}</span>
         </div>
     </div>
 </template>
