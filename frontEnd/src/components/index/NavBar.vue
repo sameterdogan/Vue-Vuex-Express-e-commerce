@@ -8,6 +8,15 @@
                         tag='button'
                         class='desktop-navbar-item'
                     >
+                        ALL PRODUCTS
+                    </router-link>
+                </li>
+                <li class='desktop-navbar-item-wrap'>
+                    <router-link
+                        to=''
+                        tag='button'
+                        class='desktop-navbar-item'
+                    >
                         CATEGORIES<i class='bi bi-caret-down-fill'></i>
                     </router-link>
                     <div class='navbar-item-dropdown '>
