@@ -70,7 +70,7 @@ const moduleCategory = {
                 })
                 .then(res => {
                     commit('EDIT_CATEGORY', res.data.editCategory)
-                    router.push('/admin/categories')
+                    router.push('/admin/category')
                 })
                 .catch(err => {
                     commit('INIT_MESSAGE', {

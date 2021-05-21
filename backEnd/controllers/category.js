@@ -2,11 +2,12 @@ import CategoryModel from '../models/category'
 import categorySchema from '../helpers/joi/categorySchema'
 import CustomError from '../helpers/error/CustomError'
 
+
 export const getCategories = async (req, res, next) => {
     const categories = await CategoryModel.find().lean()
     res.status(200).json({
         success: true,
-        message: 'All categories successfully listed.',
+        message: 'All category successfully listed.',
         categories,
     })
 }

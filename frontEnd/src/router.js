@@ -10,7 +10,7 @@ export const router = new VueRouter({
         {
             path: '/admin',
             name: 'admin',
-            component: () => import('@/pages/admin/products/Products'),
+            component: () => import('@/pages/admin/product/Products'),
             meta: {
                 layout: 'admin',
                 requiresAuth: true,
@@ -20,7 +20,7 @@ export const router = new VueRouter({
         {
             path: '/admin/add-product',
             name: 'addProduct',
-            component: () => import('@/pages/admin/products/AddProduct'),
+            component: () => import('@/pages/admin/product/AddProduct'),
             meta: {
                 layout: 'admin',
                 requiresAuth: true,
@@ -30,7 +30,7 @@ export const router = new VueRouter({
         {
             name: 'edit-product',
             path: '/admin/edit-product/:slugProduct',
-            component: () => import('@/pages/admin/products/EditProduct'),
+            component: () => import('@/pages/admin/product/EditProduct'),
             meta: {
                 layout: 'admin',
                 requiresAuth: true,
@@ -38,9 +38,9 @@ export const router = new VueRouter({
             },
         },
         {
-            path: '/admin/categories',
+            path: '/admin/category',
             name: 'categories',
-            component: () => import('@/pages/admin/categories/AddCategory'),
+            component: () => import('@/pages/admin/category/AddCategory'),
             meta: {
                 layout: 'admin',
                 requiresAuth: true,
@@ -50,7 +50,27 @@ export const router = new VueRouter({
         {
             name: 'edit-category',
             path: '/admin/edit-category/:categoryId',
-            component: () => import('@/pages/admin/categories/EditCategory'),
+            component: () => import('@/pages/admin/category/EditCategory'),
+            meta: {
+                layout: 'admin',
+                requiresAuth: true,
+                is_admin: true,
+            },
+        },
+        {
+            path: '/admin/user',
+            name: 'users',
+            component: () => import('@/pages/admin/user/users'),
+            meta: {
+                layout: 'admin',
+                requiresAuth: true,
+                is_admin: true,
+            },
+        },
+        {
+            path: '/admin/order',
+            name: 'orders',
+            component: () => import('@/pages/admin/order/Order'),
             meta: {
                 layout: 'admin',
                 requiresAuth: true,
@@ -176,7 +196,7 @@ router.beforeEach((to, from, next) => {
         } else {
             let user = store.getters.getUser
             if (to.matched.some(record => record.meta.is_admin)) {
-                if (user.role === 'Admin') {
+                if (user.role === 'admin') {
                     return next()
                 } else {
                     return next({ name: 'register' })

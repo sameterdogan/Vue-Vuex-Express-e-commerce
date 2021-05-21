@@ -12,7 +12,6 @@
 
 <script>
 import Messages from '@/components/messages/messages'
-
 const defaultLayout = 'default'
 export default {
     name: 'App',
@@ -27,7 +26,7 @@ export default {
     },
     created() {
         this.$root.$on('quickView', componentInfo => {
-              this.quickView=componentInfo
+            this.quickView=componentInfo
         })
     },
     computed: {
@@ -41,6 +40,4 @@ export default {
 <style lang='css'>
 @import "assets/css/responsive.css";
 @import "assets/css/index.css";
-
-
 </style>

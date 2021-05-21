@@ -6,7 +6,10 @@ import '@/plugins/vueCarouesel'
 import '@/plugins/vueMask'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {BootstrapVue} from 'bootstrap-vue'
+Vue.use(BootstrapVue)
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { router } from './router'
 import store from './store/store'
 import '@/store/subscriber'
@@ -27,6 +30,6 @@ store.dispatch('attempt', localStorage.getItem('token')).then(() => {
     new Vue({
         render: h => h(App),
         router,
-        store,
+        store
     }).$mount('#app')
 })

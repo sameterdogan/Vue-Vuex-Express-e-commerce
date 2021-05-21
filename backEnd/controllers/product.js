@@ -3,7 +3,16 @@ import CustomError from '../helpers/error/CustomError'
 import asyncErrorWrapper from '../helpers/error/asyncErrorWrapper'
 
 
+export const allProducts=asyncErrorWrapper(async (req,res,next)=>{
+    const allProducts=await ProductModel.find({},{name:1,price:1,stock:1,category:1,image:1})
+        .populate("category")
 
+    res.status(200).json({
+        success:true,
+        message:"All product brought in successfully",
+        allProducts
+    })
+})
 
 export const getProducts = async (req, res, next) => {
     const products = await req.getProductsQuery.lean()
@@ -31,7 +40,7 @@ export const getNewArrivalsProducts = asyncErrorWrapper(async (req, res, next) =
         .limit(5)
     res.status(200).json({
         success: true,
-        message: 'New products have been successfully listed.',
+        message: 'New product have been successfully listed.',
         newArrivalsProducts,
     })
 })

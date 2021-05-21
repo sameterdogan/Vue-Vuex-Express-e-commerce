@@ -23,7 +23,7 @@ export const isLogin = async (req, res, next) => {
 
 export const isAdmin = async (req, res, next) => {
     const user = req.user
-    if (user.role !== 'Admin')
+    if (user.role !== 'admin')
         return next(
             new CustomError(
                 'You are not authorized to access this route !',

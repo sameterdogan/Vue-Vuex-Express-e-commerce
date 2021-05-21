@@ -3,6 +3,7 @@ import { router } from '@/router'
 
 const moduleProduct = {
     state: {
+        allProducts:[],
         products: [],
         productsByCategory: [],
         newArrivals: [],
@@ -11,13 +12,15 @@ const moduleProduct = {
         quickViewProduct: {},
     },
     mutations: {
+        INIT_ALL_PRODUCTS(state,allProducts){
+            state.allProducts=allProducts
+        },
         INIT_PRODUCTS(state, products) {
             state.products = products
         },
         INIT_NEW_ARRIVALS(state, newArrivals) {
             state.newArrivals = newArrivals
         },
-
         INIT_PRODUCTS_BY_CATEGORY(state, productsByCategory) {
             state.productsByCategory = productsByCategory
         },
@@ -48,6 +51,13 @@ const moduleProduct = {
         },
     },
     actions: {
+        initAllProducts({commit}){
+            axios.get("product/allProducts")
+                .then(res=>{
+                    commit("INIT_ALL_PRODUCTS",res.data.allProducts)
+                })
+        }
+        ,
         initProducts({ commit }, filterAndSortObject) {
             const filter = JSON.stringify(filterAndSortObject.filter)
             const sort = JSON.stringify(filterAndSortObject.sort)
@@ -134,6 +144,9 @@ const moduleProduct = {
         },
     },
     getters: {
+        getAllProducts(state){
+          return state.allProducts
+        },
         getProducts(state) {
             return state.products
         },

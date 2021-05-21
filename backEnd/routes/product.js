@@ -14,6 +14,7 @@ import {
     getProductsByCategory,
     getNewArrivalsProducts,
     getQuickViewProduct,
+    allProducts,
 } from '../controllers/product'
 
 const router = express.Router()
@@ -21,21 +22,18 @@ const router = express.Router()
 
 router.get('/', productsQuery, getProducts)
 
+router.get('/allProducts', allProducts)
 
 router.get('/category/:slugCategory', productsByCategoryQuery, getProductsByCategory)
 
-
 router.get('/quick-view/:productId', getQuickViewProduct)
-
 
 router.get('/new-arrivals', getNewArrivalsProducts)
 
-
 router.get('/:slugProduct', getBySlugProduct)
 
-
-/*router.use(isLogin)
-router.use(isAdmin)*/
+router.use(isLogin)
+router.use(isAdmin)
 
 router.post('/',
     productImageMuter.single('image'),

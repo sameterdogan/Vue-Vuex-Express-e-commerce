@@ -36,22 +36,10 @@
         <div class='card-body'>
             <div class='card-text border p-2'>
                 <div class='row align-items-center'>
-                    <div v-if='order.status===0' class='col-4 text-center'>
-                        <i class='bi bi-hourglass-split text-success mr-2'></i>
-                        <span class='text-success'>Is preparing</span>
+                    <div class='col-4'>
+                        <order-status :orderStatus='order.status'/>
                     </div>
-                    <div v-else-if='order.status===1' class='col-4 text-center'>
-                        <i class='bi bi-x text-danger mr-2'></i>
-                        <span class='text-danger'>Rejected</span>
-                    </div>
-                    <div v-else-if='order.status===2' class='col-4 text-center'>
-                        <i class='bi bi-box-seam text-success mr-2'></i>
-                        <span class='text-success'>In cargo</span>
-                    </div>
-                    <div v-else-if='order.status===3' class='col-4 text-center'>
-                        <i class='bi bi-check2 text-success mr-2'></i>
-                        <span class='text-success'>Was delivered</span>
-                    </div>
+
                     <div class='col-6'>
                         <img class='img-fluid order-item-img' v-for='item in order.items' :key='item._id'
                              :src='`http://localhost:5000/assets/images/productImages/${item.image}`'
@@ -65,8 +53,10 @@
 </template>
 
 <script>
+import OrderStatus from '@/components/cammon/OrderStatus'
 export default {
     name: 'OrderItem',
+    components: { OrderStatus },
     props: ['order'],
 
 }

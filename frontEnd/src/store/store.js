@@ -7,6 +7,7 @@ import messageStore from '@/store/modules/messageStore'
 import cartStore from '@/store/modules/cartStore'
 import addressStore from '@/store/modules/addressStore'
 import orderStore from "@/store/modules/orderStore"
+import userStore from "@/store/modules/userStore"
 
 Vue.use(Vuex)
 
@@ -18,7 +19,8 @@ const store = new Vuex.Store({
         messageStore,
         cartStore,
         addressStore,
-        orderStore
+        orderStore,
+        userStore
     },
 })
 

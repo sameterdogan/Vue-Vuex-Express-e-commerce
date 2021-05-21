@@ -1,0 +1,45 @@
+<template>
+    <tr>
+        <td>{{ order.address.name }} {{ order.address.surname }}</td>
+        <td>{{ order.address.phone }}</td>
+        <td>{{ order.items.length }}</td>
+        <td>{{ order.totalPrice }}</td>
+        <td>
+            <order-status :orderStatus='order.status' />
+        </td>
+        <td>
+            <button @click='showOrderDetailModal' class='btn btn-sm '>Show Detail</button>
+            <component :is='orderDetailModal' :order='order' @closeOrderDetailModal='closeOrderDetailModal' />
+
+        </td>
+
+    </tr>
+</template>
+
+<script>
+import OrderStatus from '@/components/cammon/OrderStatus'
+import OrderDetailModal from '@/components/admin/order/OrderDetailModal'
+
+export default {
+    name: 'order',
+    components: { OrderDetailModal, OrderStatus },
+    data() {
+        return {
+            orderDetailModal: null,
+        }
+    },
+    props: ['order'],
+    methods: {
+        showOrderDetailModal() {
+            this.orderDetailModal = OrderDetailModal
+        },
+        closeOrderDetailModal(){
+            this.orderDetailModal=null
+        }
+    },
+}
+</script>
+
+<style scoped>
+
+</style>

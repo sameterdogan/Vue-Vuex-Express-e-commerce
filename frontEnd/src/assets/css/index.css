@@ -81,6 +81,7 @@ main {
     max-width: 1000px;
     min-width: 500px;
     margin: 1.25rem auto;
+    overflow: auto;
 }
 
 .modal-cart-content {
@@ -90,6 +91,7 @@ main {
     background-clip: padding-box;
     border-radius: .3rem;
     padding: 3rem;
+
 }
 
 .close-modal {

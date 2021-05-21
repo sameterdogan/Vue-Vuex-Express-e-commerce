@@ -3,16 +3,20 @@ import { router } from '@/router'
 
 const moduleOrder = {
     state: {
+        allOrders: [],
         orders: [],
         order: {},
         stockErrorProductsInfo: [],
     },
     mutations: {
+        INIT_ALL_ORDERS(state,allOrders){
+            state.allOrders=allOrders
+        },
         INIT_ORDERS(state, orders) {
             state.orders = orders
         },
-        INIT_ORDER(state,order){
-          state.order=order
+        INIT_ORDER(state, order) {
+            state.order = order
         },
         ADD_ORDER(state, order) {
             state.orders.push(order)
@@ -27,17 +31,23 @@ const moduleOrder = {
         },
     },
     actions: {
+        initAllOrders({ commit }) {
+            axios.get('order/allOrders')
+                .then(res => {
+                    commit('INIT_ALL_ORDERS', res.data.allOrders)
+                })
+        },
         initOrders({ commit }) {
             axios.get('/order').then(res => {
                 console.log(res.data)
                 commit('INIT_ORDERS', res.data.orders)
             })
         },
-        initOrder({commit},orderId){
-          axios.get(`/order/${orderId}`)
-              .then(res=>{
-                  commit("INIT_ORDER",res.data.order)
-              })
+        initOrder({ commit }, orderId) {
+            axios.get(`/order/${orderId}`)
+                .then(res => {
+                    commit('INIT_ORDER', res.data.order)
+                })
         },
         addOrder({ commit, dispatch }, orderInfo) {
             axios.post('/order/add-order', orderInfo)
@@ -60,8 +70,11 @@ const moduleOrder = {
         },
     },
     getters: {
-        getOrders(state){
-          return state.orders
+        getAllOrders(state){
+            return state.allOrders
+        },
+        getOrders(state) {
+            return state.orders
         },
         getOrder(state) {
             return state.order
