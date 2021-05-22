@@ -15,8 +15,8 @@ export const allOrders=asyncErrorWrapper(async (req,res,next)=>{
 })
 export const addOrder = asyncErrorWrapper(async (req, res, next) => {
     req.body["user"]=req.user._id
-    console.log(req.body)
     const orderInfo = req.body
+    console.log(orderInfo.items[0].category)
     const productIdes = orderInfo.items.map(product => product._id)
     const databaseProducts = await ProductModel.find({ _id: productIdes })
     const stockError= ProductModel.stockCheckProduct(databaseProducts,orderInfo.items)

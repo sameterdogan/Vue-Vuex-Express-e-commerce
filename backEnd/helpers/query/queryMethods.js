@@ -44,8 +44,9 @@ export const paginationQueryMethod = (count, req, query) => {
     const pagination = {
         isEndIndex: false,
     }
-    const start = Number(req.query.start) || 0
-    const limit = Number(req.query.limit) || 15
+    const paginationProps=req.query.paginationProps ? JSON.parse(req.query.paginationProps):{start:0,limit:15}
+    const start = Number(paginationProps.start)
+    const limit = Number(paginationProps.limit)
     if (start + limit < count) {
         pagination['isEndIndex'] = true
     }

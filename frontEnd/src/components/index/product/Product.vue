@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import QuickView from '@/components/index/product/QuickView'
+import QuickViewModal from '@/components/index/product/QuickViewModal'
 
 export default {
 
@@ -42,9 +42,9 @@ export default {
     },
     methods: {
         quickView() {
-            this.$root.$emit('quickView', { component: QuickView, productId: this.product._id })
+            this.$root.$emit('quickView', { component: QuickViewModal, productId: this.product._id })
             document.querySelector('body').style.setProperty('overflow', 'hidden')
-            this.$store.commit('INIT_QUICK_VIEW_PRODUCT', {})
+            this.$store.commit('INIT_QUICK_VIEW_PRODUCT')
         },
         addToCart() {
             this.item = { ...this.$props.product }

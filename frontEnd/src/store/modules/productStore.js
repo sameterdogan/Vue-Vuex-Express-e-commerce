@@ -10,6 +10,11 @@ const moduleProduct = {
         relatedProducts: [],
         product: {},
         quickViewProduct: {},
+        queryProps:{
+            sort:{},
+            filter:{},
+            pagination:{start:0,limit:3}
+        }
     },
     mutations: {
         INIT_ALL_PRODUCTS(state,allProducts){
@@ -49,6 +54,15 @@ const moduleProduct = {
                 state.products.splice(index, 1)
             }
         },
+        CHANGE_SORT(state,sort){
+            state.queryProps.sort=sort
+        },
+        CHANGE_FILTER(state,filter){
+            state.queryProps.filter=filter
+        },
+        CHANGE_PAGINATION(state,pagination){
+            state.queryProps.pagination=pagination
+        }
     },
     actions: {
         initAllProducts({commit}){
@@ -58,10 +72,13 @@ const moduleProduct = {
                 })
         }
         ,
-        initProducts({ commit }, filterAndSortObject) {
-            const filter = JSON.stringify(filterAndSortObject.filter)
-            const sort = JSON.stringify(filterAndSortObject.sort)
-            axios.get(`product?filter=${filter}&sort=${sort}`).then(res => {
+        initProducts({ commit,state }) {
+            const filter = JSON.stringify(state.queryProps.filter)
+            const sort = JSON.stringify(state.queryProps.sort)
+            const pagination=JSON.stringify(state.queryProps.pagination)
+            console.log(filter)
+            console.log(sort)
+            axios.get(`product?filter=${filter}&sort=${sort}&paginationProps=${pagination}`).then(res => {
                 console.log(res)
                 commit('INIT_PRODUCTS', res.data.products)
             })
@@ -164,6 +181,9 @@ const moduleProduct = {
         },
         getQuickViewProduct(state){
             return state.quickViewProduct
+        },
+        getPagination(state){
+            return state.queryProps.pagination
         }
     },
 }

@@ -8,7 +8,7 @@ const UserSchema = new Schema(
         name: {
             type: String,
             trim: true,
-            set: function (value) {
+            set: function(value) {
                 const fullNameArray = value.split(' ')
                 value = ''
                 fullNameArray.forEach(name => {
@@ -53,17 +53,20 @@ const UserSchema = new Schema(
     },
     {
         timestamps: true,
-    }
+    },
 )
 
-UserSchema.pre('save', async function (next) {
-    try {
-        if(!this.isModified("password")) return(next)
-        this.password = bcrypt.hash(this.password, 10)
-        next()
-    } catch (err) {
-        next(err)
-    }
+UserSchema.pre('save', function(next) {
+
+    if (!this.isModified('password')) return (next)
+    bcrypt.genSalt(10, (err, salt) => {
+        if (err) return (next(err))
+        bcrypt.hash(this.password, salt, (err, hash) => {
+            if (err) return next(err)
+            this.password = hash
+            next()
+        })
+    })
 })
 
 export default mongoose.model('User', UserSchema)

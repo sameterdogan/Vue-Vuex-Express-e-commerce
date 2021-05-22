@@ -104,6 +104,14 @@ export const router = new VueRouter({
             },
         },
         {
+            name: 'all-products',
+            path: '/all-products',
+            component: () => import('@/pages/index/product/products'),
+            meta: {
+                layout: 'default',
+            },
+        },
+        {
             name: 'products-by-category',
             path: '/product/:slugCategory',
             component: () => import('@/pages/index/product/ProductsByCategory'),

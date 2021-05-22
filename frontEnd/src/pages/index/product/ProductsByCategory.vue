@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import SearchOptions from '@/components/index/product/SearchOptions'
+import SearchOptions from '@/components/index/product/ProductFilterAndSort'
 import ListNewArrival from '@/components/index/product/NewArrivals/ListNewArrival'
 import ProductListByCategory from '@/components/index/product/ProductListByCategory'
 export default {

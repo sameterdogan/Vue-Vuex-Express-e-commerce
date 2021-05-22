@@ -4,9 +4,8 @@ import asyncErrorWrapper from '../helpers/error/asyncErrorWrapper'
 
 
 export const allProducts=asyncErrorWrapper(async (req,res,next)=>{
-    const allProducts=await ProductModel.find({},{name:1,price:1,stock:1,category:1,image:1})
+    const allProducts=await ProductModel.find({},{name:1,price:1,stock:1,category:1,image:1,slugProduct:1})
         .populate("category")
-
     res.status(200).json({
         success:true,
         message:"All product brought in successfully",

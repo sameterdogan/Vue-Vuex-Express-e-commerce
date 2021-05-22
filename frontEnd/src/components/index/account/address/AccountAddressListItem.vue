@@ -47,6 +47,7 @@ export default {
         },
         openEditAddressModal(){
            this.editAddressModal=NewAddress
+            document.querySelector('body').style.setProperty('overflow', 'hidden')
         },
         closeAddressModal() {
             this.editAddressModal = null

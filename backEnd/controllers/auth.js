@@ -4,7 +4,7 @@ import CustomError from '../helpers/error/CustomError'
 
 export const register = async (req, res, next) => {
     try {
-        await UserModel.create(req.body)
+        await UserModel.create({...req.body})
         res.status(201).json({
             success: true,
             message: `"${req.body.email}" You can login using your e-mail account.`,

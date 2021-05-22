@@ -34,6 +34,7 @@ export default {
     methods:{
         openAddressModal(){
             this.newAddress=AddressModal
+            document.querySelector('body').style.setProperty('overflow', 'hidden')
         },
         closeAddressModal(){
             this.newAddress=null

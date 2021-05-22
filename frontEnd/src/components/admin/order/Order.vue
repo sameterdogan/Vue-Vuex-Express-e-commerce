@@ -8,7 +8,7 @@
             <order-status :orderStatus='order.status' />
         </td>
         <td>
-            <button @click='showOrderDetailModal' class='btn btn-sm '>Show Detail</button>
+            <button @click='showOrderDetailModal' class='btn btn-sm btn-outline-light '>Show Detail</button>
             <component :is='orderDetailModal' :order='order' @closeOrderDetailModal='closeOrderDetailModal' />
 
         </td>
@@ -32,6 +32,7 @@ export default {
     methods: {
         showOrderDetailModal() {
             this.orderDetailModal = OrderDetailModal
+            document.querySelector('body').style.setProperty('overflow', 'hidden')
         },
         closeOrderDetailModal(){
             this.orderDetailModal=null

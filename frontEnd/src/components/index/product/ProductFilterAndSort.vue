@@ -53,7 +53,7 @@
 
 <script>
 export default {
-    name: 'SearchOptions',
+    name: 'ProductFilterAndSort',
     data() {
         return {
             colors: ['Black', 'Brown', 'White'],
@@ -84,7 +84,9 @@ export default {
             this.sort.groupBy = groupBy
         },
         ApplyFilter() {
-            this.$root.$emit('filterOptions', { filter: this.filter, sort: this.sort })
+            this.$store.commit("CHANGE_SORT",this.sort)
+            this.$store.commit("CHANGE_FILTER",this.filter)
+            this.$store.dispatch("initProducts")
         },
     },
     watch: {

@@ -8,20 +8,22 @@
                   <div class='col-lg-9 col-md-12'>
                         <search-options/>
                         <list-product/>
-
+                       <product-pagination class='my-5' />
                   </div>
             </div>
+
       </div>
 </template>
 
 <script>
 import ListProduct from '@/components/index/product/ListProduct'
-import SearchOptions from '@/components/index/product/SearchOptions'
+import SearchOptions from '@/components/index/product/ProductFilterAndSort'
 import ListNewArrival from '@/components/index/product/NewArrivals/ListNewArrival'
+import ProductPagination from '@/components/index/product/ProductPagination'
 
 export default {
       name: 'Home',
-      components: { ListProduct, SearchOptions,ListNewArrival },
+      components: { ProductPagination, ListProduct, SearchOptions,ListNewArrival },
 }
 </script>
 

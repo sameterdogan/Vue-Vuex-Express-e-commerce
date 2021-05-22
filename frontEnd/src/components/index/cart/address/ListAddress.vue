@@ -30,6 +30,7 @@ export default {
     methods: {
         showNewAddress() {
             this.newAddress = 'NewAddress'
+            document.querySelector('body').style.setProperty('overflow', 'hidden')
         },
         closeAddressModal() {
             this.newAddress = null

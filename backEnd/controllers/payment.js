@@ -13,12 +13,16 @@ export const checkout = async (req, res, next) => {
     const order = await OrderModel.findById(req.params.orderId).populate([{ path: 'address' }, { path: 'user' }, { path: 'category' }])
 
     order.items.forEach(item => {
+
+        console.log(item.category)
         item['id'] = item._id
         item['itemType'] = Iyzipay.BASKET_ITEM_TYPE.PHYSICAL
         item['category1'] = item.category.category
         item['price'] = String(item.price * item.quantity)
+        console.log(item)
         delete item['_id']
     })
+    console.log(order.items)
 
     const request = {
         locale: Iyzipay.LOCALE.TR,
@@ -60,7 +64,7 @@ export const checkout = async (req, res, next) => {
         basketItems: order.items,
     }
     iyzipay.checkoutFormInitialize.create(request, function(err, result) {
-        console.log(result)
+/*        console.log(result)*/
         res.status(200)
             .json({
                 success: true,
