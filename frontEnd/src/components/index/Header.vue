@@ -51,8 +51,8 @@ export default {
   margin: 2rem 1rem;
 }
 .header-logo img{
-  width: 80px;
-  height: 80px;
+  width: 170px;
+  height: 120px;
 }
 .header-options{
   display: flex;

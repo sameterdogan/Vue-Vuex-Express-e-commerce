@@ -1,7 +1,6 @@
 export default schema => {
     return async (req, res, next) => {
         try {
-            console.log('geldi ve kontol etti')
             await schema.validateAsync(req.body, {
                 abortEarly: false,
                 allowUnknown: true,

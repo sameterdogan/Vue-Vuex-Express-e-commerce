@@ -14,19 +14,20 @@ export default async (req, res, next) => {
             },
             { _id: 1 }
         )
-        category = category._id
 
         let searchCount, defaultCount
-        let query = ProductModel.find({ category })
+        let query = ProductModel.find({ category:category._id })
         const filterKeys = ['gender', 'color', 'name', 'price']
         const filterObject = filterQueryMethod(filterKeys, query, req) //search query
         if (filterObject.filter) {
-            filterObject.filter['category'] = category.slugCategory
+            filterObject.filter['category'] = category._id
             searchCount = await ProductModel.countDocuments(filterObject.filter)
+            console.log(searchCount+"asdasda")
         } else {
             defaultCount = await ProductModel.find().countDocuments({
                 category: req.params.category,
             })
+            console.log(defaultCount+"asdasdas")
         }
 
         query = filterObject.query
@@ -37,10 +38,8 @@ export default async (req, res, next) => {
             query
         )
         query = paginationObject.query
-
         req.getProductsByCategoryQuery = query
         req.isEndIndex = paginationObject.isEndIndex
-        console.log('geldi')
         next()
     } catch (err) {
         next(err)

@@ -26,29 +26,13 @@ const UserSchema = new Schema(
             type: String,
             trim: true,
         },
-        block: {
-            type: Boolean,
-            default: false,
-        },
         password: {
             type: String,
             trim: true,
             select: false,
         },
-        profileImage: {
-            type: String,
-            default: 'default.png',
-        },
         slugName: {
             type: String,
-        },
-        forgotPasswordToken: {
-            type: String,
-            default: undefined,
-        },
-        forgotPasswordTokenExpire: {
-            type: Date,
-            default: undefined,
         },
     },
     {

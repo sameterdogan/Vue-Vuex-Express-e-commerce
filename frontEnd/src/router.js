@@ -146,14 +146,6 @@ export const router = new VueRouter({
 
             },
         },
-        {
-            path: '*',
-            name: 'notFound',
-            component: () => import('@/pages/error/404'),
-            meta: {
-                layout: 'blank',
-            },
-        },
         //account
         {
             name: 'account',
@@ -189,6 +181,23 @@ export const router = new VueRouter({
             meta: {
                 layout: 'default',
                 requiresAuth: true,
+            },
+        },
+        //error
+        {
+            path: '*',
+            name: '404',
+            component: () => import('@/pages/error/404'),
+            meta: {
+                layout: 'blank',
+            },
+        },
+        {
+            path: '*',
+            name: '403',
+            component: () => import('@/pages/error/403'),
+            meta: {
+                layout: 'blank',
             },
         },
     ],

@@ -3,31 +3,46 @@ import { router } from '@/router'
 
 const moduleProduct = {
     state: {
-        allProducts:[],
+        allProducts: [],
         products: [],
         productsByCategory: [],
         newArrivals: [],
         relatedProducts: [],
         product: {},
         quickViewProduct: {},
-        queryProps:{
-            sort:{},
-            filter:{},
-            pagination:{start:0,limit:3}
-        }
+        queryProps: {
+            sort: {},
+            filter: {},
+            pagination: { start: 0, limit: 8, isEndIndex: false },
+        },
     },
     mutations: {
-        INIT_ALL_PRODUCTS(state,allProducts){
-            state.allProducts=allProducts
+        INIT_ALL_PRODUCTS(state, allProducts) {
+            state.allProducts = allProducts
         },
-        INIT_PRODUCTS(state, products) {
-            state.products = products
+        INIT_PRODUCTS(state, productsInfo) {
+            state.products.push(...productsInfo.products)
+            state.queryProps.pagination.isEndIndex = productsInfo.isEndIndex
+        },
+        CLEAR_PRODUCTS_ARRAY(state) {
+            state.products = []
+        },
+        CLEAR_PRODUCTS_QUERY_PROPS(state) {
+            state.queryProps = {
+                sort: {},
+                filter: {},
+                pagination: { start: 0, limit: 8, isEndIndex: false },
+            }
+        },
+        CLEAR_PRODUCTS_BY_CATEGORY_ARRAY(state) {
+            state.productsByCategory = []
         },
         INIT_NEW_ARRIVALS(state, newArrivals) {
             state.newArrivals = newArrivals
         },
-        INIT_PRODUCTS_BY_CATEGORY(state, productsByCategory) {
-            state.productsByCategory = productsByCategory
+        INIT_PRODUCTS_BY_CATEGORY(state, productsByCategoryInfo) {
+            state.productsByCategory.push(...productsByCategoryInfo.productsByCategory)
+            state.queryProps.pagination.isEndIndex = productsByCategoryInfo.isEndIndex
         },
         INIT_BY_SLUG_PRODUCT(state, product) {
             state.product = { ...product }
@@ -54,48 +69,46 @@ const moduleProduct = {
                 state.products.splice(index, 1)
             }
         },
-        CHANGE_SORT(state,sort){
-            state.queryProps.sort=sort
+        PRODUCTS_CHANGE_SORT(state, sort) {
+            state.queryProps.sort = sort
         },
-        CHANGE_FILTER(state,filter){
-            state.queryProps.filter=filter
+        PRODUCTS_CHANGE_FILTER(state, filter) {
+            state.queryProps.filter = filter
         },
-        CHANGE_PAGINATION(state,pagination){
-            state.queryProps.pagination=pagination
-        }
+        PRODUCTS_CHANGE_PAGINATION(state, start) {
+            state.queryProps.pagination.start = start
+        },
     },
     actions: {
-        initAllProducts({commit}){
-            axios.get("product/allProducts")
-                .then(res=>{
-                    commit("INIT_ALL_PRODUCTS",res.data.allProducts)
+        initAllProducts({ commit }) {
+            axios.get('product/allProducts')
+                .then(res => {
+                    commit('INIT_ALL_PRODUCTS', res.data.allProducts)
                 })
         }
         ,
-        initProducts({ commit,state }) {
+        initProducts({ commit, state }) {
             const filter = JSON.stringify(state.queryProps.filter)
             const sort = JSON.stringify(state.queryProps.sort)
-            const pagination=JSON.stringify(state.queryProps.pagination)
-            console.log(filter)
-            console.log(sort)
+            const pagination = JSON.stringify(state.queryProps.pagination)
             axios.get(`product?filter=${filter}&sort=${sort}&paginationProps=${pagination}`).then(res => {
                 console.log(res)
-                commit('INIT_PRODUCTS', res.data.products)
+                commit('INIT_PRODUCTS', { products: res.data.products, isEndIndex: res.data.isEndIndex })
             })
         },
-        initProductsByCategory({ commit }, filterObjectAndCategory) {
-            const filter = JSON.stringify(filterObjectAndCategory.filter)
-            const sort = JSON.stringify(filterObjectAndCategory.sort)
-            const slugCategory = filterObjectAndCategory.slugCategory
+        initProductsByCategory({ commit, state }, slugCategory) {
+            const filter = JSON.stringify(state.queryProps.filter)
+            const sort = JSON.stringify(state.queryProps.sort)
+            const pagination = JSON.stringify(state.queryProps.pagination)
             axios
                 .get(
-                    `product/category/${slugCategory}?filter=${filter}&sort=${sort}`,
+                    `product/category/${slugCategory}?filter=${filter}&sort=${sort}&paginationProps=${pagination}`,
                 )
                 .then(res => {
                     console.log(res)
                     commit(
                         'INIT_PRODUCTS_BY_CATEGORY',
-                        res.data.productsByCategory,
+                        { productsByCategory: res.data.productsByCategory, isEndIndex: res.data.isEndIndex },
                     )
                 })
         },
@@ -122,10 +135,10 @@ const moduleProduct = {
                 })
         },
         initQuickViewProduct({ commit }, productId) {
-              axios.get(`product/quick-view/${productId}`)
-                  .then(res=>{
-                      commit("INIT_QUICK_VIEW_PRODUCT",res.data.quickView)
-                  })
+            axios.get(`product/quick-view/${productId}`)
+                .then(res => {
+                    commit('INIT_QUICK_VIEW_PRODUCT', res.data.quickView)
+                })
         }
         ,
         addProduct({ commit }, productForm) {
@@ -161,8 +174,8 @@ const moduleProduct = {
         },
     },
     getters: {
-        getAllProducts(state){
-          return state.allProducts
+        getAllProducts(state) {
+            return state.allProducts
         },
         getProducts(state) {
             return state.products
@@ -179,12 +192,18 @@ const moduleProduct = {
         getProductsByCategory(state) {
             return state.productsByCategory
         },
-        getQuickViewProduct(state){
+        getQuickViewProduct(state) {
             return state.quickViewProduct
         },
-        getPagination(state){
+        getPagination(state) {
             return state.queryProps.pagination
-        }
+        },
+        getProductsLength(state) {
+            return state.products.length
+        },
+        getProductsByCategoryLength(state) {
+            return state.productsByCategory.length
+        },
     },
 }
 

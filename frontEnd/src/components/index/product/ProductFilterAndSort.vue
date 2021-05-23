@@ -84,11 +84,19 @@ export default {
             this.sort.groupBy = groupBy
         },
         ApplyFilter() {
-            this.$store.commit("CHANGE_SORT",this.sort)
-            this.$store.commit("CHANGE_FILTER",this.filter)
-            this.$store.dispatch("initProducts")
+            this.$store.commit('PRODUCTS_CHANGE_PAGINATION', 0)
+            this.$store.commit('PRODUCTS_CHANGE_SORT', this.sort)
+            this.$store.commit('PRODUCTS_CHANGE_FILTER', this.filter)
+            if (this.$route.name === 'all-products') {
+                this.$store.commit('CLEAR_PRODUCTS_ARRAY')
+                this.$store.dispatch('initProducts')
+            } else if (this.$route.name === 'products-by-category') {
+                this.$store.commit('CLEAR_PRODUCTS_BY_CATEGORY_ARRAY')
+                this.$store.dispatch('initProductsByCategory', this.$route.params.slugCategory)
+            }
         },
-    },
+    }
+    ,
     watch: {
         $route() {
             this.$refs.filterAndSortOptionsForm.reset()
@@ -104,8 +112,10 @@ export default {
                 groupBy: '',
                 sortBy: '',
             }
-        },
-    },
+        }
+        ,
+    }
+    ,
 }
 </script>
 
@@ -120,16 +130,19 @@ export default {
 .filter-options li {
     margin-right: 20px;
 }
-select{
+
+select {
     width: 180px;
 }
+
 @media screen and (max-width: 768px) {
-    select{
+    select {
         width: 160px;
     }
 }
+
 @media screen and (max-width: 426px) {
-    select{
+    select {
         width: 140px;
     }
 }

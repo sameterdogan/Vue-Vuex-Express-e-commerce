@@ -4,7 +4,7 @@
             <ul class='desktop-navbar'>
                 <li class='desktop-navbar-item-wrap'>
                     <router-link
-                        to=''
+                        :to='{name:"all-products"}'
                         tag='button'
                         class='desktop-navbar-item'
                     >
@@ -21,7 +21,7 @@
                     </router-link>
                     <div class='navbar-item-dropdown '>
                         <button v-for='category in categories' :key='category._id'
-                                @click="$router.push({name:'products-by-category',params:{slugCategory:category.slugCategory}})"
+                                @click='toProductsByCategory(category.slugCategory)'
                                 class='dropdown-item-button'>
                             {{ category.category }}
                         </button>
@@ -62,6 +62,12 @@ export default {
     },
     computed: {
         ...mapGetters({ categories: 'getCategories' })
+    },
+    methods:{
+        toProductsByCategory(slugCategory){
+
+           this.$router.push({name:'products-by-category',params:{slugCategory}})
+        }
     }
 }
 </script>

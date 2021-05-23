@@ -4,7 +4,8 @@
   "description": "e-commerce api",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon -r esm server.js"
+    "dev": "nodemon -r esm server.js",
+    "build": "nodemon -r esm server.js"
   },
   "keywords": [
     "Expressjs",

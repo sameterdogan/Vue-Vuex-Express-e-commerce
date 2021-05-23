@@ -14,26 +14,14 @@ import { mapGetters } from 'vuex'
 export default {
     name: 'ProductList',
     components: { Product },
-    data() {
-        return {
-            filter: {},
-            sort: {},
-        }
-    },
     created() {
-        this.$root.$on('filterOptions', filterOptions => {
-            if (this.$route.name === 'home') {
-
-                this.filter = filterOptions.filter
-                this.sort = filterOptions.sort
-                this.$store.dispatch('initProducts', { filter: this.filter, sort: this.sort })
-            }
-
-        }), this.$store.dispatch('initProducts', { filter: this.filter, sort: this.sort })
+        this.$store.commit("CLEAR_PRODUCTS_QUERY_PROPS")
+        this.$store.commit("CLEAR_PRODUCTS_ARRAY")
+        this.$store.dispatch('initProducts')
     },
-    computed:{
-        ...mapGetters({products:"getProducts"})
-    }
+    computed: {
+        ...mapGetters({ products: 'getProducts' }),
+    },
 
 }
 

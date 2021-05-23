@@ -54,10 +54,11 @@ export default {
         Slide,
     },
     created() {
-        this.$store.dispatch("initProducts",{filter:{},sort:{}})
+
+        this.$store.dispatch("initAllProducts")
     },
     computed:{
-        ...mapGetters({products:"getProducts"})
+        ...mapGetters({products:"getAllProducts"})
     }
 }
 </script>

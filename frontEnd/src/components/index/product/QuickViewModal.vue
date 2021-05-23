@@ -7,7 +7,7 @@
                     &times;
                 </button>
                 <div class='col-lg-6 col-md-6 col-12 text-center'>
-                    <img class='quick-view-image img-fluid '
+                    <img class=' img-fluid '
                          :src='`http://localhost:5000/assets/images/productImages/${product.image}`' alt=''>
                 </div>
                 <div class='col-lg-6 col-md-6 col-12'>

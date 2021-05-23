@@ -1,12 +1,8 @@
 <template>
 
-    <div class='row'>
+    <div class='row ' v-if='pagination.isEndIndex===false'>
         <div class='col-12 text-center'>
-            <Button @click='previousPage' v-if='pagination.start=!0' class='btn btn-sm pagination-button'><i
-                class='bi bi-arrow-left-short'></i> Previous Page
-            </Button>
-            <span class='mx-2'></span>
-            <Button @click='nextPage' class='btn btn-sm pagination-button'>Next Page <i
+            <Button @click='showMoreProducts' class='btn btn-sm pagination-button '>Show More <i
                 class='bi bi-arrow-right-short'></i></Button>
         </div>
     </div>
@@ -22,18 +18,22 @@ export default {
     },
     computed: {
         ...mapGetters({ pagination: 'getPagination' }),
+        ...mapGetters({ productsLength: 'getProductsLength' }),
+        ...mapGetters({ productsByCategoryLength: 'getProductsByCategoryLength' }),
     },
     methods: {
-        nextPage() {
-            this.pagination.start += this.pagination.limit
-            this.$store.commit("CHANGE_PAGINATION",this.pagination)
-            this.$store.dispatch("initProducts")
+        showMoreProducts() {
+            if (this.$route.name === 'all-products') {
+                this.$store.commit('PRODUCTS_CHANGE_PAGINATION',this.productsLength)
+                this.$store.dispatch('initProducts')
+            } else if (this.$route.name === 'products-by-category') {
+                this.$store.commit('PRODUCTS_CHANGE_PAGINATION',this.productsByCategoryLength)
+                console.log(this.$route.params.slugCategory)
+                this.$store.dispatch('initProductsByCategory',this.$route.params.slugCategory)
+            }
+
         },
-        previousPage() {
-            this.pagination.start -= this.pagination.limit
-            this.$store.commit("CHANGE_PAGINATION",this.pagination)
-            this.$store.dispatch("initProducts")
-        },
+
     },
 }
 </script>
@@ -43,7 +43,7 @@ export default {
     color: #0077C1;
     border: solid #0077C1 1px;
     transition: all .5s;
-    width: 15%;
+    width: 20%;
     height: 31px;
 }
 

@@ -24,12 +24,13 @@ export const getProducts = async (req, res, next) => {
 }
 
 export const getProductsByCategory = asyncErrorWrapper(async (req, res, next) => {
-    const productsByCategory = await req.getProductsByCategoryQuery.lean()
-
+    const productsByCategory = await req.getProductsByCategoryQuery.populate("category").lean()
+ console.log(productsByCategory)
     res.status(200).json({
         success: true,
         message: 'Products successfully listed.',
         productsByCategory,
+        isEndIndex: req.isEndIndex,
     })
 })
 
@@ -47,10 +48,10 @@ export const getNewArrivalsProducts = asyncErrorWrapper(async (req, res, next) =
 export const getBySlugProduct = asyncErrorWrapper(async (req, res, next) => {
     const product = await ProductModel.findOne({
         slugProduct: req.params.slugProduct,
-    })
+    }).populate("category")
     if (!product) return next(new CustomError('Product not found', 404))
     const relatedProducts = await ProductModel.find({
-        category: product.category,
+        category: product.category._id,
         _id: { $ne: product._id },
     }).limit(6)
     res.status(200).json({

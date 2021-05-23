@@ -2,7 +2,7 @@
 
     <div class='p-5'>
         <div id='gist'></div>
-        <div @submit.prevent='toPayment' id='iyzipay-checkout-form' class='responsive'></div>
+        <div  id='iyzipay-checkout-form' class='responsive'></div>
     </div>
 
 </template>
@@ -22,9 +22,10 @@ export default {
         postscribe('#gist', this.checkoutForm)
 
     },
-    methods:{
-        toPayment(){
-           console.log(document.querySelector("#iyzipay-checkout-form"))
+    watch:{
+        $route(to){
+            this.checkoutForm=to.params.checkoutForm
+            postscribe('#gist', this.checkoutForm)
         }
     }
 }

@@ -5,12 +5,12 @@
                 <span @click='closePaymentResult' class='float-right close-modal'>&times;</span>
                 <div v-if='paymentResult.status==="success"' class='success-payment-result'>
                     <i class='bi bi-bag-check-fill success-payment-icon'></i>
-                    <h1  class='success-payment-title'>Teşekkürler</h1>
-                    <p class='success-payment-text'>Ödeme işlemi başarılı bir şekilde gerçekleşmiştir.</p>
+                    <h1  class='success-payment-title'>Thanks</h1>
+                    <p class='success-payment-text'>Payment transaction has been completed successfully.</p>
                 </div>
                 <div v-else class='error-payment-result'>
                     <i class='bi bi-bag-x-fill error-payment-icon'></i>
-                    <h1 class='error-payment-title'>Hay aksi !</h1>
+                    <h1 class='error-payment-title'>Christ no !</h1>
                     <p class='error-payment-text'> {{paymentResult.errorMessage}}</p>
 
                 </div>

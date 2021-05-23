@@ -1,11 +1,11 @@
 <template>
-      <div class='container-fluid'>
+      <div class='container'>
 
             <div class='row'>
                   <div class='col-lg-3 new-arrivals'>
                     <list-new-arrival/>
                   </div>
-                  <div class='col-lg-9 col-md-12'>
+                  <div class='col-lg-9 col-md-12 min-height'>
                         <search-options/>
                         <list-product/>
                        <product-pagination class='my-5' />

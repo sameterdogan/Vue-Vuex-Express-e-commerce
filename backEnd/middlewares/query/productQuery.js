@@ -27,6 +27,7 @@ export default async (req, res, next) => {
         query = paginationObject.query
         req.getProductsQuery = query
         req.isEndIndex = paginationObject.isEndIndex
+        console.log(req.isEndIndex)
         next()
     } catch (err) {
         next(err)

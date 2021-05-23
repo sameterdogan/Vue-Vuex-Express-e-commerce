@@ -23,49 +23,25 @@ export default {
     data() {
         return {
             slugCategory: '',
-            filter: {},
-            sort: {},
         }
     },
     created() {
         this.slugCategory = this.$route.params.slugCategory
-        this.$root.$on('filterOptions', filterOptions => {
-            if (this.$route.name === 'products-by-category') {
-                this.filter = filterOptions.filter
-                this.sort = filterOptions.sort
-                this.$store.dispatch('initProductsByCategory', {
-                    slugCategory: this.slugCategory,
-                    filter: this.filter,
-                    sort: this.sort
-                })
-            }
-
-        })
-        this.$store.dispatch('initProductsByCategory', {
-            slugCategory: this.slugCategory,
-            filter: this.filter,
-            sort: this.sort
-        })
-
-
+        this.$store.commit("CLEAR_PRODUCTS_QUERY_PROPS")
+        this.$store.commit("CLEAR_PRODUCTS_BY_CATEGORY_ARRAY")
+        this.$store.dispatch('initProductsByCategory', this.slugCategory)
     },
     computed: {
-        ...mapGetters({ productsByCategory: 'getProductsByCategory' })
+        ...mapGetters({ productsByCategory: 'getProductsByCategory' }),
     },
     watch: {
         $route(to) {
-            this.filter = {}
-            this.sort = {}
             this.slugCategory = to.params.slugCategory
-            this.$store.dispatch('initProductsByCategory', {
-                slugCategory: this.slugCategory,
-                filter: this.filter,
-                sort: this.sort
-            })
-
-
-        }
-    }
+            this.$store.commit("CLEAR_PRODUCTS_QUERY_PROPS")
+            this.$store.commit("CLEAR_PRODUCTS_BY_CATEGORY_ARRAY")
+            this.$store.dispatch('initProductsByCategory', this.slugCategory)
+        },
+    },
 }
 </script>
 
