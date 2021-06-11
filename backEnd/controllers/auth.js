@@ -1,9 +1,11 @@
 import UserModel from '../models/user'
 import jwt from 'jsonwebtoken'
 import CustomError from '../helpers/error/CustomError'
+import bcrypt from "bcryptjs"
 
 export const register = async (req, res, next) => {
     try {
+
         await UserModel.create({...req.body})
         res.status(201).json({
             success: true,
@@ -16,10 +18,13 @@ export const register = async (req, res, next) => {
 export const login = async (req, res, next) => {
     const { email, password } = { ...req.body }
     const user = await UserModel.findOne({ email }).select('+password')
-
+     console.log(user)
     if (!user) return next(new CustomError('Email is incorrect', 400))
-    if (user.password !== password)
-        return next(new CustomError('Password is incorrect.', 400))
+    bcrypt.compare(password, user.password, (err, res) => {
+        if(res===false)
+            return next(new CustomError('Password is incorrect.', 400))
+    })
+
     user.password = null
     const token = await jwt.sign({ user }, process.env.jwtSecretKey, {
         expiresIn: process.env.jwtExpire,

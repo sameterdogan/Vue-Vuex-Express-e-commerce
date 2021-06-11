@@ -24,7 +24,8 @@ app.use(cors())
 app.use('/api', indexRouter)
 
 app.use((err, req, res, next) => {
-    let customError =null
+    let customError =err;
+    console.log(err)
     switch (err.name) {
         case 'SyntaxError':
             customError = new CustomError(err.message, 400)
@@ -32,11 +33,9 @@ app.use((err, req, res, next) => {
         case 'ValidationError':
             customError = new CustomError(err.message, 400)
             break
-        default :
-            customError = new CustomError("We encountered a systemic problem and we will solve it as soon as possible.", 500)
     }
 
-    res.status(customError.status).json({
+    res.status(customError.status || 500).json({
         success: false,
         message: customError.message,
     })
