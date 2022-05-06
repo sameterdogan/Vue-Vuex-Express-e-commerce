@@ -40,4 +40,5 @@ export default {
 <style lang='css'>
 @import "assets/css/responsive.css";
 @import "assets/css/index.css";
+
 </style>

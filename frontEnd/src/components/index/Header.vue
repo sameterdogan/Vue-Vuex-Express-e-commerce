@@ -53,6 +53,7 @@ export default {
 .header-logo img{
   width: 170px;
   height: 120px;
+    object-fit: contain;
 }
 .header-options{
   display: flex;

@@ -16,7 +16,7 @@
                     <div class='button-container'>
                         <button type='submit' class='btn float-right btn-primary  my-4'>Save</button>
                         <router-link
-                            to='/admin/categories'
+                            to='/admin/category'
                             tag='button'
                             class='btn float-right btn-danger mx-2 my-4'
                         >

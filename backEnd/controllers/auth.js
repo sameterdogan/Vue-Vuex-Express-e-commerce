@@ -5,7 +5,6 @@ import bcrypt from "bcryptjs"
 
 export const register = async (req, res, next) => {
     try {
-
         await UserModel.create({...req.body})
         res.status(201).json({
             success: true,

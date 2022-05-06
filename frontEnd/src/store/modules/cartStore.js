@@ -13,15 +13,19 @@ const ModuleCart = {
     },
     mutations: {
         ADD_TO_CART(state, item) {
+
             console.log(item)
+            item.category1=item.category.category
             const cartItemsIndex = state.cart.items.findIndex(i => i._id === item._id)
             if (cartItemsIndex >= 0) {
                 state.cart.items[cartItemsIndex].quantity += item.quantity
                 state.cart.totalPrice += item.quantity * item.price
             } else {
+
                 state.cart.items.push(item)
                 state.cart.totalPrice += item.quantity * item.price
             }
+
             localStorage.setItem('cart', JSON.stringify(state.cart))
 
         },

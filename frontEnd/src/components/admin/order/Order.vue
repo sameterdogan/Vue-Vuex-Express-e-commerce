@@ -1,7 +1,9 @@
 <template>
     <tr>
-        <td>{{ order.address.name }} {{ order.address.surname }}</td>
-        <td>{{ order.address.phone }}</td>
+        <td v-if='order.address'>{{ order.address.name }} {{ order.address.surname }}</td>
+        <td v-else>Adres bilgisi silinmiş</td>
+        <td v-if='order.address' >{{ order.address.phone }}</td>
+        <td v-else>Adres bilgisi silinmiş</td>
         <td>{{ order.items.length }}</td>
         <td>{{ order.totalPrice }}</td>
         <td>

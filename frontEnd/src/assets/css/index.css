@@ -18,6 +18,9 @@ td {
     text-align: center;
     font-weight: normal;
 }
+.vee-validate-span{
+    color: white !important;
+}
 
 /*input,textarea{
     box-shadow: none !important;

@@ -16,7 +16,7 @@
                     ></router-link>
 
                 </div>
-                <div class='col-lg-5 col-sm-12'>
+                <div class='col-lg-3 col-sm-12'>
                     <router-link
                         :to="{name:'product-details',params:{slugProduct:item.slugProduct}}"
                         class='item-name'
@@ -28,7 +28,7 @@
                 <div class='col-lg-3 col-sm-12'>
                    Price: <span class='item-price'>$ {{item.price}}</span>
                 </div>
-                <div class='col-lg-2 col-sm-12'>
+                <div class='col-lg-4 col-sm-12'>
                     Amount: {{item.quantity}}
 
                 </div>
@@ -76,6 +76,7 @@ export default {
     width: 100px;
     height: 100px;
     cursor: pointer;
+    object-fit: contain;
 }
 .item-price{
     color:#0077C1 ;

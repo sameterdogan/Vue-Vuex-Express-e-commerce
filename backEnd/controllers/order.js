@@ -18,9 +18,14 @@ export const addOrder = asyncErrorWrapper(async (req, res, next) => {
     const orderInfo = req.body
     console.log(orderInfo.items[0].category)
     const productIdes = orderInfo.items.map(product => product._id)
-    const databaseProducts = await ProductModel.find({ _id: productIdes })
-    const stockError= ProductModel.stockCheckProduct(databaseProducts,orderInfo.items)
+    console.log(orderInfo)
+    let databaseProducts = await ProductModel.find({ _id: productIdes }).populate("category").lean();
 
+     databaseProducts = orderInfo.items.map(product =>{
+         product.category1=product.category
+         return product
+     })
+    const stockError= ProductModel.stockCheckProduct(databaseProducts,orderInfo.items)
     if (stockError.messages.length >= 1) {
         return res.status(400).json({
             success:false,
@@ -28,6 +33,8 @@ export const addOrder = asyncErrorWrapper(async (req, res, next) => {
             stockErrorProductsIdAndStock:stockError.productsIdAndStock
         })
     }
+
+    orderInfo.items=databaseProducts
 
     const order = await OrderModel.create({ ...orderInfo })
     res.status(201).json({
