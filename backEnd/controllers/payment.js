@@ -33,7 +33,7 @@ export const checkout = async (req, res, next) => {
         paidPrice: String(order.totalPrice),
         currency: Iyzipay.CURRENCY.TRY,
         paymentGroup: Iyzipay.PAYMENT_GROUP.PRODUCT,
-        callbackUrl: `http://localhost:5000/api/payment/callback/${order._id}`,
+        callbackUrl: `http://localhost:3000/api/payment/callback/${order._id}`,
         enabledInstallments: [2, 3, 6, 9],
         buyer: {
             id: String(order.user._id),
@@ -78,17 +78,18 @@ export const checkout = async (req, res, next) => {
     })
 }
 export const callbackUrl = asyncErrorWrapper(async (req, res, next) => {
+
     iyzipay.checkoutForm.retrieve({
         locale: Iyzipay.LOCALE.TR,
         conversationId: req.params.conversationId,//conversationId = orderId
         token: req.body.token,
     }, async function(err, result) {
+
         if (result.status === 'success') {
-            await OrderModel.findByIdAndUpdate(req.params.conversationId, { status: 0 })
+            await OrderModel.findOneAndUpdate({_id:req.params.conversationId}, { status: 0 })
         } else {
             await OrderModel.findByIdAndUpdate(req.params.conversationId, { status: 1 })
         }
-        console.log(err, result)
         res.redirect(`http://localhost:8080/cart?paymentResult=${JSON.stringify(result)}`)
     })
 })

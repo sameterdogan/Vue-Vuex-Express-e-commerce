@@ -3,7 +3,7 @@ import store from '@/store/store'
 import { router } from '@/router'
 
 
-axios.defaults.baseURL = 'http://localhost:5000/api/'
+axios.defaults.baseURL = 'http://localhost:3000/api/'
 axios.interceptors.response.use(function(response) {
     return response
 }, function(error) {

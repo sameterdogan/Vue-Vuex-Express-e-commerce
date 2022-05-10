@@ -1,5 +1,7 @@
-import express from 'express'
 import dotenv from 'dotenv'
+dotenv.config({ path: './config/env/config.env' })
+import express from 'express'
+
 import dbConnect from './helpers/database/dbConnect'
 import cors from 'cors'
 import indexRouter from './routes/index'
@@ -8,7 +10,7 @@ import logger from './config/logger/logger.config'
 import morgan from 'morgan'
 import helmet from 'helmet'
 
-dotenv.config({ path: './config/env/config.env' })
+
 dbConnect()
 
 const app = express()

@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-
+import ProductModel from "./product"
 const Schema= mongoose.Schema
 
 const OrderSchema=new Schema({
@@ -28,5 +28,19 @@ const OrderSchema=new Schema({
     },
 
 })
+
+
+OrderSchema.pre('findOneAndUpdate', async function (next) {
+
+    console.log(this.getQuery());
+    const order= await this.model.findOne(this.getQuery());
+    console.log(order)
+
+    for (const product of order.items) {
+         await ProductModel.findByIdAndUpdate(product._id,{ $inc: { stock: Number(-(product.quantity)) }})
+    }
+
+    next();
+});
 
 export default mongoose.model("Order",OrderSchema)
